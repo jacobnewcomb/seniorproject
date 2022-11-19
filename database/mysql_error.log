@@ -271,3 +271,62 @@ recovered pages: 0% 22% 48% 75% 100% (0.0 seconds); tables to flush: 3 2 1 0
 2022-11-16 15:18:08 0 [Note] Plugin 'FEEDBACK' is disabled.
 2022-11-16 15:18:08 0 [Note] InnoDB: Buffer pool(s) load completed at 221116 15:18:08
 2022-11-16 15:18:08 0 [Note] Server socket created on IP: '::'.
+2022-11-18 17:06:42 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2022-11-18 17:06:42 0 [Note] InnoDB: Uses event mutexes
+2022-11-18 17:06:42 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2022-11-18 17:06:42 0 [Note] InnoDB: Number of pools: 1
+2022-11-18 17:06:42 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2022-11-18 17:06:42 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2022-11-18 17:06:42 0 [Note] InnoDB: Completed initialization of buffer pool
+2022-11-18 17:06:42 0 [Note] InnoDB: Starting crash recovery from checkpoint LSN=1530798
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Operating system error number 3 in a file operation.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: The error means the system cannot find the path specified.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: If you are installing InnoDB, remember that you must create directories yourself, InnoDB does not create them.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\goalboard\goal.ibd' OS error: 203
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2022-11-18 17:06:42 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``goalboard`.`goal``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2022-11-18 17:06:42 0 [Warning] InnoDB: Ignoring tablespace for `goalboard`.`goal` because it could not be opened.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Operating system error number 3 in a file operation.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: The error means the system cannot find the path specified.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: If you are installing InnoDB, remember that you must create directories yourself, InnoDB does not create them.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\goalboard\groupinfo.ibd' OS error: 203
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2022-11-18 17:06:42 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``goalboard`.`groupinfo``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2022-11-18 17:06:42 0 [Warning] InnoDB: Ignoring tablespace for `goalboard`.`groupinfo` because it could not be opened.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Operating system error number 3 in a file operation.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: The error means the system cannot find the path specified.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: If you are installing InnoDB, remember that you must create directories yourself, InnoDB does not create them.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\goalboard\tasks.ibd' OS error: 203
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2022-11-18 17:06:42 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``goalboard`.`tasks``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2022-11-18 17:06:42 0 [Warning] InnoDB: Ignoring tablespace for `goalboard`.`tasks` because it could not be opened.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Operating system error number 3 in a file operation.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: The error means the system cannot find the path specified.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: If you are installing InnoDB, remember that you must create directories yourself, InnoDB does not create them.
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\goalboard\users.ibd' OS error: 203
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2022-11-18 17:06:42 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2022-11-18 17:06:42 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``goalboard`.`users``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2022-11-18 17:06:42 0 [Warning] InnoDB: Ignoring tablespace for `goalboard`.`users` because it could not be opened.
+2022-11-18 17:06:42 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2022-11-18 17:06:42 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2022-11-18 17:06:42 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2022-11-18 17:06:42 0 [Note] InnoDB: Setting file 'C:\xampp\mysql\data\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2022-11-18 17:06:42 0 [Note] InnoDB: File 'C:\xampp\mysql\data\ibtmp1' size is now 12 MB.
+2022-11-18 17:06:42 0 [Note] InnoDB: Waiting for purge to start
+2022-11-18 17:06:42 3 [ERROR] InnoDB: Failed to find tablespace for table `goalboard`.`tasks` in the cache. Attempting to load the tablespace with space id 55
+2022-11-18 17:06:42 3 [ERROR] InnoDB: Operating system error number 3 in a file operation.
+2022-11-18 17:06:42 3 [ERROR] InnoDB: The error means the system cannot find the path specified.
+2022-11-18 17:06:42 3 [ERROR] InnoDB: If you are installing InnoDB, remember that you must create directories yourself, InnoDB does not create them.
+2022-11-18 17:06:42 3 [ERROR] InnoDB: Cannot open datafile for read-only: '.\goalboard\tasks.ibd' OS error: 203
+2022-11-18 17:06:42 3 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2022-11-18 17:06:42 3 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2022-11-18 17:06:42 3 [ERROR] InnoDB: Could not find a valid tablespace file for ``goalboard`.`tasks``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2022-11-18 17:06:42 0 [Note] InnoDB: 10.4.22 started; log sequence number 1530807; transaction id 1725
+2022-11-18 17:06:42 0 [Note] InnoDB: Loading buffer pool(s) from C:\xampp\mysql\data\ib_buffer_pool
+2022-11-18 17:06:42 0 [Note] Plugin 'FEEDBACK' is disabled.
+2022-11-18 17:06:42 0 [Note] InnoDB: Buffer pool(s) load completed at 221118 17:06:42
+2022-11-18 17:06:42 0 [Note] Server socket created on IP: '::'.
