@@ -100,7 +100,7 @@
             die("Unable to Connect database: " . mysqli_connect_error());
         }
 
-        $query = "SELECT * FROM 'CustomersCars' WHERE Cust_id = " . $cust_id;
+        $query = "SELECT * FROM car natural join customerscar WHERE cust_id = " . $cust_id;
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))
