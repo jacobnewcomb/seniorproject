@@ -11,7 +11,7 @@
             die("Unable to Connect database: " . mysqli_connect_error());
         }
 
-        $query = "SELECT * FROM 'customer' WHERE 1";
+        $query = "SELECT * FROM 'customer'";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))
@@ -28,7 +28,7 @@
             die("Unable to Connect database: " . mysqli_connect_error());
         }
 
-        $query = "SELECT A.Cust_id FROM 'appointments' A WHERE A.apt_id = '" . $apt_id . "';";
+        $query = "SELECT A.Cust_id FROM 'appointments' A WHERE A.Apt_id = '" . $apt_id . "';";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))
@@ -47,7 +47,7 @@
             die("Unable to Connect database: " . mysqli_connect_error());
         }
 
-        $query = "SELECT * FROM 'appointments' WHERE 1";
+        $query = "SELECT * FROM 'appointments'";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))
@@ -83,7 +83,7 @@
             die("Unable to Connect database: " . mysqli_connect_error());
         }
 
-        $query = "SELECT * FROM 'cars' WHERE 1";
+        $query = "SELECT * FROM 'cars'";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))
@@ -119,7 +119,7 @@
             die("Unable to Connect database: " . mysqli_connect_error());
         }
 
-        $query = "SELECT * FROM 'invoices' WHERE 1";
+        $query = "SELECT * FROM 'invoices'";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))
@@ -155,7 +155,7 @@
             die("Unable to Connect database: " . mysqli_connect_error());
         }
 
-        $query = "SELECT * FROM 'inventory' WHERE 1";
+        $query = "SELECT * FROM 'inventory'";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))
