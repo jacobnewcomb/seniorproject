@@ -28,7 +28,7 @@
             die("Unable to Connect database: " . mysqli_connect_error());
         }
 
-        $query = "SELECT C.Cust_id, C.f_name, C.l_name, C.address FROM 'customers' C, 'appointments' A WHERE C.Cust_id = A.Cust_id";
+        $query = "SELECT A.Cust_id FROM 'appointments' A WHERE A.apt_id = '" . $apt_id . "';";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))
