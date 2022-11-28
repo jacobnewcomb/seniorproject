@@ -1,11 +1,11 @@
 <?php
+    $hostname     = "localhost";
+    $username     = "senior";
+    $password     = "project";
+    $database     = "seniorproject";
+
     #Customer Queries
     function fetchAllCustomers(){
-        $hostname     = "localhost";
-        $username     = "senior";
-        $password     = "project";
-        $database     = "seniorproject";
-
         $conn = mysqli_connect($hostname, $username, $password, $database);
         if (!$conn) {
             die("Unable to Connect database: " . mysqli_connect_error());
@@ -23,11 +23,6 @@
         echo json_encode($data);
     }
     function fetchCustomerForAppointment($apt_id){
-        $hostname     = "localhost";
-        $username     = "senior";
-        $password     = "project";
-        $database     = "seniorproject";
-
         $conn = mysqli_connect($hostname, $username, $password, $database);
         if (!$conn) {
             die("Unable to Connect database: " . mysqli_connect_error());
@@ -47,11 +42,6 @@
 
     #Appointment Queries
     function fetchAllAppointments(){
-        $hostname     = "localhost";
-        $username     = "senior";
-        $password     = "project";
-        $database     = "seniorproject";
-
         $conn = mysqli_connect($hostname, $username, $password, $database);
         if (!$conn) {
             die("Unable to Connect database: " . mysqli_connect_error());
@@ -69,11 +59,6 @@
         echo json_encode($data);
     }
     function fetchAppointmentsForCustomer($cust_id){
-        $hostname     = "localhost";
-        $username     = "senior";
-        $password     = "project";
-        $database     = "seniorproject";
-
         $conn = mysqli_connect($hostname, $username, $password, $database);
         if (!$conn) {
             die("Unable to Connect database: " . mysqli_connect_error());
@@ -93,11 +78,6 @@
 
     #Car Queries
     function fetchAllCars(){
-        $hostname     = "localhost";
-        $username     = "senior";
-        $password     = "project";
-        $database     = "seniorproject";
-
         $conn = mysqli_connect($hostname, $username, $password, $database);
         if (!$conn) {
             die("Unable to Connect database: " . mysqli_connect_error());
@@ -115,11 +95,6 @@
         echo json_encode($data);
     }
     function fetchCarsForCustomer($cust_id){
-        $hostname     = "localhost";
-        $username     = "senior";
-        $password     = "project";
-        $database     = "seniorproject";
-
         $conn = mysqli_connect($hostname, $username, $password, $database);
         if (!$conn) {
             die("Unable to Connect database: " . mysqli_connect_error());
@@ -139,11 +114,6 @@
 
     #Invoice Queries
     function fetchAllInvoices(){
-        $hostname     = "localhost";
-        $username     = "senior";
-        $password     = "project";
-        $database     = "seniorproject";
-
         $conn = mysqli_connect($hostname, $username, $password, $database);
         if (!$conn) {
             die("Unable to Connect database: " . mysqli_connect_error());
@@ -161,11 +131,6 @@
         echo json_encode($data);
     }
     function fetchInvoicesForCustomer($cust_id){
-        $hostname     = "localhost";
-        $username     = "senior";
-        $password     = "project";
-        $database     = "seniorproject";
-
         $conn = mysqli_connect($hostname, $username, $password, $database);
         if (!$conn) {
             die("Unable to Connect database: " . mysqli_connect_error());
@@ -185,11 +150,6 @@
 
     #Inventory Queries
     function fetchAllInventory(){
-        $hostname     = "localhost";
-        $username     = "senior";
-        $password     = "project";
-        $database     = "seniorproject";
-
         $conn = mysqli_connect($hostname, $username, $password, $database);
         if (!$conn) {
             die("Unable to Connect database: " . mysqli_connect_error());
