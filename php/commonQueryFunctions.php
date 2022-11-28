@@ -147,6 +147,23 @@
         mysqli_close($conn);
         echo json_encode($data);
     }
+    function fetchPDFByInvoice($invoice_id){
+        $conn = mysqli_connect($hostname, $username, $password, $database);
+        if (!$conn) {
+            die("Unable to Connect database: " . mysqli_connect_error());
+        }
+
+        $query = "SELECT invoice_path FROM 'invoices' WHERE invoice_id = '" . $invoice_id . "';";
+        $exec = mysqli_query($conn, $query);
+        $data = array();
+        while($row = mysqli_fetch_assoc($exec))
+        {
+            $data[] = $row;
+        }
+        $data = array_reverse($data);
+        mysqli_close($conn);
+        echo json_encode($data);
+    }
 
     #Inventory Queries
     function fetchAllInventory(){
@@ -156,6 +173,43 @@
         }
 
         $query = "SELECT * FROM 'inventory'";
+        $exec = mysqli_query($conn, $query);
+        $data = array();
+        while($row = mysqli_fetch_assoc($exec))
+        {
+            $data[] = $row;
+        }
+        $data = array_reverse($data);
+        mysqli_close($conn);
+        echo json_encode($data);
+    }
+
+    function fetchItem($name){
+        $conn = mysqli_connect($hostname, $username, $password, $database);
+        if (!$conn) {
+            die("Unable to Connect database: " . mysqli_connect_error());
+        }
+
+        $query = "SELECT * FROM 'inventory' WHERE name = '" . $name . "';";
+        $exec = mysqli_query($conn, $query);
+        $data = array();
+        while($row = mysqli_fetch_assoc($exec))
+        {
+            $data[] = $row;
+        }
+        $data = array_reverse($data);
+        mysqli_close($conn);
+        echo json_encode($data);
+    }
+
+    #Inventory Ledger Queries
+    function fetchLedgerInfoByInvoice($invoice_id){
+        $conn = mysqli_connect($hostname, $username, $password, $database);
+        if (!$conn) {
+            die("Unable to Connect database: " . mysqli_connect_error());
+        }
+
+        $query = "SELECT * FROM 'InventoryLedger' WHERE invoice_id = '" . $invoice_id . "';";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))
