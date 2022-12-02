@@ -16,19 +16,32 @@
 	<body>
 		<div class = "container">
 			<div class = "px-2 py-1 mb-2 bg-dark text-white">
-				<h1>Login Page</h1>
-				<h3>For testing purposes: Username = "admin", Password = "abc123"</h3>
+				<h1>Home Page</h1>
 			</div>
 			<form>
 				<div class="mb-3 w-25">
-					<label for="username_input" class="form-label">Enter Username</label>
-					<input type="text" class="form-control" id="username_input">
+					<button class = "btn btn-primary" type "submit" value "Submit" onclick = "javascript:validate()">Schedule</button>
 				</div>
+				
 				<div class="mb-3 w-25">
-					<label for="password_input" class="form-label">Enter Password</label>
-					<input type="password" class="form-control" id="password_input">
+					<button class = "btn btn-primary" type "submit" value "Submit" onclick = "javascript:validate()">Calendar</button>
 				</div>
-				<button class = "btn btn-primary" type "submit" value "Submit" onclick = "javascript:validate()">Submit</button>
+				
+				<div class="mb-3 w-25">
+					<button class = "btn btn-primary" type "submit" value "Submit" onclick = "javascript:validate()">New Invoice</button>
+				</div>
+				
+				<div class="mb-3 w-25">
+					<button class = "btn btn-primary" type "submit" value "Submit" onclick = "javascript:validate()">Accounting</button>
+				</div>
+				
+				<div class="mb-3 w-25">
+					<button class = "btn btn-primary" type "submit" value "Submit" onclick = "javascript:validate()">Inventory</button>
+				</div>
+				
+				<div class="mb-3 w-25">
+					<button class = "btn btn-primary" type "submit" value "Submit" onclick = "javascript:validate()">Settings</button>
+				</div>
 			</form>
 		</div>
 	</body>		
@@ -37,7 +50,7 @@
 			function validate(){
 				if(document.getElementById("username_input").value == "admin"
 				&& document.getElementById("password_input").value == "abc123"){
-					document.location.href("/home.html");
+					alert("Validation Succeeded");
 				}
 				else{
 					alert("Validation Failed");
