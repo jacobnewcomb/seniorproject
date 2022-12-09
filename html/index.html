@@ -11,20 +11,49 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="../css/login.css">
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			function init(){
+				const submitButton = document.getElementById("submit");
+				submitButton.addEventListener('click', login);
+			}
 
+			function login(){
+				var username = document.getElementById("user").value;
+				var password = document.getElementById("password").value;
+				$.ajax({
+					async: false,
+					url: "../php/login.php",    //the page containing php script
+					type: "post",    //request type,
+					data: {
+						'username' : username,
+						'password' : password,
+					},
+					dataType: "json",
+					success:function(result){
+						if(result){
+							document.location.href = "home.html"
+						}
+						else{
+							alert("Could not find user. Please try again.");
+						}
+					}
+				});
+			}
+		</script>
 	</head>
 
-	<body>
-		<form action="" method="">				<!--Add link location here, variable names are: user,password -->
+	<body onload="init();">
+		<div class="form">				<!--Add link location here, variable names are: user,password -->
 			<div class="v31_3">
 				<div class="header"></div>
 				<div class="v31_6"></div>
-				<input type="text" placeholder="Username:" name="user">
-				<input type="password" placeholder="Password:" name="password">
-				<input type="submit" value="">
-				<span class="v31_14">sign in</span>
+				<input type="text" placeholder="Username:" id="user">
+				<input type="password" placeholder="Password:" id="password">
+<!--				<button class="submit">Login</button>-->
+				<button class="v31_14" id="submit">sign in</button>
+			</div>
 		</div>
-	</form>
 	</body>
 </html>
 	 <br/><br/>

@@ -39,7 +39,7 @@
     border-bottom-right-radius: 20px;
     overflow: hidden;
   }
-  input[name=user]{
+  #user{
     font-size: 40px;
     width: 793px;
     height: 87px;
@@ -52,7 +52,7 @@
     overflow: hidden;
   }
 
-  input[name=password] {
+  #password {
     font-size: 40px;
     width: 793px;
     height: 82px;
@@ -65,7 +65,7 @@
     overflow: hidden;
   }
 
-  input[type=submit] {
+  #submit {
     width: 330px;
     height: 76px;
     background: rgba(30,144,255,1);
@@ -80,7 +80,7 @@
     overflow: hidden;
   }
   .v31_14 {
-    width: 123px;
+    width: 330px;
     color: rgba(255,255,255,1);
     position: absolute;
     top: 637px;
