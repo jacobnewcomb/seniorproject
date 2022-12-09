@@ -41,6 +41,20 @@
 				});
 			}
 		</script>
+		<script type="text/javascript">
+			$.ajax({
+				async: false,
+				url:"../php/checkLogin.php",    //the page containing php script
+				type: "post",    //request type,
+				data: {},
+				dataType: "json",
+				success:function(result){
+					if(result){
+						document.location.href = "home.html";
+					}
+				}
+			});
+		</script>
 	</head>
 
 	<body onload="init();">
