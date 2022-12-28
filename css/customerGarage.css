@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .v54_95 {
+    width: 100%;
+    height: 1024px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v54_96 {
+    width: 100%;
+    height: 117px;
+    background: rgba(53,56,57,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v54_97 {
+    width: 688px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 22px;
+    left: 156px;
+    font-family: Roboto Slab;
+    font-weight: Regular;
+    font-size: 64px;
+    opacity: 1;
+    text-align: left;
+  }
+  .name {
+    color: #fff;
+  }
+  .v54_111 {
+    width: 213px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 883px;
+    left: 248px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 32px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v54_116 {
+    width: 100%;
+    height: 578px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 259px;
+    left: 73px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  .v54_118 {
+    width: 46px;
+    height: 50px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 39px;
+    left: 73px;
+    overflow: hidden;
+  }
+  .v55_120 {
+    width: 100%;
+    height: 53px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 175px;
+    left: 96px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  .v55_121 {
+    width: 156px;
+    height: 53px;
+    background: rgba(30,144,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 175px;
+    left: 1196px;
+    overflow: hidden;
+  }
+  .v69_132 {
+    width: 70px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 179px;
+    left: 1229px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 36px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v55_122 {
+    width: 368px;
+    height: 53px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 175px;
+    left: 73px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  .v69_129 {
+    width: 76px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 184px;
+    left: 211px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 36px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .v55_123 {
+    width: 384px;
+    height: 53px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 175px;
+    left: 441px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  .v69_130 {
+    width: 93px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 179px;
+    left: 598px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 36px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .v55_124 {
+    width: 370px;
+    height: 53px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 175px;
+    left: 826px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  .v69_131 {
+    width: 106px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 179px;
+    left: 946px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 36px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .v69_133 {
+    width: 462px;
+    height: 75px;
+    background: rgba(30,144,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 874px;
+    left: 506px;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    overflow: hidden;
+  }
+  .v69_134 {
+    width: 121px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 890px;
+    left: 676px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 36px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v69_155 {
+    width: 100%;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 313px;
+    left: 217px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 128px;
+    opacity: 1;
+    text-align: left;
+  }

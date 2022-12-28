@@ -1,0 +1,318 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .v177_27 {
+    width: 100%;
+    height: 1024px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v177_28 {
+    width: 100%;
+    height: 117px;
+    background: rgba(53,56,57,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .welcomeText {
+    width: 434px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 17px;
+    left: 79px;
+    font-family: Roboto Slab;
+    font-weight: Regular;
+    font-size: 64px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v177_95 {
+    width: 220px;
+    height: 62px;
+    background: url("../images/v177_95.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 28px;
+    left: 1137px;
+    overflow: hidden;
+  }
+  .logoutButton {
+    width: 220px;
+    height: 62px;
+    background: rgba(30,144,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgba(0,0,0,1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .v177_69 {
+    width: 76px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 15px;
+    left: 72px;
+    font-family: Roboto Slab;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v177_97 {
+    width: 994px;
+    height: 177px;
+    background: url("../images/v177_97.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 190px;
+    left: 223px;
+    overflow: hidden;
+  }
+  .activeScreen {
+    width: 994px;
+    height: 177px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  .scheduleScreen {
+    width: 167px;
+    height: 760px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
+    position: absolute;
+    top: 192px;
+    left: 1273px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3499999940395355);
+    overflow: hidden;
+  }
+  .newSaleButton {
+    width: 451px;
+    height: 135px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
+    position: absolute;
+    top: 456px;
+    left: 223px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3499999940395355);
+    overflow: hidden;
+  }
+  .v177_82 {
+    width: 209px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 495px;
+    left: 344px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 48px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .v177_96 {
+    width: 451px;
+    height: 135px;
+    background: url("../images/v177_96.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 456px;
+    left: 766px;
+    overflow: hidden;
+  }
+  .inventoryButton{
+    width: 451px;
+    height: 135px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3499999940395355);
+    overflow: hidden;
+  }
+  .v177_83 {
+    width: 213px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 39px;
+    left: 119px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 48px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .settingsButton {
+    width: 451px;
+    height: 135px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
+    position: absolute;
+    top: 664px;
+    left: 223px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3499999940395355);
+    overflow: hidden;
+  }
+  .v177_84 {
+    width: 188px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 703px;
+    left: 355px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 48px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .accountingButton{
+    width: 451px;
+    height: 135px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
+    position: absolute;
+    top: 664px;
+    left: 766px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3499999940395355);
+    overflow: hidden;
+  }
+  .v177_86 {
+    width: 257px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 703px;
+    left: 863px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 48px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  
+  .v177_88 {
+    width: 36px;
+    height: 68px;
+    background: url("../images/v177_88.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 557px;
+    left: 165px;
+    overflow: hidden;
+  }
+  .v177_89 {
+    width: 36px;
+    height: 68px;
+    background: url("../images/v177_89.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  
+  .v177_92 {
+    width: 141px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 211px;
+    left: 1286px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 32px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .name {
+    color: #fff;
+  }
+  .v180_99 {
+    width: 165px;
+    height: 734px;
+    background: url("../images/v180_99.png");
+    opacity: 1;
+    position: absolute;
+    top: 194px;
+    left: 1px;
+  }
+  .apptsWindow{
+    width: 166px;
+    height: 760px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
+    position: absolute;
+    top: 192px;
+    left: 0px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  .v177_91 {
+    width: 98px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 211px;
+    left: 35px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 32px;
+    opacity: 0.5;
+    text-align: left;
+  }

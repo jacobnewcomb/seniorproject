@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Sale</title>
+
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        <link href="../css/newSale.css" rel="stylesheet">
+    </head>
+
+<body>
+    <div class="v39_2">
+        <div class="v43_29"></div><span class="v45_7">New Sale</span>
+        <div class="name"></div>
+        <div class="v44_30"></div>
+
+    <form>
+        <div class="v44_31"></div>
+        <div class="lastName"></div><input type="text" placeholder="e.g last name" id="lastName" name="lastName">
+       
+        <div class="phoneNumber"></div><input type="tel" placeholder="e.g phone number" id="phoneNumber" name="phoneNumber"> 
+        <div class="address"></div><input type="text" name="address" id="address" placeholder="e.g address (optional)">
+        <div class="emailAddress"></div><input type="email" name="email" id="email" placeholder="e.g email (optional)">
+        
+        <div class="v44_33"></div>
+        <div class="addCustomerButton" id="addCustomer" onclick="window.location.href='customerGarage.html'">Add customer</div>  <!--Add javascript for this change div to button if needed, text will auto align when switched to button.--> 
+
+     </form>
+     
+     <form>
+        <div class="searchResultBody">
+            <table class="table table-hover"  onclick="window.location.href='finalizeSale.php'">
+				<thead>
+					<tr>
+					<th scope="col">id#</th>
+					<th scope="col">First</th>
+					<th scope="col">Last</th>
+					<th scope="col">Phone</th>
+					<th scope="col">Email</th>
+					<th scope="col">City</th>
+					<th scope="col">Zip</th>
+					<th scope="col">Select</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+                    <!-- 
+                        example of how to get the bootstrap table to generate list using php (from my previous project). May be helpful!
+
+                        <?php 
+					
+					if(isset($_GET['search'])){
+
+						$search = $_GET['search'];
+						$query = "select * from customers where concat(customerId,fname,lname,phone,email,city,zip) like '%$search%'";
+						$results = mysqli_query($conn,$query);
+
+						if(mysqli_num_rows($results) > 0){
+							foreach($results as $items){
+								?>
+									<tr>
+										<td><?= $items['customerId'];?></td>
+										<td><?= $items['fname'];?></td>
+										<td><?= $items['lname'];?></td>
+										<td><?= $items['phone'];?></td>
+										<td><?= $items['email'];?></td>
+										<td><?= $items['city'];?></td>
+										<td><?= $items['zip'];?></td>
+										<td>
+											<a href="finalizeSale.php?fname=<?php echo $items['customerId'];?>">Select</a>
+										</td>
+									</tr>
+
+
+								<?php
+							}
+						}
+						else{
+							
+							?>
+
+							<tr>
+								<td colspan="7">No record found...</td>
+							</tr>
+							<?php 
+						}
+
+
+					}
+					?>
+				-->
+	
+						
+				</tbody>
+			</table>
+
+
+
+        </div>
+        <div class="savedJobsButton" id="savedJobsText">Saved jobs</div>
+  
+        <div class="v44_35"></div>
+        <div class="searchButton" id="searchButton">search</div>      <!--Button to search for variable: searchInput (name,lastname,phone etc.)-->
+        <input id="searchInput" type="text" name="searchInput">
+        <div class="firstName"></div><input type="text" id="firstName" name="firstName" placeholder="e.g first name">
+        <div class="v45_10"></div>
+    </form>
+
+    </div>
+</body>
+
+</html> <br /><br />

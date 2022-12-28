@@ -1,0 +1,344 @@
+*{font-size: 14px;
+}
+
+.v39_2 {
+  width: 100%;
+  height: 1024px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v43_29 {
+  width: 100%;
+  height: 117px;
+  background: rgba(53,56,57,1);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.v45_7 {
+  width: 410px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 22px;
+  left: 151px;
+  font-family: Roboto Slab;
+  font-weight: Regular;
+  font-size: 64px;
+  opacity: 1;
+  text-align: left;
+}
+.name {
+  color: #fff;
+}
+.v44_30 {
+  width: 100px;
+  height: 100px;
+  background: url("../images/v44_30.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 284px;
+  left: 151px;
+  overflow: hidden;
+}
+.v44_31 {
+  width: 599px;
+  height: 667px;
+  background: rgba(229,228,226,1);
+  opacity: 1;
+  position: absolute;
+  top: 179px;
+  left: 79px;
+  border: 1px solid rgba(0,0,0,1);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
+.lastName{
+  width: 520px;
+  height: 54px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 358px;
+  left: 119px;
+  border: 1px solid rgba(0,0,0,1);
+  overflow: hidden;
+}
+#lastName{
+  width: 519px;
+  height: 49px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 360px;
+  left: 120px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 23px;
+  opacity: 0.5;
+  text-align: left;
+  overflow: hidden;
+}
+.phoneNumber{
+  width: 520px;
+  height: 54px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 492px;
+  left: 119px;
+  border: 1px solid rgba(0,0,0,1);
+  overflow: hidden;
+}
+#phoneNumber{
+  width: 520px;
+  height: 48px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 495px;
+  left: 119px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 0.5;
+  text-align: left;
+}
+.address{
+  width: 520px;
+  height: 54px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 620px;
+  left: 119px;
+  border: 1px solid rgba(0,0,0,1);
+  overflow: hidden;
+}
+#address{
+  width: 520px;
+  height: 50px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 620px;
+  left: 119px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 0.5;
+  text-align: left;
+}
+.emailAddress {
+  width: 520px;
+  height: 54px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 743px;
+  left: 119px;
+  border: 1px solid rgba(0,0,0,1);
+  overflow: hidden;
+}
+#email{
+  width: 520px;
+  height: 54px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 743px;
+  left: 119px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 0.5;
+  text-align: left;
+}
+.searchResultBody {
+  width: 599px;
+  height: 581px;
+  background: rgba(229,228,226,1);
+  opacity: 1;
+  position: absolute;
+  top: 264px;
+  left: 753px;
+  border: 1px solid rgba(0,0,0,1);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+}
+.v44_33 {
+  width: 280px;
+  height: 60px;
+  background: rgba(30,144,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 874px;
+  left: 215px;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  overflow: hidden;
+}
+.addCustomerButton {
+  width: 280px;
+  height: 60px;
+  background: rgba(30,144,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 874px;
+  left: 215px;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  overflow: hidden;
+}
+.savedJobsButton {
+  width: 280px;
+  height: 60px;
+  background: rgba(30,144,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 874px;
+  left: 913px;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  overflow: hidden;
+}
+#savedJobsText {
+  width: 280px;
+  height: 60px;
+  color: rgba(255,255,255,1);
+  position: relative;
+  top: 874px;
+  left: 973px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 32px;
+  opacity: 1;
+  text-align: center;
+  
+}
+#addCustomer {
+  width: 280px;
+  height: 60px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 874px;
+  left: 215px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 32px;
+  opacity: 1;
+  text-align: center;
+  overflow: hidden;
+}
+.v44_35 {
+  width: 599px;
+  height: 84px;
+  background: rgba(229,228,226,1);
+  opacity: 1;
+  position: absolute;
+  top: 179px;
+  left: 753px;
+  border: 1px solid rgba(0,0,0,1);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+}
+.searchButton {
+  width: 143px;
+  height: 84px;
+  background: rgba(30,144,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 179px;
+  left: 753px;
+  border: 1px solid rgba(0,0,0,1);
+  border-top-left-radius: 20px;
+  overflow: hidden;
+}
+#searchButton {
+  width: 145px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 180px;
+  left: 753px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 32px;
+  opacity: 1;
+  text-align: center;
+  overflow: hidden;
+}
+.searchInput {
+  width: 404px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 213px;
+  left: 923px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 32px;
+  opacity: 0.5;
+  text-align: left;
+}
+#searchInput {
+    width: 440px;
+    height: 65px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 190px;
+    left: 900px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 32px;
+    opacity: 0.5;
+    text-align: left;
+  }
+.firstName {
+  width: 520px;
+  height: 54px;
+  background: rgba(255,255,255,1);
+  opacity: 1;
+  position: absolute;
+  top: 244px;
+  left: 119px;
+  border: 1px solid rgba(0,0,0,1);
+  overflow: hidden;
+}
+#firstName{
+  width: 520px;
+  height: 49px;
+  color: rgba(0,0,0,1);
+  position: absolute;
+  top: 245px;
+  left: 119px;
+  font-family: Inter;
+  font-weight: Regular;
+  font-size: 24px;
+  opacity: 0.5;
+  text-align: left;
+}
+.v45_10 {
+  width: 46px;
+  height: 50px;
+  background: rgba(217,217,217,1);
+  opacity: 1;
+  position: absolute;
+  top: 39px;
+  left: 73px;
+  overflow: hidden;
+}
+
