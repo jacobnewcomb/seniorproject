@@ -51,17 +51,6 @@
     opacity: 1;
     text-align: left;
   }
-  .v54_116 {
-    width: 100%;
-    height: 578px;
-    background: rgba(255,255,255,1);
-    opacity: 1;
-    position: absolute;
-    top: 259px;
-    left: 73px;
-    border: 1px solid rgba(0,0,0,1);
-    overflow: hidden;
-  }
   .v54_118 {
     width: 46px;
     height: 50px;
@@ -72,109 +61,92 @@
     left: 73px;
     overflow: hidden;
   }
-  .v55_120 {
-    width: 100%;
-    height: 53px;
-    background: rgba(255,255,255,1);
-    opacity: 1;
-    position: absolute;
-    top: 175px;
-    left: 96px;
-    border: 1px solid rgba(0,0,0,1);
-    overflow: hidden;
-  }
-  .v55_121 {
-    width: 156px;
-    height: 53px;
+  .addButton {
+    width: 144px;
+    height: 62px;
     background: rgba(30,144,255,1);
     opacity: 1;
     position: absolute;
-    top: 175px;
-    left: 1196px;
+    top: 200px;
+    left: 1126px;
     overflow: hidden;
   }
-  .v69_132 {
-    width: 70px;
-    color: rgba(255,255,255,1);
-    position: absolute;
-    top: 179px;
-    left: 1229px;
+  #addButton {
+    font-size: 32px;
+    color: #fff;
     font-family: Inter;
-    font-weight: Regular;
-    font-size: 36px;
-    opacity: 1;
-    text-align: left;
   }
-  .v55_122 {
-    width: 368px;
-    height: 53px;
-    background: rgba(217,217,217,1);
+  .yearInput {
+    font-size: 32px;
+    width: 332px;
+    height: 60px;
+    background: rgba(229,228,226,1);
     opacity: 1;
     position: absolute;
-    top: 175px;
-    left: 73px;
+    top: 202px;
+    left: 119px;
     border: 1px solid rgba(0,0,0,1);
     overflow: hidden;
   }
-  .v69_129 {
-    width: 76px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 184px;
-    left: 211px;
-    font-family: Inter;
-    font-weight: Regular;
-    font-size: 36px;
-    opacity: 0.5;
-    text-align: left;
-  }
-  .v55_123 {
-    width: 384px;
-    height: 53px;
-    background: rgba(217,217,217,1);
+  #yearInput {
+    font-size: 32px;
+    width: 332px;
+    height: 60px;
+    background: rgba(229,228,226,1);
     opacity: 1;
     position: absolute;
-    top: 175px;
-    left: 441px;
+    top: 202px;
+    left: 119px;
     border: 1px solid rgba(0,0,0,1);
     overflow: hidden;
   }
-  .v69_130 {
-    width: 93px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 179px;
-    left: 598px;
-    font-family: Inter;
-    font-weight: Regular;
-    font-size: 36px;
-    opacity: 0.5;
-    text-align: left;
-  }
-  .v55_124 {
-    width: 370px;
-    height: 53px;
-    background: rgba(217,217,217,1);
+  .makeInput {
+    width: 346px;
+    height: 60px;
+    background: rgba(229,228,226,1);
     opacity: 1;
     position: absolute;
-    top: 175px;
-    left: 826px;
+    top: 202px;
+    left: 448px;
     border: 1px solid rgba(0,0,0,1);
     overflow: hidden;
   }
-  .v69_131 {
-    width: 106px;
-    color: rgba(0,0,0,1);
+  #makeInput {
+    font-size: 32px;
+    width: 346px;
+    height: 60px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
     position: absolute;
-    top: 179px;
-    left: 946px;
-    font-family: Inter;
-    font-weight: Regular;
-    font-size: 36px;
-    opacity: 0.5;
-    text-align: left;
+    top: 202px;
+    left: 448px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
   }
-  .v69_133 {
+  .modelInput {
+    width: 334px;
+    height: 60px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
+    position: absolute;
+    top: 202px;
+    left: 794px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #modelInput {
+    font-size: 32px;
+    width: 334px;
+    height: 60px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
+    position: absolute;
+    top: 202px;
+    left: 794px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  .invoiceButton {
     width: 462px;
     height: 75px;
     background: rgba(30,144,255,1);
@@ -188,27 +160,23 @@
     border-bottom-right-radius: 45px;
     overflow: hidden;
   }
-  .v69_134 {
-    width: 121px;
-    color: rgba(255,255,255,1);
-    position: absolute;
-    top: 890px;
-    left: 676px;
-    font-family: Inter;
-    font-weight: Regular;
-    font-size: 36px;
-    opacity: 1;
-    text-align: left;
+  #invoiceButton{
+      color: #fff;
+      font-family: Inter;
+      font-weight: Regular;
+      font-size: 36px;
+      opacity: 1;
   }
-  .v69_155 {
-    width: 100%;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 313px;
-    left: 217px;
-    font-family: Inter;
-    font-weight: Regular;
-    font-size: 128px;
+
+  .carList {
+    width: 1153px;
+    height: 490px;
+    background: rgba(217,217,217,1);
     opacity: 1;
-    text-align: left;
+    position: absolute;
+    top: 330px;
+    left: 119px;
+    border: 2px solid rgba(0,0,0,1);
+    overflow: hidden;
   }
+  
