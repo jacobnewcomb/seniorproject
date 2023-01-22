@@ -1,0 +1,525 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  
+  .v69_137 {
+    width: 100%;
+    height: 1024px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  
+  /*   ===== Header Components =====   */
+  .v69_138 {
+    width: 100%;
+    height: 117px;
+    background: rgba(53,56,57,1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v69_139 {		/* Text: "INVOICE" */
+    width: 688px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 13px;
+    left: 156px;
+    font-family: Roboto Slab;
+    font-weight: Regular;
+    font-size: 64px;
+    opacity: 1;
+    text-align: left;
+  }
+  .name {
+    color: #fff;
+  }
+  .v69_143 {		/* Top-Left Decorative Square */
+    width: 46px;
+    height: 50px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 39px;
+    left: 73px;
+    overflow: hidden;
+  }
+  
+  /*   ===== Invoice Num. Input =====   */
+  .v134_3 {
+    width: 209px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 151px;
+    left: 928px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 1;
+    text-align: right;
+  }
+  .invoiceNum {
+    width: 206px;
+    height: 36px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 152px;
+    left: 1146px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #invoiceNum{
+    width: 206px;
+    height: 36px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 152px;
+    left: 1146px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  
+  /*   ===== First-Row Data Entry =====   */
+  .custID {
+    width: 320px;
+    height: 55px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 222px;
+    left: 73px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #custID{
+    width: 320px;
+    height: 55px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 222px;
+    left: 73px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .fName {
+    width: 320px;
+    height: 55px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 222px;
+    left: 393px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #fName{
+    width: 320px;
+    height: 55px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 222px;
+    left: 393px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .lName {
+    width: 320px;
+    height: 55px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 222px;
+    left: 713px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #lName{
+    width: 320px;
+    height: 55px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 222px;
+    left: 713px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .carInfo {
+    width: 320px;
+    height: 55px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 222px;
+    left: 1033px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #carInfo{
+    width: 320px;
+    height: 55px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 222px;
+    left: 1033px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  
+  /*   ===== Second-Row Data Entry =====   */
+  .capacity {
+    width: 640px;
+    height: 55px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 301px;
+    left: 73px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #capacity{
+    width: 640px;
+    height: 55px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 301px;
+    left: 73px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .oil {
+    width: 640px;
+    height: 55px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 301px;
+    left: 712px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #oil{
+    width: 640px;
+    height: 55px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 301px;
+    left: 712px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  
+  /*   ===== Third-Row Data Entry =====   */
+  .extract {
+    width: 640px;
+    height: 55px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 380px;
+    left: 73px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #extract{
+    width: 640px;
+    height: 55px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 380px;
+    left: 73px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  
+  .v104_113 {
+    width: 41px;
+    height: 40px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 388px;
+    left: 794px;
+    border-radius: 50%;
+  }
+  .v104_114 {
+    width: 226px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 383px;
+    left: 840px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 32px;
+    opacity: 1;
+    text-align: left;
+  }
+  .discount {
+    width: 209px;
+    height: 55px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 380px;
+    left: 1103px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #discount{
+    width: 209px;
+    height: 55px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 380px;
+    left: 1103px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .v125_113 {
+    width: 33px;
+    color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 375px;
+    left: 1315px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+  }
+  
+  /*   ===== Fourth-Row Data Entry =====   */
+  .quantity {
+    width: 296px;
+    height: 55px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 457px;
+    left: 72px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #quantity{
+    width: 296px;
+    height: 55px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 457px;
+    left: 72px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .clientData {
+    width: 860px;
+    height: 55px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 457px;
+    left: 368px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #clientData{
+    width: 860px;
+    height: 55px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 457px;
+    left: 368px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  
+  
+  .v86_6 {
+    width: 860px;
+    height: 55px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 457px;
+    left: 368px;
+    border: 1px solid rgba(0,0,0,1);
+  }
+  .v79_2 {
+    width: 100%;
+    height: 293px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 558px;
+    left: 73px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  
+  .displayBox {
+    width: 1275px;
+    height: 293px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
+    position: absolute;
+    top: 558px;
+    left: 74px;
+    border: 1px solid rgba(0,0,0,1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .v86_4 {
+    width: 124px;
+    height: 56px;
+    background: rgba(30,144,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 456px;
+    left: 1228px;
+    overflow: hidden;
+  }
+  .v86_8 {
+    width: 839px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 465px;
+    left: 377px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 32px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .v86_9 {
+    width: 62px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 465px;
+    left: 1259px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 32px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v86_11 {
+    width: 304px;
+    height: 63px;
+    background: rgba(30,144,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 887px;
+    left: 559px;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    overflow: hidden;
+  }
+  .v104_111 {
+    width: 304px;
+    height: 63px;
+    background: rgba(50,205,50,1);
+    opacity: 1;
+    position: absolute;
+    top: 887px;
+    left: 142px;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    overflow: hidden;
+  }
+  .v104_112 {
+    width: 111px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 887px;
+    left: 238px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 48px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v104_108 {
+    width: 304px;
+    height: 63px;
+    background: rgba(255,40,0,1);
+    opacity: 1;
+    position: absolute;
+    top: 887px;
+    left: 1008px;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    overflow: hidden;
+  }
+  .v104_109 {
+    width: 108px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 887px;
+    left: 1106px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 48px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v87_12 {
+    width: 171px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 888px;
+    left: 626px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 48px;
+    opacity: 1;
+    text-align: center;
+  }

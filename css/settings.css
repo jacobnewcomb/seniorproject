@@ -1,0 +1,350 @@
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 12px;
+  }
+  .v91_329 {
+    width: 100%;
+    height: 1024px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v91_330 {
+    width: 100%;
+    height: 117px;
+    background: rgba(53,56,57,1);
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .v125_127 {
+    width: 410px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 22px;
+    left: 151px;
+    font-family: Roboto Slab;
+    font-weight: Regular;
+    font-size: 64px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v91_331 {
+    width: 123px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 658px;
+    left: 655px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+  }
+  
+  .flatRate {
+    width: 355px;
+    height: 70px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 175px;
+    left: 655px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #flatRate{
+    width: 355px;
+    height: 70px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 175px;
+    left: 655px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  
+  .v125_109 {
+    width: 355px;
+    height: 70px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 174px;
+    left: 655px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  .v125_115 {
+    width: 575px;
+    height: 70px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 174px;
+    left: 42px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  
+  
+  
+  .v125_119 {
+    width: 575px;
+    height: 70px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 358px;
+    left: 42px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  
+  .v125_117 {		/* "Drop-List of Choices" in Appointments box */
+    width: 500px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 185px;
+    left: 100px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .v125_120 {		/* "Drop-List of Choices" in Invent. box */
+    width: 500px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 369px;
+    left: 100px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .v125_111 {
+    width: 355px;
+    height: 70px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 174px;
+    left: 1048px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  
+  .taxRate {
+    width: 355px;
+    height: 70px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 175px;
+    left: 1048px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #taxRate{
+    width: 355px;
+    height: 70px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 175px;
+    left: 1048px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  
+  .v125_110 {			/* "Current Flat Rate" */
+    width: 350px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 253px;
+    left: 685px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v125_114 {			/* "Tax Rate" */
+    width: 350px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 253px;
+    left: 1149px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v125_116 {			/* "Remind me of Appointments" */
+    width: 600px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 253px;
+    left: 64px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v125_121 {			/* "Remind me of Low Invent." */
+    width: 600px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 437px;
+    left: 93px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v125_125 {
+    width: 46px;
+    height: 50px;
+    background: rgba(217,217,217,1);
+    opacity: 1;
+    position: absolute;
+    top: 39px;
+    left: 70px;
+    overflow: hidden;
+  }
+  .name {
+    color: #fff;
+  }
+  .v127_129 {
+    width: 431px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 654px;
+    left: 114px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 64px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v143_66 {
+    width: 599px;
+    height: 667px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
+    position: absolute;
+    top: 348px;
+    left: 804px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    overflow: hidden;
+  }
+  .v143_67 {
+    width: 599px;
+    height: 84px;
+    background: rgba(229,228,226,1);
+    opacity: 1;
+    position: absolute;
+    top: 348px;
+    left: 804px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .searchInput {
+    width: 450px;
+    height: 70px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 360px;
+    left: 950px;
+    border: 1px solid rgba(0,0,0,1);
+    overflow: hidden;
+  }
+  #searchInput{
+    width: 450px;
+    height: 70px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 360px;
+    left: 950px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 24px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  
+  .v143_68 {
+    width: 143px;
+    height: 84px;
+    background: rgba(30,144,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 348px;
+    left: 804px;
+    border: 1px solid rgba(0,0,0,1);
+    border-top-left-radius: 20px;
+    overflow: hidden;
+  }
+  .v143_69 {
+    width: 102px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 382px;
+    left: 825px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 32px;
+    opacity: 1;
+    text-align: left;
+  }
+  .v143_70 {
+    width: 500px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 382px;
+    left: 974px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 32px;
+    opacity: 0.5;
+    text-align: left;
+  }
+  .v143_71 {
+    width: 494px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 564px;
+    left: 857px;
+    font-family: Inter;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: left;
+  }
+  
