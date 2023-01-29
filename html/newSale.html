@@ -2,55 +2,101 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Sale</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>New Sale</title>
 
-    <head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-        <link href="../css/newSale.css" rel="stylesheet">
-    </head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+	<link href="../css/newSale.css" rel="stylesheet">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+		integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		// ensure we are logged in
+		$.get('../php/checkLogin.php', function () { });
+
+		// prepare form submittal function
+		$(document).ready(function () {
+			$("#add-cust-form").submit(function (event) {
+				// prevent the form from doing default behavior
+				event.preventDefault();
+
+				// get vars
+				var fname = $("#cust-fname").val();
+				var lname = $("#cust-lname").val();
+				var phone = $("#cust-phone").val();
+				var email = $("#cust-email").val();
+				var address = $("#cust-address").val();
+
+				//send vars
+				$("#cust-form-message").load("../php/addCustomer.php", {
+					'fname': fname,
+					'lname': lname,
+					'phone': phone,
+					'email': email,
+					'address': address
+				});
+
+				// reroute to window.location.href='customerGarage.html'
+			});
+		});
+	</script>
+</head>
 
 <body>
-    <div class="v39_2">
-        <div class="v43_29"></div><span class="v45_7">New Sale</span>
-        <div class="name"></div>
-        <div class="v44_30"></div>
+	<div class="v39_2">
+		<div class="v43_29"></div><span class="v45_7">New Sale</span>
+		<div class="name"></div>
+		<div class="v44_30"></div>
 
-    <form>
-        <div class="v44_31"></div>
-        <div class="lastName"></div><input type="text" placeholder="e.g last name" id="lastName" name="lastName">
-       
-        <div class="phoneNumber"></div><input type="tel" placeholder="e.g phone number" id="phoneNumber" name="phoneNumber"> 
-        <div class="address"></div><input type="text" name="address" id="address" placeholder="e.g address (optional)">
-        <div class="emailAddress"></div><input type="email" name="email" id="email" placeholder="e.g email (optional)">
-        
-        <div class="v44_33"></div>
-        <div class="addCustomerButton" id="addCustomer" onclick="window.location.href='customerGarage.html'">Add customer</div>  <!--Add javascript for this change div to button if needed, text will auto align when switched to button.--> 
+		<div>
+			<form id="add-cust-form">
+				<div class="v44_31">
+					<input type="text" placeholder="First Name" id="cust-fname">
+					<input type="text" placeholder="Last Name" id="cust-lname">
+					<input type="text" placeholder="Phone Number" id="cust-phone">
+					<input type="text" placeholder="Address (optional)" id="cust-address">
+					<input type="text" placeholder="E-Mail Address (optional)" id="cust-email">
+				</div>
 
-     </form>
-     
-     <form>
-        <div class="searchResultBody">
-            <table class="table table-hover"  onclick="window.location.href='finalizeSale.php'">
-				<thead>
-					<tr>
-					<th scope="col">id#</th>
-					<th scope="col">First</th>
-					<th scope="col">Last</th>
-					<th scope="col">Phone</th>
-					<th scope="col">Email</th>
-					<th scope="col">City</th>
-					<th scope="col">Zip</th>
-					<th scope="col">Select</th>
-					</tr>
-				</thead>
-				<tbody>
-					
-                    <!-- 
+				<button class="v44_33" type="submit" name="submit">Add Customer</button>
+				<p id="cust-form-message"></p>
+
+			</form>
+		</div>
+
+
+
+		<form>
+			<div class="searchResultBody">
+				<table class="table table-hover" onclick="window.location.href='finalizeSale.php'">
+					<thead>
+						<tr>
+							<th scope="col">id#</th>
+							<th scope="col">First</th>
+							<th scope="col">Last</th>
+							<th scope="col">Phone</th>
+							<th scope="col">Email</th>
+							<th scope="col">City</th>
+							<th scope="col">Zip</th>
+							<th scope="col">Select</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<!-- 
                         example of how to get the bootstrap table to generate list using php (from my previous project). May be helpful!
 
                         <?php 
@@ -95,24 +141,22 @@
 					}
 					?>
 				-->
-	
-						
-				</tbody>
-			</table>
+
+
+					</tbody>
+				</table>
 
 
 
-        </div>
-        <div class="savedJobsButton" id="savedJobsText">Saved jobs</div>
-  
-        <div class="v44_35"></div>
-        <div class="searchButton" id="searchButton">search</div>      <!--Button to search for variable: searchInput (name,lastname,phone etc.)-->
-        <input id="searchInput" type="text" name="searchInput">
-        <div class="firstName"></div><input type="text" id="firstName" name="firstName" placeholder="e.g first name">
-        <div class="v45_10"></div>
-    </form>
+			</div>
+			<div class="savedJobsButton" id="savedJobsText">Saved jobs</div>
 
-    </div>
+			<div class="v44_35"></div>
+			<div class="searchButton" id="searchButton">search</div>
+			<!--Button to search for variable: searchInput (name,lastname,phone etc.)-->
+			<input id="searchInput" type="text" name="searchInput">
+			<div class="v45_10"></div>
+		</form>
+
+	</div>
 </body>
-
-</html> <br /><br />
