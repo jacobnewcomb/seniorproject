@@ -31,7 +31,7 @@ $errorEmail = false;
 if (empty($fname) || empty($lname) || empty($phone)) {
 
     //if the required fields are empty we must catch the error
-    echo "<span style=\"color:red\">fill all non-optional fields</span>";
+    echo "<span style=\"color:red\">Fill All Non-Optional Fields</span>";
     $errorEmpty = true;
 
 } elseif (!preg_match('/^[0-9]{10}+$/', $phone)) {

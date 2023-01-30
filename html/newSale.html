@@ -53,6 +53,12 @@
 			});
 		});
 	</script>
+
+	<style>
+		.input-error {
+ 			box-shadow: 0 0 5px red;
+		}
+	</style>
 </head>
 
 <body>
@@ -64,15 +70,15 @@
 		<div>
 			<form id="add-cust-form">
 				<div class="v44_31">
-					<input type="text" placeholder="First Name" id="cust-fname">
-					<input type="text" placeholder="Last Name" id="cust-lname">
-					<input type="text" placeholder="Phone Number" id="cust-phone">
-					<input type="text" placeholder="Address (optional)" id="cust-address">
-					<input type="text" placeholder="E-Mail Address (optional)" id="cust-email">
+					<input type="text" placeholder="First Name" id="cust-fname"><br>
+					<input type="text" placeholder="Last Name" id="cust-lname"><br>
+					<input type="text" placeholder="Phone Number" id="cust-phone"><br>
+					<input type="text" placeholder="Address (optional)" id="cust-address"><br>
+					<input type="text" placeholder="E-Mail Address (optional)" id="cust-email"><br>
+					<p id="cust-form-message"></p>
 				</div>
 
 				<button class="v44_33" type="submit" name="submit">Add Customer</button>
-				<p id="cust-form-message"></p>
 
 			</form>
 		</div>
