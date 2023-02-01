@@ -186,6 +186,7 @@
   text-align: center;
   overflow: hidden;
 }
+
 .searchInput {
   width: 404px;
   color: rgba(0,0,0,1);
@@ -198,19 +199,7 @@
   opacity: 0.5;
   text-align: left;
 }
-#searchInput {
-    width: 440px;
-    height: 65px;
-    color: rgba(0,0,0,1);
-    position: absolute;
-    top: 190px;
-    left: 900px;
-    font-family: Inter;
-    font-weight: Regular;
-    font-size: 32px;
-    opacity: 0.5;
-    text-align: left;
-  }
+
 .firstName {
   width: 520px;
   height: 54px;
