@@ -60,44 +60,45 @@
 		<h1>New Sale</h1>
 	</header>
 	<main>
-		<form id="add-cust-form">
-			<div class="form_box">
-				<input type="text" placeholder="First Name" id="cust-fname"><br>
-				<input type="text" placeholder="Last Name" id="cust-lname"><br>
-				<input type="text" placeholder="Phone Number" id="cust-phone"><br>
-				<input type="text" placeholder="Address (optional)" id="cust-address"><br>
-				<input type="text" placeholder="E-Mail Address (optional)" id="cust-email"><br>
-				<p id="cust-form-message"></p>
-			</div>
+		<section>
+			<form id="add-cust-form">
+				<div class="form_box">
+					<input type="text" placeholder="First Name" id="cust-fname"><br>
+					<input type="text" placeholder="Last Name" id="cust-lname"><br>
+					<input type="text" placeholder="Phone Number" id="cust-phone"><br>
+					<input type="text" placeholder="Address (optional)" id="cust-address"><br>
+					<input type="text" placeholder="E-Mail Address (optional)" id="cust-email"><br>
+					<p id="cust-form-message"></p>
+				</div>
 
-			<button class="genericButton" type="submit" name="submit">Add Customer</button>
+				<button class="bottomButton" type="submit" name="submit">Add Customer</button>
 
-		</form>
+			</form>
+		</section>
 
-
-
-		<form id="search-cust-form">
-			<div class="searchButton">search</div>
-			<div class="grid_container" id="search-bar">
-				<input type="text" name="search-input-fname" placeholder="First Name">
-				<input type="text" name="search-input-lname" placeholder="Last Name">
-				<input type="text" name="search-input-phone" placeholder="Phone">
-				<input type="text" name="search-input-address" placeholder="Address">
-				<input type="text" name="search-input-email" placeholder="Email">
-			</div>
+		<section>
+			<form id="search-cust-form">
+				<div id="search-bar">
+					<button id="searchButton">search</button>
+					<div class="grid_container">
+						<input type="text" name="search-input-fname" placeholder="First Name">
+						<input type="text" name="search-input-lname" placeholder="Last Name">
+						<input type="text" name="search-input-phone" placeholder="Phone">
+						<input type="text" name="search-input-email" placeholder="Email">
+						<input type="text" name="search-input-address" placeholder="Address">
+					</div>
+				</div>
+			</form>
 
 			<div class="searchResultBody">
 				<table class="table table-hover" onclick="window.location.href='finalizeSale.php'">
 					<thead>
 						<tr>
-							<th scope="col">id#</th>
 							<th scope="col">First</th>
 							<th scope="col">Last</th>
 							<th scope="col">Phone</th>
 							<th scope="col">Email</th>
-							<th scope="col">City</th>
-							<th scope="col">Zip</th>
-							<th scope="col">Select</th>
+							<th scope="col">Address</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -153,7 +154,7 @@
 				</table>
 			</div>
 
-			<div class="genericButton">Saved jobs</div>
-		</form>
+			<button class="bottomButton">Saved jobs</button>
+		</section>
 	</main>
 </body>

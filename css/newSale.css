@@ -32,14 +32,18 @@ main {
   flex-wrap: wrap;
 }
 
-form {
+section {
   background: pink;
   margin: 1em;
   width: 36em;
   height: 42em;
 }
 
-.genericButton {
+button {
+  border: none;
+}
+
+.bottomButton {
   width: 9em;
   height: 2em;
   color: white;
@@ -48,6 +52,9 @@ form {
   font-family: var(--button-font);
   font-size: 2em;
   text-align: center;
+  float: center;
+  position: relative;
+  bottom: 0;
 }
 
 .grid_container {
@@ -70,11 +77,11 @@ form {
 
 /* search customer styling */
 
-#search-bar > input {
-
+#search-bar {
+  display: flex;
 }
 
-.searchButton {
+#searchButton {
   color: white;
   background: var(--agua);
   border-top-left-radius: 1.25em;
