@@ -53,22 +53,15 @@
 			});
 		});
 	</script>
-
-	<style>
-		.input-error {
-			box-shadow: 0 0 5px red;
-		}
-	</style>
 </head>
 
 <body>
-	<div class="v39_2">
-		<div class="v43_29"></div><span class="v45_7">New Sale</span>
-		<div class="name"></div>
-		<div class="v44_30"></div>
-
+	<header>
+		<h1>New Sale</h1>
+	</header>
+	<main>
 		<form id="add-cust-form">
-			<div class="v44_31">
+			<div class="form_box">
 				<input type="text" placeholder="First Name" id="cust-fname"><br>
 				<input type="text" placeholder="Last Name" id="cust-lname"><br>
 				<input type="text" placeholder="Phone Number" id="cust-phone"><br>
@@ -77,22 +70,23 @@
 				<p id="cust-form-message"></p>
 			</div>
 
-			<button class="v44_33" type="submit" name="submit">Add Customer</button>
+			<button class="genericButton" type="submit" name="submit">Add Customer</button>
 
 		</form>
 
 
 
 		<form id="search-cust-form">
-			<div class="searchButton" id="searchButton">search</div>
-			<input class="searchInput" type="text" name="search-input-fname" placeholder="First Name"><br>
-			<input class="searchInput" type="text" name="search-input-lname" placeholder="Last Name"><br>
-			<input class="searchInput" type="text" name="search-input-phone" placeholder="Phone"><br>
-			<input class="searchInput" type="text" name="search-input-address" placeholder="Address"><br>
-			<input class="searchInput" type="text" name="search-input-email" placeholder="Email"><br>
+			<div class="searchButton">search</div>
+			<div class="grid_container" id="search-bar">
+				<input type="text" name="search-input-fname" placeholder="First Name">
+				<input type="text" name="search-input-lname" placeholder="Last Name">
+				<input type="text" name="search-input-phone" placeholder="Phone">
+				<input type="text" name="search-input-address" placeholder="Address">
+				<input type="text" name="search-input-email" placeholder="Email">
+			</div>
 
 			<div class="searchResultBody">
-
 				<table class="table table-hover" onclick="window.location.href='finalizeSale.php'">
 					<thead>
 						<tr>
@@ -159,8 +153,7 @@
 				</table>
 			</div>
 
-			<div class="savedJobsButton" id="savedJobsText">Saved jobs</div>
+			<div class="genericButton">Saved jobs</div>
 		</form>
-
-	</div>
+	</main>
 </body>

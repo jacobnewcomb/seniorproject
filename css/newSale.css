@@ -1,237 +1,91 @@
-*{font-size: 14px;
+:root {
+  --dark-steel: rgb(53, 56, 57);
+  --platinum: rgb(229, 228, 226);
+  --agua: rgb(30, 144, 255);
+  --title-font: Roboto Slab, Times;
+  --button-font: Inter, Sans-Serif;
 }
 
-.v39_2 {
+body {
+  font-size: 100%
+}
+
+header {
   width: 100%;
-  height: 1024px;
-  background: rgba(255,255,255,1);
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
+  height: 7em;
+  background: var(--dark-steel);
 }
-.v43_29 {
-  width: 100%;
-  height: 117px;
-  background: rgba(53,56,57,1);
-  opacity: 1;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  overflow: hidden;
+
+h1 {
+  color: white;
+  position: relative;
+  top: 0.25em;
+  left: 1em;
+  font-family: var(--title-font);
+  font-size: 4em;
 }
-.v45_7 {
-  width: 410px;
-  color: rgba(255,255,255,1);
-  position: absolute;
-  top: 22px;
-  left: 151px;
-  font-family: Roboto Slab;
-  font-weight: Regular;
-  font-size: 64px;
-  opacity: 1;
-  text-align: left;
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2em;
+  flex-wrap: wrap;
 }
-.name {
-  color: #fff;
+
+form {
+  background: pink;
+  margin: 1em;
+  width: 36em;
+  height: 42em;
 }
-.v44_30 {
-  width: 100px;
-  height: 100px;
-  background: url("../images/v44_30.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 1;
-  position: absolute;
-  top: 284px;
-  left: 151px;
-  overflow: hidden;
+
+.genericButton {
+  width: 9em;
+  height: 2em;
+  color: white;
+  background: var(--agua);
+  border-radius: 3em;
+  font-family: var(--button-font);
+  font-size: 2em;
+  text-align: center;
 }
-.v44_31 {
-  width: 599px;
-  height: 667px;
-  background: rgba(229,228,226,1);
-  opacity: 1;
-  position: absolute;
-  top: 179px;
-  left: 79px;
-  border: 1px solid rgba(0,0,0,1);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  overflow: hidden;
+
+.grid_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  
+}
+
+.input-error {
+  box-shadow: 0 0 5px red;
+}
+
+/* add customer styling */
+.form_box {
+  background: var(--platinum);
+  border-radius: 1.25em;
+}
+
+
+/* search customer styling */
+
+#search-bar > input {
+
+}
+
+.searchButton {
+  color: white;
+  background: var(--agua);
+  border-top-left-radius: 1.25em;
+  font-family: var(--button-font);
+  font-size: 2em;
+  text-align: center;
+  width: 145px;
+  height: 84px;
 }
 
 .searchResultBody {
-  width: 599px;
-  height: 581px;
-  background: rgba(229,228,226,1);
-  opacity: 1;
-  position: absolute;
-  top: 264px;
-  left: 753px;
-  border: 1px solid rgba(0,0,0,1);
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  overflow: hidden;
+  background: var(--platinum);
+  border-radius: 0px 0px 20px 20px;
 }
-.v44_33 {
-  width: 280px;
-  height: 60px;
-  background: rgba(30,144,255,1);
-  opacity: 1;
-  position: absolute;
-  top: 874px;
-  left: 215px;
-  border-top-left-radius: 45px;
-  border-top-right-radius: 45px;
-  border-bottom-left-radius: 45px;
-  border-bottom-right-radius: 45px;
-  overflow: hidden;
-}
-.addCustomerButton {
-  width: 280px;
-  height: 60px;
-  background: rgba(30,144,255,1);
-  opacity: 1;
-  position: absolute;
-  top: 874px;
-  left: 215px;
-  border-top-left-radius: 45px;
-  border-top-right-radius: 45px;
-  border-bottom-left-radius: 45px;
-  border-bottom-right-radius: 45px;
-  overflow: hidden;
-}
-.savedJobsButton {
-  width: 280px;
-  height: 60px;
-  background: rgba(30,144,255,1);
-  opacity: 1;
-  position: absolute;
-  top: 874px;
-  left: 913px;
-  border-top-left-radius: 45px;
-  border-top-right-radius: 45px;
-  border-bottom-left-radius: 45px;
-  border-bottom-right-radius: 45px;
-  overflow: hidden;
-}
-#savedJobsText {
-  width: 280px;
-  height: 60px;
-  color: rgba(255,255,255,1);
-  position: relative;
-  top: 874px;
-  left: 973px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 32px;
-  opacity: 1;
-  text-align: center;
-  
-}
-#addCustomer {
-  width: 280px;
-  height: 60px;
-  color: rgba(255,255,255,1);
-  position: absolute;
-  top: 874px;
-  left: 215px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 32px;
-  opacity: 1;
-  text-align: center;
-  overflow: hidden;
-}
-.v44_35 {
-  width: 599px;
-  height: 84px;
-  background: rgba(229,228,226,1);
-  opacity: 1;
-  position: absolute;
-  top: 179px;
-  left: 753px;
-  border: 1px solid rgba(0,0,0,1);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  overflow: hidden;
-}
-.searchButton {
-  width: 143px;
-  height: 84px;
-  background: rgba(30,144,255,1);
-  opacity: 1;
-  position: absolute;
-  top: 179px;
-  left: 753px;
-  border: 1px solid rgba(0,0,0,1);
-  border-top-left-radius: 20px;
-  overflow: hidden;
-}
-#searchButton {
-  width: 145px;
-  color: rgba(255,255,255,1);
-  position: absolute;
-  top: 180px;
-  left: 753px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 32px;
-  opacity: 1;
-  text-align: center;
-  overflow: hidden;
-}
-
-.searchInput {
-  width: 404px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 213px;
-  left: 923px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 32px;
-  opacity: 0.5;
-  text-align: left;
-}
-
-.firstName {
-  width: 520px;
-  height: 54px;
-  background: rgba(255,255,255,1);
-  opacity: 1;
-  position: absolute;
-  top: 244px;
-  left: 119px;
-  border: 1px solid rgba(0,0,0,1);
-  overflow: hidden;
-}
-#firstName{
-  width: 520px;
-  height: 49px;
-  color: rgba(0,0,0,1);
-  position: absolute;
-  top: 245px;
-  left: 119px;
-  font-family: Inter;
-  font-weight: Regular;
-  font-size: 24px;
-  opacity: 0.5;
-  text-align: left;
-}
-.v45_10 {
-  width: 46px;
-  height: 50px;
-  background: rgba(217,217,217,1);
-  opacity: 1;
-  position: absolute;
-  top: 39px;
-  left: 73px;
-  overflow: hidden;
-}
-
