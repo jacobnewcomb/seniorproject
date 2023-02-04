@@ -51,14 +51,34 @@
 
 				// reroute to window.location.href='customerGarage.html'
 			});
+
+			$("#search-cust-form").submit(function (event) {
+				event.preventDefault();
+				
+				var fname = $("#search-fname").val();
+				var lname = $("#search-lname").val();
+				var phone = $("#search-phone").val();
+				var email = $("#search-email").val();
+				var address = $("#search-address").val();
+
+				$("#search-results-table").load("../php/searchCustomer.php", {
+					'fname': fname,
+					'lname': lname,
+					'phone': phone,
+					'email': email,
+					'address': address
+				});
+			});
 		});
 	</script>
 </head>
 
 <body>
+
 	<header>
 		<h1>New Sale</h1>
 	</header>
+
 	<main>
 		<section>
 			<form id="add-cust-form">
@@ -79,19 +99,19 @@
 		<section>
 			<form id="search-cust-form">
 				<div id="search-bar">
-					<button id="searchButton">search</button>
+					<button type="submit" id="searchButton">Search</button>
 					<div class="grid_container">
-						<input type="text" name="search-input-fname" placeholder="First Name">
-						<input type="text" name="search-input-lname" placeholder="Last Name">
-						<input type="text" name="search-input-phone" placeholder="Phone">
-						<input type="text" name="search-input-email" placeholder="Email">
-						<input type="text" name="search-input-address" placeholder="Address">
+						<input type="text" id="search-fname" placeholder="First Name">
+						<input type="text" id="search-lname" placeholder="Last Name">
+						<input type="text" id="search-phone" placeholder="Phone">
+						<input type="text" id="search-email" placeholder="Email">
+						<input type="text" id="search-address" placeholder="Address">
 					</div>
 				</div>
 			</form>
 
 			<div class="searchResultBody">
-				<table class="table table-hover" onclick="window.location.href='finalizeSale.php'">
+				<table class="table table-hover">
 					<thead>
 						<tr>
 							<th scope="col">First</th>
@@ -101,60 +121,12 @@
 							<th scope="col">Address</th>
 						</tr>
 					</thead>
-					<tbody>
-
-						<!-- 
-                        example of how to get the bootstrap table to generate list using php (from my previous project). May be helpful!
-
-                        <?php 
-					
-					if(isset($_GET['search'])){
-
-						$search = $_GET['search'];
-						$query = "select * from customers where concat(customerId,fname,lname,phone,email,city,zip) like '%$search%'";
-						$results = mysqli_query($conn,$query);
-
-						if(mysqli_num_rows($results) > 0){
-							foreach($results as $items){
-								?>
-									<tr>
-										<td><?= $items['customerId'];?></td>
-										<td><?= $items['fname'];?></td>
-										<td><?= $items['lname'];?></td>
-										<td><?= $items['phone'];?></td>
-										<td><?= $items['email'];?></td>
-										<td><?= $items['city'];?></td>
-										<td><?= $items['zip'];?></td>
-										<td>
-											<a href="finalizeSale.php?fname=<?php echo $items['customerId'];?>">Select</a>
-										</td>
-									</tr>
-
-
-								<?php
-							}
-						}
-						else{
-							
-							?>
-
-							<tr>
-								<td colspan="7">No record found...</td>
-							</tr>
-							<?php 
-						}
-
-
-					}
-					?>
-				-->
-
-
-					</tbody>
+					<tbody id="search-results-table"></tbody>
 				</table>
 			</div>
 
 			<button class="bottomButton">Saved jobs</button>
 		</section>
+
 	</main>
 </body>

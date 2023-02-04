@@ -1,13 +1,8 @@
 <?php
-$hostname     = "localhost";
-$username     = "senior";
-$password     = "project";
-$database     = "seniorproject";
 
-$conn = mysqli_connect($hostname, $username, $password, $database);
-if (!$conn) {
-    die("Unable to Connect database: " . mysqli_connect_error());
-}
+require_once 'databaseConnection.php';
+$instance = ConnectDb::getInstance();
+$conn = $instance->getConnection();
 
 $query = "SELECT * FROM appointments";
 $exec = mysqli_query($conn, $query);

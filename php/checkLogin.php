@@ -1,16 +1,9 @@
 <?php
 session_start();
 
-$hostname     = "localhost";
-$username     = "senior";
-$password     = "project";
-$database     = "seniorproject";
-// Create connection
-$conn = mysqli_connect($hostname, $username, $password, $database);
-// Check connection
-if (!$conn) {
-    die("Unable to Connect database: " . mysqli_connect_error());
-}
+require_once 'databaseConnection.php';
+$instance = ConnectDb::getInstance();
+$conn = $instance->getConnection();
 
 if(!isset($_SESSION["id"])){
     echo json_encode(false);

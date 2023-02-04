@@ -1,16 +1,6 @@
 <?php
-    $hostname     = "localhost";
-    $username     = "senior";
-    $password     = "project";
-    $database     = "seniorproject";
-
     #Customer Queries
-    function fetchAllCustomers(){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchAllCustomers($conn){
         $query = "SELECT * FROM 'customer'";
         $exec = mysqli_query($conn, $query);
         $data = array();
@@ -22,12 +12,7 @@
         mysqli_close($conn);
         echo json_encode($data);
     }
-    function fetchCustomerForAppointment($apt_id){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchCustomerForAppointment($conn, $apt_id){
         $query = "SELECT C.Cust_id, C.f_name, C.l_name, C.address FROM 'customers' C, 'appointments' A WHERE A.Apt_id = '" . $apt_id . "' and A.Cust_id = C.Cust_id;";
         $exec = mysqli_query($conn, $query);
         $data = array();
@@ -39,12 +24,7 @@
         mysqli_close($conn);
         echo json_encode($data);
     }
-    function fetchCustomerByParameters($input){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchCustomerByParameters($conn, $input){
         $query = "SELECT * FROM 'customer' WHERE f_name = '" . $input . "' OR l_name = '" . $input . "' OR cust_id = '" . $input . "' OR phone_number = '" . $input . "';";
         $exec = mysqli_query($conn, $query);
         $data = array();
@@ -58,12 +38,7 @@
     }
 
     #Appointment Queries
-    function fetchAllAppointments(){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchAllAppointments($conn){
         $query = "SELECT * FROM 'appointments'";
         $exec = mysqli_query($conn, $query);
         $data = array();
@@ -75,12 +50,7 @@
         mysqli_close($conn);
         echo json_encode($data);
     }
-    function fetchAppointmentsForCustomer($cust_id){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchAppointmentsForCustomer($conn, $cust_id){
         $query = "SELECT * FROM 'appointments' WHERE Cust_id = " . $cust_id;
         $exec = mysqli_query($conn, $query);
         $data = array();
@@ -94,12 +64,7 @@
     }
 
     #Car Queries
-    function fetchAllCars(){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchAllCars($conn){
         $query = "SELECT * FROM 'cars'";
         $exec = mysqli_query($conn, $query);
         $data = array();
@@ -111,12 +76,7 @@
         mysqli_close($conn);
         echo json_encode($data);
     }
-    function fetchCarsForCustomer($cust_id){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchCarsForCustomer($conn, $cust_id){
         $query = "SELECT * FROM car natural join customerscar WHERE cust_id = " . $cust_id;
         $exec = mysqli_query($conn, $query);
         $data = array();
@@ -128,11 +88,7 @@
         mysqli_close($conn);
         echo json_encode($data);
     }
-    function fetchCarByParameters($make, $model, $year){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
+    function fetchCarByParameters($conn, $make, $model, $year){
         if($make != "" && $model != "" && $year != ""){
             $query = "SELECT * FROM 'cars' WHERE (CHARINDEX('" . $make . "', MakeModel) = 1 AND CHARINDEX('" . $model . "', MakeModel) > 1 AND year = '" . $year . "');";
         }
@@ -169,12 +125,7 @@
     }
 
     #Invoice Queries
-    function fetchAllInvoices(){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchAllInvoices($conn){
         $query = "SELECT * FROM 'invoices'";
         $exec = mysqli_query($conn, $query);
         $data = array();
@@ -186,12 +137,7 @@
         mysqli_close($conn);
         echo json_encode($data);
     }
-    function fetchInvoicesForCustomer($cust_id){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchInvoicesForCustomer($conn, $cust_id){
         $query = "SELECT * FROM 'invoices' WHERE Cust_id = " . $cust_id;
         $exec = mysqli_query($conn, $query);
         $data = array();
@@ -203,12 +149,7 @@
         mysqli_close($conn);
         echo json_encode($data);
     }
-    function fetchInvoicesByParameters($invoice_date, $start_date, $end_date, $f_name, $l_name){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchInvoicesByParameters($conn, $invoice_date, $start_date, $end_date, $f_name, $l_name){
         $param_number = 0;
 
         $queryStart = "SELECT * FROM 'customers' C, 'invoices' I WHERE ";
@@ -235,7 +176,7 @@
             if($param_number > 0){
                 $query = $query . "AND ";
             }
-            $query = $query . "C.cust_id = I.cust.id AND "
+            $query = $query . "C.cust_id = I.cust.id AND ";
             if($f_name != "" && $l_name != ""){
                 $query = $query . "C.f_name = '" . $f_name . "' AND C.l_name = '" . $l_name . "';";
             }
@@ -260,12 +201,7 @@
         mysqli_close($conn);
         echo json_encode($data);
     }
-    function fetchPDFByInvoice($invoice_id){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchPDFByInvoice($conn, $invoice_id){
         $query = "SELECT invoice_path FROM 'invoices' WHERE invoice_id = '" . $invoice_id . "';";
         $exec = mysqli_query($conn, $query);
         $data = array();
@@ -279,12 +215,7 @@
     }
 
     #Inventory Queries
-    function fetchAllInventory(){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchAllInventory($conn){
         $query = "SELECT * FROM 'inventory'";
         $exec = mysqli_query($conn, $query);
         $data = array();
@@ -297,12 +228,7 @@
         echo json_encode($data);
     }
 
-    function fetchItem($name){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchItem($conn, $name){
         $query = "SELECT * FROM 'inventory' WHERE name = '" . $name . "';";
         $exec = mysqli_query($conn, $query);
         $data = array();
@@ -316,12 +242,7 @@
     }
 
     #Inventory Ledger Queries
-    function fetchLedgerInfoByInvoice($invoice_id){
-        $conn = mysqli_connect($hostname, $username, $password, $database);
-        if (!$conn) {
-            die("Unable to Connect database: " . mysqli_connect_error());
-        }
-
+    function fetchLedgerInfoByInvoice($conn, $invoice_id){
         $query = "SELECT * FROM 'InventoryLedger' WHERE invoice_id = '" . $invoice_id . "';";
         $exec = mysqli_query($conn, $query);
         $data = array();
