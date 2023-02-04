@@ -33,6 +33,9 @@
 				// prevent the form from doing default behavior
 				event.preventDefault();
 
+				// remove error styles
+				$("#cust-fname, #cust-lname, #cust-phone, #cust-address, #cust-email").removeClass();
+
 				// get vars
 				var fname = $("#cust-fname").val();
 				var lname = $("#cust-lname").val();
@@ -48,13 +51,12 @@
 					'email': email,
 					'address': address
 				});
-
 				// reroute to window.location.href='customerGarage.html'
 			});
 
 			$("#search-cust-form").submit(function (event) {
 				event.preventDefault();
-				
+
 				var fname = $("#search-fname").val();
 				var lname = $("#search-lname").val();
 				var phone = $("#search-phone").val();

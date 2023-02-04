@@ -40,7 +40,7 @@ if (empty($fname) || empty($lname) || empty($phone)) {
     echo "<span style=\"color:red\">Invalid Phone Number Format</span>";
     $errorPhone = true;
 
-} elseif (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+} elseif (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
     // optional email was provided but is invalid format
     echo "<span style=\"color:red\">Invalid Email Format</span>";
@@ -84,10 +84,7 @@ if (empty($fname) || empty($lname) || empty($phone)) {
 
 ?>
 
-
-<script>
-    $("#cust-fname, #cust-lname, #cust-phone, #cust-address, #cust-email").removeClass(); //remove the styles
-    
+<script>  
     var errorEmpty = "<?php echo $errorEmpty; ?>";
     var errorEmail = "<?php echo $errorEmail; ?>";
     var errorPhone = "<?php echo $errorPhone; ?>";
@@ -98,10 +95,10 @@ if (empty($fname) || empty($lname) || empty($phone)) {
     if (errorPhone) {
         $("#cust-phone").addClass("input-error");
     }
-    if (errorMail) {
+    if (errorEmail) {
         $("#cust-email").addClass("input-error");
     }
-    if(!errorEmpty && !errorEmail) {
+    if(!errorEmpty && !errorPhone && !errorEmail) {
         // clear inputs
         $("#cust-fname, #cust-lname, #cust-phone, #cust-address, #cust-email").val("");
     }
