@@ -10,8 +10,44 @@ $phone = $_POST['phone'];
 $email = $_POST['email'];
 $address = $_POST['address'];
 
-$query = "select * from customer"; # where concat(customerId,fname,lname,phone,email,city,zip) like '%$search%'";
+$sel = array();
+$tup = array();
+
+if(!empty($fname)) {
+    $sel[] = "f_name";
+    $tup[] = "'" . $fname . "'";
+}
+
+if(!empty($lname)) {
+    $sel[] = "l_name";
+    $tup[] = "'" . $lname . "'";
+}
+
+if(!empty($phone)) {
+    $sel[] = "phone";
+    $tup[] = "'" . $phone . "'";
+}
+
+if(!empty($email)) {
+    $sel[] = "email";
+    $tup[] = "'" . $email . "'";
+}
+
+if(!empty($address)) {
+    $sel[] = "address";
+    $tup[] = "'" . $address . "'";
+}
+
+$sel = "(" . implode(", ", $sel) . ")";
+$tup = "(" . implode(", ", $tup) . ")";
+
+$query = "select * from customer where " . $sel . " = " . $tup;
+if ($tup == "()") {
+    $query = "select * from customer";
+}
+
 $results = mysqli_query($conn, $query);
+
 
 if (mysqli_num_rows($results) > 0) :
     foreach ($results as $items) : ?>
