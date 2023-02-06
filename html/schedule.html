@@ -64,19 +64,60 @@
 				viewType: "Week"
 			});
 			dp.init();
-			loadEvents();
+
 			
 			//Load Events
 			function loadEvents(){
 				dp.events.load("../php/backend_events.php");
+				dp.onEventClick = function(args){
+					popup(args.e);
+				}
+				// setTimeout(function(){
+				// 	var appointments = document.querySelectorAll('.calendar_default_event_inner');
+				// 	for(var i = 0; i < appointmentIDs.length; i++){
+				// 		if()
+				// 		appointments[i].setAttribute("appt_id", appointmentIDs[i]);
+				// 	}
+				// 	appointments.forEach(function(item){item.addEventListener('click', popup)})
+				// }, 500);
 			}
 
-			// function popup(){
-			// 	alert("test");
-			// 	var popup = document.createElement("schedulePopup");
-			// 	popup.createElement("schedulePopupBackground");
-			// 	popup.createElement("schedulePopupMessage");
-			// }
+			loadEvents();
+
+			function popup(appointment){
+				const popup = document.createElement("div");
+				popup.setAttribute("id", "schedulePopup");
+					const popupBackground = document.createElement("div");
+					popupBackground.setAttribute("id", "schedulePopupBackground");
+					const popupMessage = document.createElement("div");
+					popupMessage.setAttribute("id", "schedulePopupMessage");
+						const appointmentID = document.createElement("span");
+						appointmentID.innerHTML = "Appointment ID: " + appointment.id();
+						popupMessage.appendChild(appointmentID);
+						//
+						const customerName = document.createElement("span");
+						customerName.innerHTML = "Customer Name: " + appointment.data.tags.name;
+						popupMessage.appendChild(customerName);
+						//
+						const location = document.createElement("span");
+						location.innerHTML = "Location: " + appointment.data.tags.location;
+						popupMessage.appendChild(location);
+						//
+						const notes = document.createElement("span");
+						notes.innerHTML = "Notes: " + appointment.data.tags.notes;
+						popupMessage.appendChild(notes);
+
+
+
+
+				popup.appendChild(popupBackground);
+				popup.appendChild(popupMessage);
+				document.body.appendChild(popup);
+				popupBackground.addEventListener('click', unpop);
+			}
+			function unpop(){
+				document.getElementById("schedulePopup").remove();
+			}
 		</script>
     </body>
 </html>
