@@ -3,10 +3,12 @@
 
     $action = $_POST["action"];
     $search = $_POST["search"];
+    if(ISSET($_POST["cust_id"])) $cust_id = $_POST["cust_id"];
     $conn = ConnectDb::getInstance();
 
     switch($action){
         case 'fetchCustomerByParameters': fetchCustomerByParameters($conn->getConnection(), $search);
+        case 'fetchCarByParameters': if(ISSET($_POST["cust_id"])) fetchCarByParameters($conn->getConnection(), $cust_id, $search);
         default:;
     }
     #Customer Queries
@@ -98,37 +100,15 @@
         mysqli_close($conn);
         echo json_encode($data);
     }
-    function fetchCarByParameters($conn, $make, $model, $year){
-        if($make != "" && $model != "" && $year != ""){
-            $query = "SELECT * FROM 'cars' WHERE (CHARINDEX('" . $make . "', MakeModel) = 1 AND CHARINDEX('" . $model . "', MakeModel) > 1 AND year = '" . $year . "');";
-        }
-        else if($make != "" && $model != ""){
-            $query = "SELECT * FROM 'cars' WHERE (CHARINDEX('" . $make . "', MakeModel) = 1 AND CHARINDEX('" . $model . "', MakeModel) > 1);";
-        }
-        else if($make != "" && $year != ""){
-            $query = "SELECT * FROM 'cars' WHERE (CHARINDEX('" . $make . "', MakeModel) = 1 AND year = '" . $year . "');";
-        }
-        else if($model != "" && $year != ""){
-            $query = "SELECT * FROM 'cars' WHERE (CHARINDEX('" . $model . "', MakeModel) > 1 AND year = '" . $year . "');";
-        }
-        else if($make != ""){
-            $query = "SELECT * FROM 'cars' WHERE (CHARINDEX('" . $make . "', MakeModel) = 1);";
-        }
-        else if($model != ""){
-            $query = "SELECT * FROM 'cars' WHERE (CHARINDEX('" . $model . "', MakeModel) > 1);";
-        }
-        else if($year != ""){
-            $query = "SELECT * FROM 'cars' WHERE (year = '" . $year . "');";
-        }
-        else{
-            $query = "SELECT * FROM 'cars'";
-        }
+    function fetchCarByParameters($conn, $cust_id, $input){
+        $query = "SELECT Make, Model, Year FROM (customerscar NATURAL JOIN car) NATURAL JOIN customer WHERE cust_id = " . $cust_id . " AND (Make LIKE '%" . $input . "%' OR Model LIKE '%" . $input . "%' OR concat(Make, ' ', Model) LIKE '%" . $input . "%' OR concat(Model, ' ', Make) LIKE '%" . $input . "%') AND ('" . $input . "' != '' AND '" . $input . "' != ' ');";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))
         {
             $data[] = $row;
         }
+
         $data = array_reverse($data);
         mysqli_close($conn);
         echo json_encode($data);

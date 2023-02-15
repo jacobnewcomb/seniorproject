@@ -77,7 +77,10 @@
             <div class="tab">
                 <h1>Customer Vehicle:</h1>
                 <div id="carSearch">
-                    <input id="carName" type="text">
+                    <input oninput="searchCars(this.value);" id="carName" type="text">
+                    <div id="carSearchResults">
+
+                    </div>
                 </div>
                 <div>
                     <button onclick="prevTab();" style="width: 15%;">Back</button>
@@ -89,6 +92,7 @@
 <script type="text/javascript">
     var currentTab = 0;
     var selectedCustomer = null;
+    var selectedCar = null;
     $(':input').val('');
     
     const tabs = document.getElementsByClassName("tab");
@@ -110,7 +114,7 @@
                 results = result;
             }
         });
-        //MORE CODING NEEDS TO BE DONE
+        
         var resultsDisplay = document.getElementById("customerSearchResults");
         while (resultsDisplay.hasChildNodes()) {
             resultsDisplay.removeChild(resultsDisplay.firstChild);
@@ -136,6 +140,45 @@
         }
     }
 
+    function searchCars(name){
+        selectedCar = null;
+        var results;
+        document.getElementById("carSearchResults").style.display = "flex";
+        $.ajax({
+            async: false,
+            url:"../php/commonQueryFunctions.php",    //the page containing php script
+            type: "post",    //request type,
+            data: {"action": "fetchCarByParameters", "search": name, "cust_id": selectedCustomer},
+            dataType: "json",
+            success:function(result){
+                results = result;
+            }
+        });
+        var resultsDisplay = document.getElementById("carSearchResults");
+        while (resultsDisplay.hasChildNodes()) {
+            resultsDisplay.removeChild(resultsDisplay.firstChild);
+        }
+        if(results.length == 0 && name.match(/^\s*&/)){
+            document.getElementById("carSearchResults").style.display = "none";
+        }
+        else{
+            var resultsElements = new Array(results.length);
+            for(var i = 0; i < resultsElements.length; i++){
+                resultsElements[i] = document.createElement("div");
+                resultsElements[i].classList.add("result");
+                resultsElements[i].setAttribute("id", results[i].id);
+                resultsElements[i].addEventListener("click", selectCar);
+                resultsElements[i].innerHTML = results[i].Make + " " + results[i].Model + ", " + results[i].Year;
+                resultsDisplay.appendChild(resultsElements[i]);
+            }
+            var createNewCustomerButton = document.createElement("div");
+            createNewCustomerButton.classList.add("result");
+            createNewCustomerButton.addEventListener("click", transferToAddNewCar);
+            createNewCustomerButton.innerHTML = "Add new car to customer profile...";
+            resultsDisplay.appendChild(createNewCustomerButton);
+        }
+    }
+
     function selectCustomer(){
         document.getElementById("customerName").value = this.innerHTML;
         selectedCustomer = this.getAttribute("cust_id");
@@ -144,6 +187,15 @@
             resultsDisplay.removeChild(resultsDisplay.firstChild);
         }
         document.getElementById("customerSearchResults").style.display = "none";
+    }
+    function selectCar(){
+        document.getElementById("carName").value = this.innerHTML;
+        selectedCar = this.getAttribute("id");
+        var resultsDisplay = document.getElementById("carSearchResults");
+        while (resultsDisplay.hasChildNodes()) {
+            resultsDisplay.removeChild(resultsDisplay.firstChild);
+        }
+        document.getElementById("carSearchResults").style.display = "none";
     }
 
     function transferToAddNewCustomer(){
@@ -165,6 +217,11 @@
         else{
             document.getElementById("newCustomerPhoneNumber").value = tempName;
         }
+    }
+    function transferToAddNewCar() {
+        tabs[currentTab].style.display = "none";
+        currentTab = 3;
+        tabs[currentTab].style.display = "flex";
     }
 
     function addNewCustomer(){

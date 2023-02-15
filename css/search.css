@@ -8,12 +8,26 @@
     flex-direction: column;
     width: 50%;
 }
+#carSearch{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
 
 #customerSearch.input{
     width: 100%;
 }
 
 #customerSearchResults{
+    width: 100%;
+    border: 2px solid black;
+    max-height: 9em;
+    overflow-y: scroll;
+    display: none;
+    flex-direction: column;
+}
+
+#carSearchResults{
     width: 100%;
     border: 2px solid black;
     max-height: 9em;
