@@ -23,6 +23,9 @@ $phone = $_POST['phone'];
 $addr = $_POST['address'];
 $email = $_POST['email'];
 
+# flags
+$needId = $_POST['needId'];
+
 # check errors
 $errorEmpty = false;
 $errorPhone = false;
@@ -71,10 +74,18 @@ if (empty($fname) || empty($lname) || empty($phone)) {
         
     #if (empty($res)) {
         // insert the new customer
+
     $insert = "INSERT INTO `customer` " . $sel . " VALUES " . $tup;
     mysqli_query($conn, $insert);
-
-    echo "<span style=\"color:green\">Customer Added</span>";
+    if (empty($needId)) {
+        echo "<span style=\"color:green\">Customer Added</span>";
+    }
+    else{
+        $idQuery = "SELECT cust_id FROM customer ORDER BY cust_id DESC LIMIT 1";
+        $exec = mysqli_query($conn, $idQuery);
+        $data = mysqli_fetch_assoc($exec);
+        echo $data["cust_id"];
+    }
     #} else {
     #    echo "<span style=\"color:red\">Customer Already Exists</span>";
     #}
