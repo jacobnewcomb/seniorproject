@@ -1,4 +1,14 @@
 <?php
+    require_once('databaseConnection.php');
+
+    $action = $_POST["action"];
+    $search = $_POST["search"];
+    $conn = ConnectDb::getInstance();
+
+    switch($action){
+        case 'fetchCustomerByParameters': fetchCustomerByParameters($conn->getConnection(), $search);
+        default:;
+    }
     #Customer Queries
     function fetchAllCustomers($conn){
         $query = "SELECT * FROM 'customer'";
@@ -13,7 +23,7 @@
         echo json_encode($data);
     }
     function fetchCustomerForAppointment($conn, $apt_id){
-        $query = "SELECT C.Cust_id, C.f_name, C.l_name, C.address FROM 'customers' C, 'appointments' A WHERE A.Apt_id = '" . $apt_id . "' and A.Cust_id = C.Cust_id;";
+        $query = "SELECT C.Cust_id, C.f_name, C.l_name, C.address FROM 'customers' C, 'appointments' A WHERE A.apt_id = '" . $apt_id . "' and A.cust_id = C.cust_id;";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))
@@ -25,7 +35,7 @@
         echo json_encode($data);
     }
     function fetchCustomerByParameters($conn, $input){
-        $query = "SELECT * FROM 'customer' WHERE f_name = '" . $input . "' OR l_name = '" . $input . "' OR cust_id = '" . $input . "' OR phone_number = '" . $input . "';";
+        $query = "SELECT * FROM `customer` WHERE (f_name LIKE '%" . $input . "%' OR l_name LIKE '%" . $input . "%' OR concat(f_name, ' ', l_name) LIKE '%" . $input . "%' OR cust_id = '" . $input . "' OR phone LIKE '%" . $input . "%') AND ('" . $input . "' != '' AND '" . $input . "' != ' ');";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))

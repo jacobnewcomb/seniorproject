@@ -1,0 +1,34 @@
+.tab{
+    display: flex;
+    flex-direction: column;
+}
+
+#customerSearch{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#customerSearch.input{
+    width: 100%;
+}
+
+#customerSearchResults{
+    width: 100%;
+    border: 2px solid black;
+    max-height: 9em;
+    overflow-y: scroll;
+    display: none;
+    flex-direction: column;
+}
+
+.result{
+    width: 100%;
+    height: 2em;
+    cursor: pointer;
+
+}
+
+.result:hover{
+    background-color: grey;
+}
