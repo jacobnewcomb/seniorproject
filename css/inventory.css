@@ -25,68 +25,41 @@ h1 {
   font-size: 4em;
 }
 
-.add_form_container {
+.main_container {
+  padding: 5% 10%;
+  width: 100%;
+  height: 50em;
   display: flex;
-  background: pink;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.addButton {
-  width: 10em;
-  height: 4em;
-  background: var(--agua);
-  position: relative;
-  top: 10em;
-  left: 75em;
+.form_container {
+  display: flex;
+  font-size: 1.5em;
+  height: 2em;
+  font-family: var(--sans-serif-font);
 }
 
 .inputDescription {
-  width: 45em;
-  height: 4em;
-  color: black;
-  position: relative;
-  font-family: var(--sans-serif-font);
-  font-size: 1.5em;
-  text-align: left;
+  width: 60%;
 }
 
 .dropDown {
-  width: 267px;
-  color: black;
-  position: relative;
-  font-family: var(--sans-serif-font);
-  font-size: 2em;
-  text-align: left;
+  width: 30%;
 }
 
-.searchButton {
-  width: 9.75em;
-  height: 3.5em;
+#searchInput {
+  width: 90%;
+}
+
+.formButton {
+  width: 10%;
   background: var(--agua);
-  position: relative;
-  color: white;
-  font-family: var(--sans-serif-font);
-  font-size: 2em;
 }
 
 .table-section {
-  width: 80em;
+  width: 100%;
   height: 32em;
-  background: white;
-  position: absolute;
-  top: 356px;
-  left: 73px;
-  border: 1px solid black;
-}
-
-
-#searchInput {
-  width: 70em;
-  height: 4em;
-  color: black;
-  background: white;
-  border: 1px solid black;
-  font-family: var(--sans-serif-font);
-  font-size: 1.5em;
-  opacity: 0.5;
-  text-align: left;
+  border: 1px solid var(--dark-steel);
 }

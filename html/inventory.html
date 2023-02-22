@@ -31,6 +31,12 @@
 				}
 			}
 		});
+
+		function searchInventory(item) {
+			$("#inventory-table").load("../php/searchInventory.php", {
+				'item': item
+			});
+		}
 	</script>
 
 	<meta charset="UTF-8">
@@ -48,40 +54,50 @@
 	</header>
 
 	<main>
-		<section>
-			<form>
-				<div class="add_form_container">
-					<input type="text" class="inputDescription" placeholder="Item Description">
-					<input type="text" class="dropDown" placeholder="drop box of type">
-					<button class="addButton">Add</button>
-				</div>
-			</form>
+		<div class="main_container">
+			<section>
+				<form>
+					<div class="form_container">
+						<input type="text" class="inputDescription" placeholder="Item Description">
+						<input type="text" class="dropDown" placeholder="drop box of type">
+						<button class="formButton">Add</button>
+					</div>
+				</form>
 
-			<form>
-				<input type="text" id="searchInput" placeholder="Find This for Me!">
-				<button>Search</button>
-			</form>
-		</section>
-		<section class="table-section">
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th scope="col" style="width: 5%; text-align: center">Add</th>
-						<th scope="col" style="width: 75%; text-align: center">Item Description</th>
-						<th scope="col" style="width: 5%; text-align: center">+</th>
-						<th scope="col" style="width: 5%; text-align: center">Quantity</th>
-						<th scope="col" style="width: 5%; text-align: center">-</th>
-						<th scope="col" style="width: 5%; text-align: center">Delete</th>
-					</tr>
-				</thead>
-				<tbody>
-					<!-- Insert PHP code here to connect to database-->
-				</tbody>
-			</table>
-		</section>
+				<form id="search-inventory-form">
+					<div class="form_container">
+						<input oninput="searchInventory(this.value);" type="text" id="searchInput"
+							placeholder="Search Inventory">
+						<button class="formButton">Search</button>
+					</div>
+				</form>
+			</section>
+			<section class="table-section">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col" style="width: 5%; text-align: center">Add</th>
+							<th scope="col" style="width: 25%; text-align: center">Item</th>
+							<th scope="col" style="width: 50%; text-align: center">Sale Price</th>
+							<th scope="col" style="width: 5%; text-align: center">+</th>
+							<th scope="col" style="width: 5%; text-align: center">Quantity</th>
+							<th scope="col" style="width: 5%; text-align: center">-</th>
+							<th scope="col" style="width: 5%; text-align: center">Delete</th>
+						</tr>
+					</thead>
+					<tbody id="inventory-table">
+						<!-- Insert PHP code here to connect to database-->
+					</tbody>
+				</table>
+			</section>
 
-		<button class="updateButton">Update</button>
+			<button class="updateButton">Update</button>
+		</div>
 	</main>
 </body>
 
 </html>
+
+<script>
+
+</script>
