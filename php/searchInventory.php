@@ -5,11 +5,13 @@ $instance = ConnectDb::getInstance();
 $conn = $instance->getConnection();
 
 $item = $_POST['item'];
+
+
 $query = "SELECT * FROM inventory WHERE name LIKE '%" . $item . "%';";
 
 $results = mysqli_query($conn, $query);
 
-if (mysqli_num_rows($results) > 0) :
+if ($item != "" && mysqli_num_rows($results) > 0) :
     foreach ($results as $items) : ?>
         <tr>
             <td><button style="width: 100%; height: 1em; background-color: green"></td>
