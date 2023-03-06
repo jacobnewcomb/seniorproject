@@ -13,7 +13,7 @@ body {
 header {
   width: 100%;
   height: 7em;
-  background: var(--dark-steel);
+  background-color: var(--dark-steel);
 }
 
 h1 {
@@ -25,8 +25,12 @@ h1 {
   font-size: 4em;
 }
 
+h3 {
+  font-family: var(--serif-font);
+}
+
 section {
-  background-color: black;
+  width: 100%;
 }
 
 .main_container {
@@ -38,26 +42,64 @@ section {
   justify-content: space-between;
 }
 
-.auto_input_section {
-  display: grid
+/* auto input */
+
+#auto_input_grid {
+  padding: 1em;
+  border-radius: 1em;
+  border: 1px solid var(--dark-steel);
+  background-color: var(--platinum);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
-.add_button {
+#auto_input_grid>div>input {
+  width: 100%;
+}
+
+#inv_id {
+  grid-column-end: -1;
+}
+
+.row_2 {
+  grid-row-start: 2;
+}
+
+.row_3 {
+  grid-row-start: 3;
+  grid-column-end: span 2;
+}
+
+/* form section */
+
+#manual_input_grid {
+  padding: 1em;
+  border-radius: 1em;
+  border: 1px solid var(--dark-steel);
+  background-color: var(--platinum);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+#discount_input {
+  width: 2em;
+  text-align: right;
+}
+
+#add_button {
   width: 124px;
-  height: 56px;
-  background: rgba(30, 144, 255, 1);
-  position: absolute;
-  top: 456px;
-  left: 1228px;
+  background: var(--agua);
   color: white;
-  font-family: Inter;
-  font-size: 2em;
-  text-align: left;
+  font-family: var(--sans-serif-font);
+  text-align: center;
 }
 
+/* display box section */
 
 .displayBox {
-  width: 1275px;
+  width: 100%;
   height: 293px;
   background: white;
   border: 1px solid black;
@@ -65,45 +107,31 @@ section {
   border-bottom-right-radius: 20px;
 }
 
-.saveButton {
-  width: 304px;
-  height: 63px;
-  background: rgba(50, 205, 50, 1);
-  position: absolute;
-  top: 887px;
-  left: 142px;
-  border-radius: 45px;
-  overflow: hidden;
-  color: white;
-  font-family: Inter;
-  font-size: 3em;
-  text-align: left;
+/* bottom button section */
+
+#bottom_buttons_section {
+  display: flex;
+  justify-content: space-between;
 }
 
-.finalButton {
+#bottom_buttons_section>button {
   width: 304px;
   height: 63px;
-  background: rgba(30, 144, 255, 1);
-  position: absolute;
-  top: 887px;
-  left: 559px;
   border-radius: 45px;
   color: white;
-  font-family: Inter;
+  font-family: var(--sans-serif-font);
   font-size: 3em;
   text-align: center;
 }
 
-.omitButton {
-  width: 304px;
-  height: 63px;
+#saveButton {
+  background: rgba(50, 205, 50, 1);
+}
+
+#finalButton {
+  background: rgba(30, 144, 255, 1);
+}
+
+#omitButton {
   background: rgba(255, 40, 0, 1);
-  position: absolute;
-  top: 887px;
-  left: 1008px;
-  border-radius: 45px;
-  color: white;
-  font-family: Inter;
-  font-size: 3em;
-  text-align: left;
 }

@@ -42,54 +42,81 @@
 </head>
 
 <body>
-
-	<!-- Header -->
 	<header>
 		<h1>Invoice</h1>
 	</header>
 
 	<main>
 		<div class="main_container">
-			<!-- Auto Input -->
-			<section class="auto_input_section">
-				<table>
-					<thead>
-						<th>Invoice Num</th>
-						<th>Customer ID</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Car Info</th>
-						<th>Refrigerant Capacity</th>
-						<th>Refrigerant Oil</th>
-					</thead>
-					<tr>
-						<td><input type="text" placeholder="#####"></td>
-						<td><input type="text" placeholder="Customer ID (auto)"></td>
-						<td><input type="text" placeholder="First Name (auto)"></td>
-						<td><input type="text" placeholder="Last Name (auto)"></td>
-						<td><input type="text" placeholder="Car Info (auto)"></td>
-						<td><input type="text" placeholder="Refridgerant Capacity (auto)"></td>
-						<td><input type="text" placeholder="Refridgerant Oil (auto)"></td>
-					</tr>
-				</table>
-			</section>
 
-			<!-- Third Row Data Entry -->
 			<section>
-				<form>
-					<input type="text" placeholder="Refridgerant Extracted (typed)">
-					<span>Apply discount</span>
-					<input type="text" name="discount" placeholder="0">
-					<span>%</span>
+				<div id="auto_input_grid">
+					<div>
+						<h3>
+							Auto Fill Portion
+						</h3>
+					</div>
+					<div id="inv_id">
+						Invoice Num
+						<input type="text" placeholder="#####">
+					</div>
+					<div class="row_2">
+						Customer ID<br>
+						<input type="text" placeholder="Customer ID (auto)">
+					</div>
+					<div class="row_2">
+						First Name<br>
+						<input type="text" placeholder="First Name (auto)">
+					</div>
+					<div class="row_2">
+						Last Name<br>
+						<input type="text" placeholder="Last Name (auto)">
+					</div>
+					<div class="row_2">
+						Car Info<br>
+						<input type="text" placeholder="Car Info (auto)">
+					</div>
+					<div class="row_3">
+						Refrigerant Capacity<br>
+						<input type="text" placeholder="Refridgerant Capacity (auto)">
+					</div>
+					<div class="row_3">
+						Refrigerant Oil<br>
+						<input type="text" placeholder="Refridgerant Oil (auto)"></td>
+					</div>
+				</div>
 
-					<!-- Fourth Row Data Entry -->
-					<input type="text" placeholder="Quantity (this * Flat-Rate)">
-					<input type="text" placeholder="client types description allow droplist for saved invent.">
-
-					<button class="add_button">Add</button>
-				</form>
 			</section>
-			<!-- Data Display Box -->
+
+
+			<section>
+
+				<div id="manual_input_grid">
+					<div>
+						<h3>
+							Manual Fill Portion
+						</h3>
+					</div>
+					<div>
+						<input type="text" placeholder="Refridgerant Extracted (typed)">
+					</div>
+					<div>
+						Apply Discount
+						<input type="text" id="discount_input" placeholder="0">
+						%
+					</div>
+					<div>
+						<input type="text" placeholder="Quantity (this * Flat-Rate)">
+					</div>
+					<div>
+						<input type="text" placeholder="client types description allow droplist for saved invent.">
+					</div>
+					<div>
+						<button id="add_button">Add</button>
+					</div>
+				</div>
+
+			</section>
 
 			<section>
 				<div class="displayBox">
@@ -110,18 +137,18 @@
 							</tr>
 						</thead>
 						<tbody>
-							<!-- Insert PHP code here to connect to database-->
+
 						</tbody>
 					</table>
 				</div>
 			</section>
 
 			<section>
-				<!-- Buttons -->
-				<button class="saveButton">Save</button>
-				<button class="finalButton">Finalize</button>
-				<button class="omitButton">Omit</button>
-
+				<div id="bottom_buttons_section">
+					<button id="saveButton">Save</button>
+					<button id="finalButton">Finalize</button>
+					<button id="omitButton">Omit</button>
+				</div>
 			</section>
 		</div>
 	</main>
