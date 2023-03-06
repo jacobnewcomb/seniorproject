@@ -91,17 +91,17 @@
                 <h1 id="addCarHeader">Add New Car to Customer Profile:</h1>
                 <h2>Make:</h2>
                 <div id="makeSearch" style="position: relative">
-                    <input oninput="searchExistingMakes(this.value);" id="carMake" type="text">
+                    <input oninput="searchExistingMakes(this.value); carDoesntExist();" id="carMake" type="text">
                     <span id="makePlaceholder" class="placeholderCustom"></span>
                 </div>
                 <h2>Model:</h2>
                 <div id="modelSearch" style="position: relative">
-                    <input oninput="searchExistingModels(this.value);" id="carModel" type="text">
+                    <input oninput="searchExistingModels(this.value); carDoesntExist();" id="carModel" type="text">
                     <span id="modelPlaceholder" class="placeholderCustom"></span>
                 </div>
                 <h2>Year</h2>
                 <div id="yearSearch">
-                    <input oninput="carDoesntExist(this.value);" id="carYear" type="text">
+                    <input oninput="carDoesntExist();" id="carYear" type="text">
                 </div>
                 <span id="carExistsConfirmation" style="color: green; display: none;">This car exists in the database!</span>
                 <div id="refrigerentCapacityPrompt">
@@ -257,7 +257,8 @@
             document.getElementById("modelPlaceholder").innerHTML = "";
         }
     }
-    function carDoesntExist(year){
+    function carDoesntExist(){
+        var year = document.getElementById("carYear").value;
         if(year.match(/^\d+$/)){
             $.ajax({
                 async: false,
@@ -274,6 +275,7 @@
                     else{
                         document.getElementById("carExistsConfirmation").style.display = "none";
                         document.getElementById("refrigerentCapacityPrompt").style.display = "inline";
+                        selectedCarID = null;
                     }
                 }
             });
@@ -281,6 +283,7 @@
         else{
             document.getElementById("carExistsConfirmation").style.display = "none";
             document.getElementById("refrigerentCapacityPrompt").style.display = "inline";
+            selectedCarID = null;
         }
     }
 
