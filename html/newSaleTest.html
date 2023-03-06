@@ -91,12 +91,12 @@
                 <h1 id="addCarHeader">Add New Car to Customer Profile:</h1>
                 <h2>Make:</h2>
                 <div id="makeSearch" style="position: relative">
-                    <input oninput="searchExistingMakes(this.value); carDoesntExist();" id="carMake" type="text">
+                    <input oninput="searchExistingMakes(this.value); carDoesntExist();" onchange="carDoesntExist();" id="carMake" type="text">
                     <span id="makePlaceholder" class="placeholderCustom"></span>
                 </div>
                 <h2>Model:</h2>
                 <div id="modelSearch" style="position: relative">
-                    <input oninput="searchExistingModels(this.value); carDoesntExist();" id="carModel" type="text">
+                    <input oninput="searchExistingModels(this.value); carDoesntExist();" onchange="carDoesntExist();" id="carModel" type="text">
                     <span id="modelPlaceholder" class="placeholderCustom"></span>
                 </div>
                 <h2>Year</h2>
@@ -211,6 +211,7 @@
         document.onkeydown = function(e) {
             if(e.which == 39 || (e.which == 9 && document.getElementById("makePlaceholder").innerHTML != "")) {
                 document.getElementById("carMake").value = document.getElementById("makePlaceholder").innerHTML.charAt(0).toUpperCase() + document.getElementById("makePlaceholder").innerHTML.slice(1);
+                carDoesntExist();
                 document.getElementById("makePlaceholder").innerHTML = "";
             }
         };
@@ -236,6 +237,7 @@
         document.onkeydown = function(e) {
             if(e.which == 39 || (e.which == 9 && document.getElementById("modelPlaceholder").innerHTML != "")) {
                 document.getElementById("carModel").value = document.getElementById("modelPlaceholder").innerHTML.charAt(0).toUpperCase() + document.getElementById("modelPlaceholder").innerHTML.slice(1);
+                carDoesntExist();
                 document.getElementById("modelPlaceholder").innerHTML = "";
             }
         };
