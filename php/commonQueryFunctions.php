@@ -2,13 +2,21 @@
     require_once('databaseConnection.php');
 
     $action = $_POST["action"];
-    $search = $_POST["search"];
+    if(ISSET($_POST["search"])) $search = $_POST["search"];
     if(ISSET($_POST["cust_id"])) $cust_id = $_POST["cust_id"];
+    if(ISSET($_POST["make"])) $make = $_POST["make"];
+    if(ISSET($_POST["model"])) $model = $_POST["model"];
+    if(ISSET($_POST["year"])) $year = $_POST["year"];
+    if(ISSET($_POST["car_id"])) $car_id = $_POST["car_id"];
     $conn = ConnectDb::getInstance();
 
     switch($action){
-        case 'fetchCustomerByParameters': fetchCustomerByParameters($conn->getConnection(), $search);
-        case 'fetchCarByParameters': if(ISSET($_POST["cust_id"])) fetchCarByParameters($conn->getConnection(), $cust_id, $search);
+        case 'fetchCustomerByParameters': {fetchCustomerByParameters($conn->getConnection(), $search); break;}
+        case 'fetchCarByParameters': {if(ISSET($_POST["cust_id"])) fetchCarByParameters($conn->getConnection(), $cust_id, $search); break;}
+        case 'fetchExistingMakesTop': {fetchExistingMakesTop($conn->getConnection(), $search); break;}
+        case 'fetchExistingModelsTop': {fetchExistingModelsTop($conn->getConnection(), $search); break;}
+        case 'searchCars': {if(ISSET($_POST["make"]) && ISSET($_POST["model"]) && ISSET($_POST["year"])) searchCars($conn->getConnection(), $make, $model, $year); break;}
+        case 'addCustomersCarRelation': {if(ISSET($_POST["cust_id"]) && ISSET($_POST["car_id"])) addCustomersCarRelation($conn->getConnection(), $cust_id, $car_id); break;}
         default:;
     }
     #Customer Queries
@@ -101,7 +109,7 @@
         echo json_encode($data);
     }
     function fetchCarByParameters($conn, $cust_id, $input){
-        $query = "SELECT Make, Model, Year FROM (customerscar NATURAL JOIN car) NATURAL JOIN customer WHERE cust_id = " . $cust_id . " AND (Make LIKE '%" . $input . "%' OR Model LIKE '%" . $input . "%' OR concat(Make, ' ', Model) LIKE '%" . $input . "%' OR concat(Model, ' ', Make) LIKE '%" . $input . "%') AND ('" . $input . "' != '' AND '" . $input . "' != ' ');";
+        $query = "SELECT Make, Model, Year FROM customerscar cc JOIN car c on cc.car_id = c.id WHERE cust_id = " . $cust_id . " AND (Make LIKE '%" . $input . "%' OR Model LIKE '%" . $input . "%' OR concat(Make, ' ', Model) LIKE '%" . $input . "%' OR concat(Model, ' ', Make) LIKE '%" . $input . "%') AND ('" . $input . "' != '' AND '" . $input . "' != ' ');";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))
@@ -113,7 +121,42 @@
         mysqli_close($conn);
         echo json_encode($data);
     }
-
+    function fetchExistingMakesTop($conn, $input){
+        $query = "SELECT Make FROM car WHERE Make LIKE '" . $input . "%' AND Make != '" . $input . "'";
+        $exec = mysqli_query($conn, $query);
+        $data = mysqli_fetch_assoc($exec);
+        mysqli_close($conn);
+        if($data != NULL) echo $data["Make"];
+        else echo "";
+    }
+    function fetchExistingModelsTop($conn, $input){
+        $query = "SELECT Model FROM car WHERE Model LIKE '" . $input . "%' AND Model != '" . $input . "'";
+        $exec = mysqli_query($conn, $query);
+        $data = mysqli_fetch_assoc($exec);
+        mysqli_close($conn);
+        if($data != NULL) echo $data["Model"];
+        else echo "";
+    }
+    function searchCars($conn, $make, $model, $year){
+        $query = "SELECT id FROM car WHERE Make = '" . $make . "' AND Model = '" . $model . "' AND Year = " . $year;
+        $exec = mysqli_query($conn, $query);
+        $data = mysqli_fetch_assoc($exec);
+        mysqli_close($conn);
+        if($data != NULL) echo $data["id"];
+        else echo null;
+    }
+    
+    function addCustomersCarRelation($conn, $cust_id, $car_id){
+        $query = "INSERT INTO customerscar (cust_id, car_id) VALUES (" . $cust_id . ", " . $car_id . ")";
+        $exec = mysqli_query($conn, $query);
+        $query = "SELECT id FROM customerscar WHERE cust_id = " . $cust_id . " AND car_id = " . $car_id;
+        $exec = mysqli_query($conn, $query);
+        $data = mysqli_fetch_assoc($exec);
+        mysqli_close($conn);
+        if($data != NULL) echo $data["id"];
+        else echo null;
+    }
+    
     #Invoice Queries
     function fetchAllInvoices($conn){
         $query = "SELECT * FROM 'invoices'";

@@ -46,3 +46,13 @@
 .result:hover{
     background-color: grey;
 }
+
+.placeholderCustom {
+    background-color: white;
+    position: absolute;
+    height: 100%;
+    padding-top: 0.20%;
+    left: 4px;
+    pointer-events: none;
+    opacity: .5;
+}

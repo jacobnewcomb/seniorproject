@@ -87,12 +87,39 @@
                     <button onclick="nextTab();" style="width: 15%;">Next</button>
                 </div>
             </div>
+            <div class="tab fork">
+                <h1 id="addCarHeader">Add New Car to Customer Profile:</h1>
+                <h2>Make:</h2>
+                <div id="makeSearch" style="position: relative">
+                    <input oninput="searchExistingMakes(this.value);" id="carMake" type="text">
+                    <span id="makePlaceholder" class="placeholderCustom"></span>
+                </div>
+                <h2>Model:</h2>
+                <div id="modelSearch" style="position: relative">
+                    <input oninput="searchExistingModels(this.value);" id="carModel" type="text">
+                    <span id="modelPlaceholder" class="placeholderCustom"></span>
+                </div>
+                <h2>Year</h2>
+                <div id="yearSearch">
+                    <input oninput="carDoesntExist(this.value);" id="carYear" type="text">
+                </div>
+                <span id="carExistsConfirmation" style="color: green; display: none;">This car exists in the database!</span>
+                <div id="refrigerentCapacityPrompt">
+                    <h2>Refrigerent Capacity</h2>
+                    <input id="carRefrigerent" type="text">
+                </div>
+                <div>
+                    <button onclick="prevTab();" style="width: 15%;">Back</button>
+                    <button onclick="addNewCar();" style="width: 15%;">Next</button>
+                </div>
+            </div>
         </div>
     </body>
 <script type="text/javascript">
     var currentTab = 0;
-    var selectedCustomer = null;
-    var selectedCar = null;
+    var selectedCustomerID = null;
+    var selectedCustomerName = null;
+    var selectedCarID = null;
     $(':input').val('');
     
     const tabs = document.getElementsByClassName("tab");
@@ -101,8 +128,9 @@
     }
 
     function searchCustomers(name){
-        selectedCustomer = null;
-        var results;
+        selectedCustomerID = null;
+        selectedCustomerName = null;
+        var results = null;
         document.getElementById("customerSearchResults").style.display = "flex";
         $.ajax({
             async: false,
@@ -148,7 +176,7 @@
             async: false,
             url:"../php/commonQueryFunctions.php",    //the page containing php script
             type: "post",    //request type,
-            data: {"action": "fetchCarByParameters", "search": name, "cust_id": selectedCustomer},
+            data: {"action": "fetchCarByParameters", "search": name, "cust_id": selectedCustomerID},
             dataType: "json",
             success:function(result){
                 results = result;
@@ -179,9 +207,87 @@
         }
     }
 
+    function searchExistingMakes(make){
+        document.onkeydown = function(e) {
+            if(e.which == 39 || (e.which == 9 && document.getElementById("makePlaceholder").innerHTML != "")) {
+                document.getElementById("carMake").value = document.getElementById("makePlaceholder").innerHTML.charAt(0).toUpperCase() + document.getElementById("makePlaceholder").innerHTML.slice(1);
+                document.getElementById("makePlaceholder").innerHTML = "";
+            }
+        };
+        $( "#carMake" ).blur(function() {
+            document.getElementById("makePlaceholder").innerHTML = "";
+        });
+        if(!make.match(/^\s+.*$/) && make != ""){
+            $.ajax({
+                async: false,
+                url:"../php/commonQueryFunctions.php",    //the page containing php script
+                type: "post",    //request type,
+                data: {"action": "fetchExistingMakesTop", "search": make},
+                success:function(result){
+                    document.getElementById("makePlaceholder").innerHTML = make + result.substring(make.length);
+                }
+            });
+        }
+        else{
+            document.getElementById("makePlaceholder").innerHTML = "";
+        }
+    }
+    function searchExistingModels(model){
+        document.onkeydown = function(e) {
+            if(e.which == 39 || (e.which == 9 && document.getElementById("modelPlaceholder").innerHTML != "")) {
+                document.getElementById("carModel").value = document.getElementById("modelPlaceholder").innerHTML.charAt(0).toUpperCase() + document.getElementById("modelPlaceholder").innerHTML.slice(1);
+                document.getElementById("modelPlaceholder").innerHTML = "";
+            }
+        };
+        $( "#carModel" ).blur(function() {
+            document.getElementById("modelPlaceholder").innerHTML = "";
+        });
+        if(!model.match(/^\s+.*$/) && model != ""){
+            $.ajax({
+                async: false,
+                url:"../php/commonQueryFunctions.php",    //the page containing php script
+                type: "post",    //request type,
+                data: {"action": "fetchExistingModelsTop", "search": model},
+                success:function(result){
+                    document.getElementById("modelPlaceholder").innerHTML = model + result.substring(model.length);
+                }
+            });
+        }
+        else{
+            document.getElementById("modelPlaceholder").innerHTML = "";
+        }
+    }
+    function carDoesntExist(year){
+        if(year.match(/^\d+$/)){
+            $.ajax({
+                async: false,
+                url:"../php/commonQueryFunctions.php",    //the page containing php script
+                type: "post",    //request type,
+                data: {"action": "searchCars", "make": document.getElementById("carMake").value, "model": document.getElementById("carModel").value, "year": year},
+                success:function(result){
+                    if(result != ""){
+                        document.getElementById("carExistsConfirmation").style.display = "inline";
+                        document.getElementById("refrigerentCapacityPrompt").style.display = "none";
+                        document.getElementById("refrigerentCapacityPrompt").value = "";
+                        selectedCarID = result;
+                    }
+                    else{
+                        document.getElementById("carExistsConfirmation").style.display = "none";
+                        document.getElementById("refrigerentCapacityPrompt").style.display = "inline";
+                    }
+                }
+            });
+        }
+        else{
+            document.getElementById("carExistsConfirmation").style.display = "none";
+            document.getElementById("refrigerentCapacityPrompt").style.display = "inline";
+        }
+    }
+
     function selectCustomer(){
         document.getElementById("customerName").value = this.innerHTML;
-        selectedCustomer = this.getAttribute("cust_id");
+        selectedCustomerID = this.getAttribute("cust_id");
+        selectedCustomerName = this.innerHTML;
         var resultsDisplay = document.getElementById("customerSearchResults");
         while (resultsDisplay.hasChildNodes()) {
             resultsDisplay.removeChild(resultsDisplay.firstChild);
@@ -190,7 +296,7 @@
     }
     function selectCar(){
         document.getElementById("carName").value = this.innerHTML;
-        selectedCar = this.getAttribute("id");
+        selectedCarID = this.getAttribute("id");
         var resultsDisplay = document.getElementById("carSearchResults");
         while (resultsDisplay.hasChildNodes()) {
             resultsDisplay.removeChild(resultsDisplay.firstChild);
@@ -222,6 +328,12 @@
         tabs[currentTab].style.display = "none";
         currentTab = 3;
         tabs[currentTab].style.display = "flex";
+        if(selectedCustomerName.charAt(selectedCustomerName.length) != 's'){
+            document.getElementById("addCarHeader").innerHTML = "Add Car to " + selectedCustomerName + "'s Profile:";
+        }
+        else{
+            document.getElementById("addCarHeader").innerHTML = "Add Car to " + selectedCustomerName + "' Profile:";
+        }
     }
 
     function addNewCustomer(){
@@ -238,10 +350,43 @@
                 "needId": true
             },
             success:function(result){
-                selectedCustomer = result;
+                selectedCustomerID = result["cust_id"];
+                selectedCustomerName = result["fname"] + " " + result["lname"];
                 nextTab();
             }
         });
+    }
+
+    function addNewCar(){
+        if(selectedCarID == null){
+            $.ajax({
+                async: false,
+                url:"../php/addCar.php",    //the page containing php script
+                type: "post",    //request type,
+                data: {
+                    "make": document.getElementById("carMake").value,
+                    "model": document.getElementById("carModel").value,
+                    "year": document.getElementById("carYear").value,
+                    "refrigerent": document.getElementById("carRefrigerent").value,
+                    "cust_id": selectedCustomerID,
+                },
+                success:function(result){
+                    selectedCarID = result["id"];
+                    nextTab();
+                }
+            });
+        }
+        else{
+            $.ajax({
+                async: false,
+                url:"../php/commonQueryFunctions.php",    //the page containing php script
+                type: "post",    //request type,
+                data: {"action": "addCustomersCarRelation", "cust_id": selectedCustomerID, "car_id": selectedCarID},
+                success:function(result){
+                    nextTab();
+                }
+            });
+        }
     }
 
     function nextTab(){

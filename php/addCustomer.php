@@ -84,7 +84,7 @@ if (empty($fname) || empty($lname) || empty($phone)) {
         $idQuery = "SELECT cust_id FROM customer ORDER BY cust_id DESC LIMIT 1";
         $exec = mysqli_query($conn, $idQuery);
         $data = mysqli_fetch_assoc($exec);
-        echo $data["cust_id"];
+        echo $data;
     }
     #} else {
     #    echo "<span style=\"color:red\">Customer Already Exists</span>";
