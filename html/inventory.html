@@ -31,12 +31,6 @@
 				}
 			}
 		});
-
-		function searchInventory(item) {
-			$("#inventory-table").load("../php/searchInventory.php", {
-				'item': item
-			});
-		}
 	</script>
 
 	<meta charset="UTF-8">
@@ -45,6 +39,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
 	<link href="../css/inventory.css" rel="stylesheet">
+	<link href="../css/popUps.css" rel="stylesheet">
 	<title>Inventory Page</title>
 </head>
 
@@ -64,34 +59,24 @@
 					</div>
 				</form>
 
-				<form id="search-inventory-form">
-					<div class="form_container">
-						<input oninput="searchInventory(this.value);" type="text" id="searchInput"
-							placeholder="Search Inventory">
-						<button class="formButton">Search</button>
-					</div>
-				</form>
+				<input oninput="searchInventory(this.value);" type="text" id="searchInput"
+					placeholder="Search Inventory (type * to see all)">
 			</section>
+
 			<section class="table-section">
 				<table class="table table-hover">
 					<thead>
-						<tr>
-							<th scope="col" style="width: 5%; text-align: center">Add</th>
-							<th scope="col" style="width: 25%; text-align: center">Item</th>
-							<th scope="col" style="width: 50%; text-align: center">Sale Price</th>
-							<th scope="col" style="width: 5%; text-align: center">+</th>
-							<th scope="col" style="width: 5%; text-align: center">Quantity</th>
-							<th scope="col" style="width: 5%; text-align: center">-</th>
-							<th scope="col" style="width: 5%; text-align: center">Delete</th>
-						</tr>
+						<thead>
+							<th>Item</th>
+							<th>Sale Price</th>
+							<th>Quantity</th>
+							<th>Units</th>
+						</thead>
 					</thead>
 					<tbody id="inventory-table">
-						<!-- Insert PHP code here to connect to database-->
 					</tbody>
 				</table>
 			</section>
-
-			<button class="updateButton">Update</button>
 		</div>
 	</main>
 </body>
@@ -99,5 +84,42 @@
 </html>
 
 <script>
+	function searchInventory(item_name) {
+		$("#inventory-table").load("../php/inventoryBackend.php", {
+			func: "search_inventory",
+			item: item_name
+		});
+	}
+
+	function popup(item_id) {
+		$("body").append('<div id="inventoryPopup" class="popup"></div>');
+
+		$("#inventoryPopup").load("../php/inventoryBackend.php", {
+			func: "popup_content",
+			id: item_id
+		});
+	}
+
+	function unpop() {
+		document.getElementById("inventoryPopup").remove();
+	}
+
+	function changeQuantity(item_id) {
+		amount = $("input[type=number][name=change_input]").val();
+		type = $("input[type=radio][name=type]:checked").val();
+		note = $("input[type=text][name=note]").val();
+
+		$.ajax({
+			type: "POST",
+			url: "../php/inventoryBackend.php",
+			data: {
+				func: "change_quantity",
+				id: item_id,
+				amount: amount,
+				type: type,
+				note: note
+			}
+		});
+	}
 
 </script>

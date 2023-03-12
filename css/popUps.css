@@ -1,7 +1,7 @@
-#schedulePopup{
+.popup {
     z-index: 10;
     top: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
 
@@ -11,15 +11,17 @@
     align-items: center;
     -webkit-align-items: center;
 }
-#schedulePopupBackground{
+
+.popupBackground {
     z-index: 11;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background-color: black;
     opacity: 0.3;
 }
-#schedulePopupMessage{
+
+.popupMessage {
     z-index: 12;
     padding: 10px;
     width: max(30%, 300px);
