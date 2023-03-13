@@ -50,8 +50,8 @@ section {
   border: 1px solid var(--dark-steel);
   background-color: var(--platinum);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 3em) 100%;
 }
 
 #auto_input_grid>div>input {
@@ -62,13 +62,29 @@ section {
   grid-column-end: -1;
 }
 
-.row_2 {
+#fname {
   grid-row-start: 2;
 }
 
-.row_3 {
+#lname {
+  grid-row-start: 2;
+}
+
+#make {
   grid-row-start: 3;
-  grid-column-end: span 2;
+}
+
+#model {
+  grid-row-start: 3;
+}
+
+#year {
+  grid-row-start: 3;
+}
+
+#notes {
+  grid-row-start: 4;
+  grid-column: 1 / span 3;
 }
 
 /* form section */

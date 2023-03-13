@@ -53,9 +53,8 @@ h1 {
   width: 100%;
 }
 
-.formButton {
-  width: 10%;
-  background: var(--agua);
+#createNewButton {
+  background-color: var(--agua);
 }
 
 .table-section {

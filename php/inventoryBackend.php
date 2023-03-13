@@ -107,3 +107,15 @@ function change_quantity($conn)
     mysqli_query($conn, $query);
     
 }
+
+// create new function to create new item
+function create_new($conn) {
+    $name = $_POST['name'];
+    $quantity = $_POST['quantity'];
+    $low_level = $_POST['low_level'];
+    $units = $_POST['units'];
+    $price = $_POST['price'];
+
+    $query = "INSERT INTO `inventory` (`name`, `quantity`, `low_quantity_reminder_level`, `units`, `price_per_unit`) VALUES ('$name', '$quantity', '$low_level', '$units', '$price')";
+    
+}

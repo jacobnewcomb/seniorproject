@@ -51,13 +51,7 @@
 	<main>
 		<div class="main_container">
 			<section>
-				<form>
-					<div class="form_container">
-						<input type="text" class="inputDescription" placeholder="Item Description">
-						<input type="text" class="dropDown" placeholder="drop box of type">
-						<button class="formButton">Add</button>
-					</div>
-				</form>
+						
 
 				<input oninput="searchInventory(this.value);" type="text" id="searchInput"
 					placeholder="Search Inventory (type * to see all)">
@@ -76,6 +70,18 @@
 					<tbody id="inventory-table">
 					</tbody>
 				</table>
+			</section>
+
+			<section>
+				<form>
+					<input type="text" name="name" placeholder="Item Name">
+					<input type="number" name="quantity" placeholder="Quantity">
+					<input type="number" name="low_level" placeholder="Low Quantity Reminder Level">
+					<input type="text" name="units" placeholder="Units">
+					<input type="number" name="price" placeholder="Price per Unit">
+					<button onclick="createNew()" id="createNewButton">Create New Item</button>
+				</form>
+				
 			</section>
 		</div>
 	</main>
@@ -120,6 +126,19 @@
 				note: note
 			}
 		});
+	}
+
+	function createNew() {
+		$.ajax("../php/inventoryBackend.php", {
+			func: "create_new",
+			name: $("input[type=text][name=name]").val(),
+			quantity: $("input[type=text][name=quantity]").val(),
+			low_level: $("input[type=text][name=low_level]").val(),
+			units: $("input[type=text][name=units]").val(),
+			price: $("input[type=text][name=price]").val()
+		});
+
+		alert("done");
 	}
 
 </script>
