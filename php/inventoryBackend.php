@@ -14,6 +14,9 @@ switch ($_POST['func']) {
     case "change_quantity":
         change_quantity($conn);
         break;
+    case "create_new":
+        create_new($conn);
+        break;
 }
 
 function search_inventory($conn)
@@ -116,6 +119,8 @@ function create_new($conn) {
     $units = $_POST['units'];
     $price = $_POST['price'];
 
-    $query = "INSERT INTO `inventory` (`name`, `quantity`, `low_quantity_reminder_level`, `units`, `price_per_unit`) VALUES ('$name', '$quantity', '$low_level', '$units', '$price')";
-    
+    $query = "INSERT INTO `inventory` (`name`, `quantity`, `low_quantity_reminder_level`, `units`, `price_per_unit`) VALUES ('$name', '$quantity', '$low_level', '$units', '$price');";
+    mysqli_query($conn, $query);
+
+    echo '<span sytle="color: green;">Item Created!</span>';
 }
