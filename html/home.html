@@ -1,67 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Home Page</title>
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        
+		<link href = "../css/masterFile.css" rel = "stylesheet">
+		<link href="../css/home.css" rel="stylesheet">		<!-- Replace with correct CSS file when duplicating page! -->
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+			integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+			crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+			integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+			crossorigin="anonymous"></script>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+		
 		<script type="text/javascript">
-			$.ajax({
-				async: false,
-				url:"../php/checkLogin.php",    //the page containing php script
-				type: "post",    //request type,
-				data: {},
-				dataType: "json",
-				success:function(result){
-					if(!result){
-						document.location.href = "index.html";
-					}
-				}
+			// ensure we are logged in
+			$.get('../php/checkLogin.php', function () { });
+
+			// prepare form submittal function
+			$(document).ready(function () {
+				$("#add-cust-form").submit(function (event) {
+					// prevent the form from doing default behavior
+					event.preventDefault();
+
+					// get vars
+					var fname = $("#cust-fname").val();
+					var lname = $("#cust-lname").val();
+					var phone = $("#cust-phone").val();
+					var email = $("#cust-email").val();
+					var address = $("#cust-address").val();
+
+					//send vars
+					$("#cust-form-message").load("../php/addCustomer.php", {
+						'fname': fname,
+						'lname': lname,
+						'phone': phone,
+						'email': email,
+						'address': address
+					});
+
+					// reroute to window.location.href='customerGarage.html'
+				});
 			});
 		</script>
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-	<link href="../css/home.css" rel="stylesheet">
-	<title>Home</title>
-</head>
+    </head>
+	
+    <body>
+		<!-- Page Header -->
+		<header>
+			<h1>Home Page</h1>
+			<div class = "home_Button" onclick="window.location.href = 'home.html'">
+				<div class = "buttonText_Aqua">Home</div>
+			</div>
+			<div class = "logout_Button">
+				<div class = "buttonText_Aqua">Logout</div>
+			</div>
+		</header>
+		
+		<main>
+			<div class = "gridContainer">
+				<div class = "schedule_Button" onclick="window.location.href = 'schedule.html'">
+					<div class = "buttonText_Plat">Schedule</div>
+				</div>
+				
+				<div class = "display_Box">
+					<div class = "buttonText_Plat">Display Box</div>
+				</div>
+				
+				<div class = "calendar_Button" onclick="window.location.href = 'appointments.html'">
+					<div class = "buttonText_Plat">Calendar</div>
+				</div>
+				
+				<div class = "newSale_Button" onclick="window.location.href = 'newSale.html'">
+					<div class = "buttonText_Plat">New Sale</div>
+				</div>
+				
+				<div class = "inventory_Button" onclick="window.location.href = 'inventory.html'">
+					<div class = "buttonText_Plat">Inventory</div>
+				</div>
+				
+				<div class = "settings_Button" onclick="window.location.href = 'settings.html'">
+					<div class = "buttonText_Plat">Settings</div>
+				</div>
+				
+				<div class = "accounting_Button" onclick="window.location.href = 'accounting.html'">
+					<div class = "buttonText_Plat">Accounting</div>
+				</div>
+			</div>
+			
 
-
-<body>
-	<div class="v177_27">
-		<div class="v177_28"></div>
-		<span class="welcomeText">welcome: user</span>
-		<div class="v177_95">
-			<button class="logoutButton" onclick="window.location.href = 'index.html'"></button>	
-			<span class="v177_69">logout</span>
-
-		</div>
-		<div class="v177_97">
-			<div class="activeScreen"></div>
-
-		</div>
-		<div class="scheduleScreen" onclick="window.location.href='schedule.html'"></div>
-		<div class="newSaleButton" onclick="window.location.href='newSale.html'"></div>
-		<span class="v177_82">New sale</span>
-		<div class="v177_96">
-			<div class="inventoryButton" onclick="window.location.href='inventory.html'"></div>
-			<span class="v177_83">Inventory</span>
-		</div>
-		<div class="settingsButton" onclick="window.location.href='settings.html'"></div>
-		<span class="v177_84">Settings</span>
-		<div class="accountingButton" onclick="window.location.href='accounting.html'"></div>
-		<span class="v177_86">Accounting</span>
-		<div class="v177_88">
-		</div><span class="v177_92">Schedule</span>
-		<div class="name"></div>
-		<div class="v180_99"></div>
-		<div class="apptsWindow"></div><span class="v177_91">Appts.</span>
-
-	</div>
-</body>
-
-
+		</main>
+    </body>
 </html>
