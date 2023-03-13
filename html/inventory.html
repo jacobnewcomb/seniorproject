@@ -1,63 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Inventory</title>
+		
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        
+		<link href = "../css/masterFile.css" rel = "stylesheet">
+		<link href = "../css/inventory.css" rel = "stylesheet">		<!-- Replace with correct CSS file when duplicating page! -->
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+			crossorigin="anonymous"></script>
 
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+		
+		<script type="text/javascript">
+			// ensure we are logged in
+			$.get('../php/checkLogin.php', function () { });
 
-<head>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-		integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-		crossorigin="anonymous"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
+			// prepare form submittal function
+			$(document).ready(function () {
+				$("#add-cust-form").submit(function (event) {
+					// prevent the form from doing default behavior
+					event.preventDefault();
 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+					// get vars
+					var fname = $("#cust-fname").val();
+					var lname = $("#cust-lname").val();
+					var phone = $("#cust-phone").val();
+					var email = $("#cust-email").val();
+					var address = $("#cust-address").val();
 
-	<script type="text/javascript">
-		$.ajax({
-			async: false,
-			url: "../php/checkLogin.php",    //the page containing php script
-			type: "post",    //request type,
-			data: {},
-			dataType: "json",
-			success: function (result) {
-				if (!result) {
-					document.location.href = "index.html";
-				}
-			}
-		});
-	</script>
+					//send vars
+					$("#cust-form-message").load("../php/addCustomer.php", {
+						'fname': fname,
+						'lname': lname,
+						'phone': phone,
+						'email': email,
+						'address': address
+					});
 
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-	<link href="../css/inventory.css" rel="stylesheet">
-	<link href="../css/popUps.css" rel="stylesheet">
-	<title>Inventory Page</title>
-</head>
-
-<body>
-	<header>
-		<h1>Inventory</h1>
-	</header>
-
-	<main>
-		<div class="main_container">
-			<section>
-						
-
-				<input oninput="searchInventory(this.value);" type="text" id="searchInput"
-					placeholder="Search Inventory (type * to see all)">
-			</section>
-
-			<section class="table-section">
+					// reroute to window.location.href='customerGarage.html'
+				});
+			});
+		</script>
+    </head>
+	
+    <body>
+		<!-- Page Header -->
+		<header>
+			<h1>Inventory Page</h1>
+				<div class = "home_Button" onclick="window.location.href = 'home.html'">
+					<div class = "buttonText_Aqua">Home</div>
+				</div>
+			<div class = "logout_Button">
+				<div class = "buttonText_Aqua">Logout</div>
+			</div>
+		</header>
+		
+		<main>
+			<form id = "add_Item_Form">
+				<div class = "row my-3">
+					<div class = "col">
+						<div class= "form-outline">
+							<input type="text" name="name" placeholder="Item Name">
+						</div>
+					</div>
+					<div class = "col">
+						<div class= "form-outline">
+							<input type="number" name="quantity" placeholder="Quantity">
+						</div>
+					</div>
+					<div class = "col">
+						<div class= "form-outline">
+							<input type="number" name="low_level" placeholder="Low Quantity Reminder Level">
+						</div>
+					</div>
+					<div class = "col">
+						<div class= "form-outline">
+							<input type="text" name="units" placeholder="Units">
+						</div>
+					</div>
+					<div class = "col">
+						<div class= "form-outline">
+							<input type="number" name="price" placeholder="Price per Unit">
+						</div>
+					</div>
+					<div class = "col">
+						<div class = "form-outline">
+							<button class = "btn btn-primary" type = "submit" id = "addButton">
+								Add New Item
+							</button>
+						</div>
+					</div>
+				</div>
+			</form>
+			
+			<form id = "search_Item_Form">
+				<div class = "row my-3">
+					<div class = "col">
+							<input oninput="searchInventory(this.value);" type="text" id="searchInput" placeholder="Search Inventory (type * to see all)">
+					</div>
+					
+				</div>
+			</form>
+			
+			<div class = "displayBox">
 				<table class="table table-hover">
 					<thead>
 						<thead>
@@ -70,6 +126,7 @@
 					<tbody id="inventory-table">
 					</tbody>
 				</table>
+<<<<<<< Updated upstream
 			</section>
 
 			<section>
@@ -88,6 +145,11 @@
 	</main>
 </body>
 
+=======
+			</div>
+		</main>
+    </body>
+>>>>>>> Stashed changes
 </html>
 
 <script>
