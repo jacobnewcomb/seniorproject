@@ -17,6 +17,9 @@ switch ($_POST['func']) {
     case "create_new":
         create_new($conn);
         break;
+    case "update_info":
+        update_info($conn);
+        break;
 }
 
 function search_inventory($conn)
@@ -66,17 +69,17 @@ function popup_content($conn)
 
         <h3>Update Information</h3>
         <form>
-            Name: <input type="text" placeholder="<?php echo $item['name'] ?>">
-            Price: <input type="number" placeholder="<?php echo $item['price_per_unit'] ?>">
-            Units: <input type="text" placeholder="<?php echo $item['units'] ?>">
-            Low Quantity Reminder Level: <input type="number" placeholder="<?php echo $item['low_quantity_reminder_level'] ?>">
+            Name: <input name="update_name" type="text" value="<?php echo $item['name'] ?>">
+            Price: <input name="update_price" type="number" value="<?php echo $item['price_per_unit'] ?>">
+            Units: <input name="update_units" type="text" value="<?php echo $item['units'] ?>">
+            Low Quantity Reminder Level: <input name="update_low_level" type="number" value="<?php echo $item['low_quantity_reminder_level'] ?>">
             <button onclick="updateInfo(<?= $item['item_id'] ?>)">Update</button>
         </form>
 
         <h3>Change Quantity</h3>
         <span>Current Quantity: <?php echo $item['quantity'] ?></span>
         <form>
-            Change Amount <input type=number placeholder="0" name="change_input">
+            Change Amount <input type=number value="0" name="change_input">
             <input name="type" type="radio" value="deposit" id="deposit" checked><label for="deposit">Deposit</label>
             <input name="type" type="radio" value="withdraw" id="withdraw"><label for="withdraw">Withdraw</label>
             <input type="text" placeholder="Note (optional)" name="note">
@@ -100,13 +103,15 @@ function change_quantity($conn)
         $t = true;
 
     $query = "INSERT INTO `inventoryledger` (`item_id`, `quantity`, `withdraw`, `note`) VALUES ('$id', '$amount', '$t', '$note');";
+    
     mysqli_query($conn, $query);
 
     // change amount
     if ($type == "withdraw")
         $amount *= -1;
 
-    $query = "UPDATE inventory SET quantity = quantity + $amount WHERE item_id = $id";
+    $query = "UPDATE inventory SET quantity = quantity + $amount WHERE item_id = $id;";
+
     mysqli_query($conn, $query);
     
 }
@@ -120,6 +125,7 @@ function create_new($conn) {
     $price = $_POST['price'];
 
     $query = "INSERT INTO `inventory` (`name`, `quantity`, `low_quantity_reminder_level`, `units`, `price_per_unit`) VALUES ('$name', '$quantity', '$low_level', '$units', '$price');";
+    
     mysqli_query($conn, $query);
 
     echo '<span sytle="color: green;">Item Created!</span>';
@@ -134,7 +140,7 @@ function update_info($conn)
     $units = $_POST['units'];
     $low_level = $_POST['low_level'];
 
-    $query = "UPDATE inventory SET quantity = quantity + $amount WHERE item_id = $id";
-    mysqli_query($conn, $query);
+    $query = "UPDATE inventory SET `name`='$name', `price_per_unit`='$price', `units`='$units', `low_quantity_reminder_level`='$low_level' WHERE item_id = '$id';";
     
+    mysqli_query($conn, $query);
 }
