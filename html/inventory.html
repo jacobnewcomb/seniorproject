@@ -82,7 +82,7 @@
 				</div>
 				<div class="col">
 					<div class="form-outline">
-						<button class="btn btn-primary" type="submit" id="addButton">
+						<button onclick="createNew()" class="btn btn-primary" type="submit" id="addButton">
 							Add New Item
 						</button>
 					</div>
@@ -144,7 +144,7 @@
 		amount = $("input[type=number][name=change_input]").val();
 		type = $("input[type=radio][name=type]:checked").val();
 		note = $("input[type=text][name=note]").val();
-		alert(item_id);
+		
 		$.ajax({
 			type: "POST",
 			url: "../php/inventoryBackend.php",
@@ -165,16 +165,19 @@
 		units = $("input[type=text][name=units]").val();
 		price = $("input[type=number][name=price]").val();
 
-		$('#create_success_message').load("../php/inventoryBackend.php", {
-			func: "create_new",
-			name: name,
-			quantity: quantity,
-			low_level: low_level,
-			units: units,
-			price: price
+		$.ajax({
+			type: "POST",
+			url: "../php/inventoryBackend.php",
+			data: {
+				func: "create_new",
+				name: name,
+				quantity: quantity,
+				low_level: low_level,
+				units: units,
+				price: price
+			}
 		});
 
-		alert(name + ", " + quantity + ", " + low_level + ", " + units + ", " + price);
 	}
 
 	function updateInfo(item_id) {
@@ -182,7 +185,7 @@
 		price = $("input[type=number][name=update_price]").val();
 		units = $("input[type=text][name=update_units]").val();
 		low_level = $("input[type=number][name=update_low_level]").val();
-		
+
 		$.ajax({
 			type: "POST",
 			url: "../php/inventoryBackend.php",

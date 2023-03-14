@@ -102,7 +102,8 @@ function change_quantity($conn)
     if ($type == "withdraw")
         $t = true;
 
-    $query = "INSERT INTO `inventoryledger` (`item_id`, `quantity`, `withdraw`, `note`) VALUES ('$id', '$amount', '$t', '$note');";
+    $query = "INSERT INTO `inventoryledger` (`item_id`, `quantity`, `withdraw`, `note`) 
+        VALUES ('$id', '$amount', '$t', '$note');";
     
     mysqli_query($conn, $query);
 
@@ -110,7 +111,9 @@ function change_quantity($conn)
     if ($type == "withdraw")
         $amount *= -1;
 
-    $query = "UPDATE inventory SET quantity = quantity + $amount WHERE item_id = $id;";
+    $query = "UPDATE inventory 
+        SET quantity = quantity + $amount 
+        WHERE item_id = $id;";
 
     mysqli_query($conn, $query);
     
@@ -124,11 +127,10 @@ function create_new($conn) {
     $units = $_POST['units'];
     $price = $_POST['price'];
 
-    $query = "INSERT INTO `inventory` (`name`, `quantity`, `low_quantity_reminder_level`, `units`, `price_per_unit`) VALUES ('$name', '$quantity', '$low_level', '$units', '$price');";
+    $query = "INSERT INTO `inventory` (`name`, `quantity`, `low_quantity_reminder_level`, `units`, `price_per_unit`) 
+        VALUES ('$name', '$quantity', '$low_level', '$units', '$price');";
     
     mysqli_query($conn, $query);
-
-    echo '<span sytle="color: green;">Item Created!</span>';
 }
 
 // update function
@@ -140,7 +142,9 @@ function update_info($conn)
     $units = $_POST['units'];
     $low_level = $_POST['low_level'];
 
-    $query = "UPDATE inventory SET `name`='$name', `price_per_unit`='$price', `units`='$units', `low_quantity_reminder_level`='$low_level' WHERE item_id = '$id';";
+    $query = "UPDATE inventory 
+        SET `name`='$name', `price_per_unit`='$price', `units`='$units', `low_quantity_reminder_level`='$low_level' 
+        WHERE item_id = '$id';";
     
     mysqli_query($conn, $query);
 }
