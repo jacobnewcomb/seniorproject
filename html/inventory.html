@@ -176,4 +176,24 @@
 		alert(name + ", " + quantity + ", " + low_level + ", " + units + ", " + price);
 	}
 
+	function updateInfo(item_id) {
+		name = $("input[type=text][name=update_name]").val();
+		price = $("input[type=number][name=update_price]").val();
+		units = $("input[type=number][name=update_units]").val();
+		low_level = $("input[type=number][name=update_low_level]").val();
+
+		$.ajax({
+			type: "POST",
+			url: "../php/inventoryBackend.php",
+			data: {
+				func: "update_info",
+				id: item_id,
+				name: name,
+				price: price,
+				units: units,
+				low_level: low_level
+			}
+		});
+	}
+
 </script>

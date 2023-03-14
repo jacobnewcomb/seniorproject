@@ -67,10 +67,10 @@ function popup_content($conn)
         <h3>Update Information</h3>
         <form>
             Name: <input type="text" placeholder="<?php echo $item['name'] ?>">
-            Price: <input type="text" placeholder="<?php echo $item['price_per_unit'] ?>">
+            Price: <input type="number" placeholder="<?php echo $item['price_per_unit'] ?>">
             Units: <input type="text" placeholder="<?php echo $item['units'] ?>">
-            Low Quantity Reminder Level: <input type="text" placeholder="<?php echo $item['low_quantity_reminder_level'] ?>">
-            <button>Update</button>
+            Low Quantity Reminder Level: <input type="number" placeholder="<?php echo $item['low_quantity_reminder_level'] ?>">
+            <button onclick="updateInfo(<?= $item['item_id'] ?>)">Update</button>
         </form>
 
         <h3>Change Quantity</h3>
@@ -123,4 +123,18 @@ function create_new($conn) {
     mysqli_query($conn, $query);
 
     echo '<span sytle="color: green;">Item Created!</span>';
+}
+
+// update function
+function update_info($conn)
+{
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $units = $_POST['units'];
+    $low_level = $_POST['low_level'];
+
+    $query = "UPDATE inventory SET quantity = quantity + $amount WHERE item_id = $id";
+    mysqli_query($conn, $query);
+    
 }
