@@ -143,8 +143,9 @@
 	function changeQuantity(item_id) {
 		amount = $("input[type=number][name=change_input]").val();
 		type = $("input[type=radio][name=type]:checked").val();
+		expense_per = $("input[type=number][name=expense_per]").val();
 		note = $("input[type=text][name=note]").val();
-		
+
 		$.ajax({
 			type: "POST",
 			url: "../php/inventoryBackend.php",
@@ -153,6 +154,7 @@
 				id: item_id,
 				amount: amount,
 				type: type,
+				expense_per: expense_per,
 				note: note
 			}
 		});

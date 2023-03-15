@@ -82,6 +82,9 @@ function popup_content($conn)
             Change Amount <input type=number value="0" name="change_input">
             <input name="type" type="radio" value="deposit" id="deposit" checked><label for="deposit">Deposit</label>
             <input name="type" type="radio" value="withdraw" id="withdraw"><label for="withdraw">Withdraw</label>
+            <br>
+            Expense per Unit <input name="expense_per" type="number">
+            <br>
             <input type="text" placeholder="Note (optional)" name="note">
             <button onclick="changeQuantity(<?= $item['item_id'] ?>)">Change Quantity</button>
         </form>
@@ -95,6 +98,7 @@ function change_quantity($conn)
     $amount = $_POST['amount'];
     $id = $_POST['id'];
     $type = $_POST['type'];
+    $expense_per = $_POST['expense_per'];
     $note = $_POST['note'];
 
     // enter into ledger
@@ -102,8 +106,8 @@ function change_quantity($conn)
     if ($type == "withdraw")
         $t = true;
 
-    $query = "INSERT INTO `inventoryledger` (`item_id`, `quantity`, `withdraw`, `note`) 
-        VALUES ('$id', '$amount', '$t', '$note');";
+    $query = "INSERT INTO `inventoryledger` (`item_id`, `quantity`, `withdraw`, `expense_per_unit`, `note`) 
+        VALUES ('$id', '$amount', '$t', '$expense_per', '$note');";
     
     mysqli_query($conn, $query);
 

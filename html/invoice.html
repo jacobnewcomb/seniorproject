@@ -80,16 +80,13 @@
 				<div class="displayBox">
 					<table class="table table-hover">
 						<thead>
-							<tr>
-								<th scope="col">Invoice ID</th>
-								<th scope="col">First</th>
-								<th scope="col">Last</th>
-								<th scope="col">First Appointment Date</th>
-								<th scope="col">Select</th>
-							</tr>
+							<th scope="col">Invoice ID</th>
+							<th scope="col">First</th>
+							<th scope="col">Last</th>
+							<th scope="col">First Appointment Date</th>
+							<th scope="col">Select</th>
 						</thead>
-						<tbody>
-
+						<tbody id="invoice_table">
 						</tbody>
 					</table>
 				</div>
@@ -114,4 +111,6 @@
 		section: "appointments",
 		invoice_id: invoice_id
 	});
+
+//	$("#invoice_table").load
 </script>
