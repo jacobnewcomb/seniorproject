@@ -48,6 +48,30 @@
 	border: 1px solid rgba(0,0,0,1);
 }
 
+.dropdown_Appointment{
+	position: absolute;
+	top: 100px;
+	left: 80vw;
+}
+
+.dropdown_Inventory{
+	position: absolute;
+	top: 150px;
+	left: 80vw;
+}
+
+.entryFR{
+	position: absolute;
+	top: 200px;
+	left: 80vw;
+}
+
+.entryTR{
+	position: absolute;
+	top: 275px;
+	left: 80vw;
+}
+
 .newSale_Button{
 	position: relative;
 	grid-column: 2 / 3;
