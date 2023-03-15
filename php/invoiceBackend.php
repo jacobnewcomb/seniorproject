@@ -4,17 +4,38 @@ require_once 'databaseConnection.php';
 $instance = ConnectDb::getInstance();
 $conn = $instance->getConnection();
 
-$invoice_id = $_POST['invoice_id'];
-if ($invoice_id == 0) {
+$section = $_POST['section'];
+
+if ($section == "invoices") :
+    // query invoices, structure table
+    $query = "SELECT * FROM invoices;";
+    $invoices = mysqli_query($conn, $query);
+
+    foreach ($invoices as $invoice) :
+            $invoice_id = $invoice['invoice_id'];
+
+            $cust_id = $invoice['cust_id'];
+            $query = "SELECT * FROM customer WHERE cust_id = '$cust_id';";
+            $cust = mysqli_fetch_assoc(mysqli_query($conn, $query));
+
+            $apt_id = $invoice['root_apt_id'];
+            $query = "SELECT * FROM appointments WHERE apt_id = '$apt_id';";
+            $apt = mysqli_fetch_assoc(mysqli_query($conn, $query));
 ?>
-    <h3>Choose Invoice</h3>
+        <tr onclick="window.location.reload({'invoice_id': <?= $invoice_id ?>})">
+            <td><?= $invoice_id?></td>
+            <td><?= $cust['f_name']?></td>
+            <td><?= $cust['l_name']?></td>
+            <td><?= $apt['start_date']?></td>
+        </tr>
     <?php
-} else {
+    endforeach;
 
-    $section = $_POST['section'];
-
+else :
+    $invoice_id = $_POST['invoice_id'];
 
     if ($section == "customer_info") :
+
         // get invoice
         $query = "SELECT * FROM invoices WHERE invoice_id = '$invoice_id';";
         $cust_id = mysqli_fetch_assoc(mysqli_query($conn, $query))['cust_id'];
@@ -27,7 +48,7 @@ if ($invoice_id == 0) {
             <div id="inv_id">
                 <h3>
                     Invoice Num: <?= $invoice_id ?>
-                    <h3>
+                </h3>
             </div>
             <div id="fname">
                 <?= $cust['f_name'] ?>
@@ -78,4 +99,5 @@ if ($invoice_id == 0) {
             $apt_num += 1;
         endforeach;
     endif;
-} ?>
+endif;
+?>

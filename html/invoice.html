@@ -84,7 +84,6 @@
 							<th scope="col">First</th>
 							<th scope="col">Last</th>
 							<th scope="col">First Appointment Date</th>
-							<th scope="col">Select</th>
 						</thead>
 						<tbody id="invoice_table">
 						</tbody>
@@ -112,5 +111,8 @@
 		invoice_id: invoice_id
 	});
 
-//	$("#invoice_table").load
+	$("#invoice_table").load("../php/invoiceBackend.php", {
+		section: "invoices"
+	});
+
 </script>
