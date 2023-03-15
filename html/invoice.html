@@ -37,111 +37,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
-	
-	<link href = "../css/masterFile.css" rel = "stylesheet">
+
+	<link href="../css/masterFile.css" rel="stylesheet">
 	<link href="../css/invoice.css" rel="stylesheet">
 	<title>Invoice Page</title>
 </head>
 
 <body>
 	<header>
-			<h1>Invoice</h1>
-				<div class = "home_Button" onclick="window.location.href = 'home.html'">
-					<div class = "buttonText_Aqua">Home</div>
-				</div>
-			<div class = "logout_Button">
-				<div class = "buttonText_Aqua">Logout</div>
-			</div>
-		</header>
+		<h1>Invoice</h1>
+		<div class="home_Button" onclick="window.location.href = 'home.html'">
+			<div class="buttonText_Aqua">Home</div>
+		</div>
+		<div class="logout_Button">
+			<div class="buttonText_Aqua">Logout</div>
+		</div>
+	</header>
 
 	<main>
 		<div class="main_container">
 
 			<section>
-				<div id="auto_input_grid">
-					<div>
-						<h3>
-							Customer
-						</h3>
-					</div>
-					<div id="inv_id">
-						Invoice Num: XXXX
-					</div>
-					<div id="fname">
-						First Name
-					</div>
-					<div id="lname">
-						Last Name
-					</div>
-					<div id="make">
-						Make
-					</div>
-					<div id="model">
-						Model
-					</div>
-					<div id="year">
-						Year
-					</div>
-					<div id="notes">
-						<label for="notes_area">Notes:</label><br>
-						<textarea style="width: 100%;" id="notes_area"></textarea>
-					</div>
+				<div id="customer">
 				</div>
-
 			</section>
 
 
 			<section>
-
-				<div id="manual_input_grid">
-					<div>
-						<h3>
-							Add Charge from Inventory
-						</h3>
-					</div>
-					<div>
-						<input type="text" placeholder="Refridgerant Extracted (typed)">
-					</div>
-					<div>
-						Apply Discount
-						<input type="text" id="discount_input" placeholder="0">
-						%
-					</div>
-					<div>
-						<input type="text" placeholder="Quantity (this * Flat-Rate)">
-					</div>
-					<div>
-						<input type="text" placeholder="client types description allow droplist for saved invent.">
-					</div>
-					<div>
-						<button id="add_button">Add New Item</button>
-					</div>
-				</div>
-
-			</section>
-
-			<section>
-				<div class="displayBox">
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th scope="col">Invoice#</th>
-								<th scope="col">id#</th>
-								<th scope="col">First</th>
-								<th scope="col">Last</th>
-								<th scope="col">Car Info</th>
-								<th scope="col">R. Capacity</th>
-								<th scope="col">R. Oil</th>
-								<th scope="col">R. Extracted</th>
-								<th scope="col">Quantity</th>
-								<th scope="col">Discount</th>
-								<th scope="col">Select</th>
-							</tr>
-						</thead>
-						<tbody>
-
-						</tbody>
-					</table>
+				<div id="appointments">
 				</div>
 			</section>
 
@@ -152,6 +75,25 @@
 					<button id="omitButton">Omit</button>
 				</div>
 			</section>
+
+			<section>
+				<div class="displayBox">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">Invoice ID</th>
+								<th scope="col">First</th>
+								<th scope="col">Last</th>
+								<th scope="col">First Appointment Date</th>
+								<th scope="col">Select</th>
+							</tr>
+						</thead>
+						<tbody>
+
+						</tbody>
+					</table>
+				</div>
+			</section>
 		</div>
 	</main>
 
@@ -159,3 +101,17 @@
 </body>
 
 </html>
+
+<script>
+	invoice_id = 1;
+
+	$("#customer").load("../php/invoiceBackend.php", {
+		section: "customer_info",
+		invoice_id: invoice_id
+	});
+
+	$("#appointments").load("../php/invoiceBackend.php", {
+		section: "appointments",
+		invoice_id: invoice_id
+	});
+</script>

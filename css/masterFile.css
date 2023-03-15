@@ -39,7 +39,7 @@ body {
 /* Page Header */
 header {			/* Size and Color of Header*/
 	width: 100%;
-	height: 15vh;
+	height: min(15vh, 95px);
 	background: var(--dark-steel);
 }
 
