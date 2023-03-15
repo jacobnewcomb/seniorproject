@@ -113,6 +113,25 @@
                     <button onclick="addNewCar();" style="width: 15%;">Next</button>
                 </div>
             </div>
+            <div class="tab">
+                <h1>Appointment Details:</h1>
+                <div style="display: flex; flex-direction: column;">
+                    <span>Start Date:</span> <input oninput="" id="startDateInput" type="datetime-local">
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <span>End Date:</span> <input oninput="" id="endDateInput" type="datetime-local">
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <span>Location:</span> <input oninput="" id="locationInput" type="text">
+                </div>
+                <div style="display: flex; flex-direction: column;">
+                    <span>Notes:</span> <textarea oninput="" id="notesInput"></textarea>
+                </div>
+                <div>
+                    <button onclick="prevTab();" style="width: 15%;">Back</button>
+                    <button onclick="createAppointment();" style="width: 15%;">Create Appointment</button>
+                </div>
+            </div>
         </div>
     </body>
 <script type="text/javascript">
@@ -120,6 +139,7 @@
     var selectedCustomerID = null;
     var selectedCustomerName = null;
     var selectedCarID = null;
+    var selectedCustomersCarID = null;
     $(':input').val('');
     
     const tabs = document.getElementsByClassName("tab");
@@ -388,6 +408,7 @@
                 type: "post",    //request type,
                 data: {"action": "addCustomersCarRelation", "cust_id": selectedCustomerID, "car_id": selectedCarID},
                 success:function(result){
+                    selectedCustomersCarID = result;
                     nextTab();
                 }
             });
@@ -408,6 +429,18 @@
             currentTab--;
         }while(tabs[currentTab].classList.contains("fork"));
         tabs[currentTab].style.display = "flex";
+    }
+
+    function createAppointment(){
+        $.ajax({
+            async: false,
+            url:"../php/commonQueryFunctions.php",    //the page containing php script
+            type: "post",    //request type,
+            data: {"action": "createAppointmentAndInvoice", "cust_id": selectedCustomerID, "cust_car_id": selectedCustomersCarID, "start_date": document.getElementById("startDateInput").value, "end_date": document.getElementById("endDateInput").value, "locations": document.getElementById("locationInput").value, "notes": document.getElementById("notesInput").value},
+            success:function(result){
+                
+            }
+        });
     }
 
 </script>

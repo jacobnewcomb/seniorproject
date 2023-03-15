@@ -82,6 +82,9 @@
         mysqli_close($conn);
         echo json_encode($data);
     }
+    function createAppointmentAndInvoice($conn, $cust_id, $cust_car_id, $start_date, $end_date, $location, $notes){
+        $query = "INSERT INTO `invoices`(`cust_id`, `date`) VALUES ('" . $cust_id . "', '" . $start_date . "')";
+    }
 
     #Car Queries
     function fetchAllCars($conn){
