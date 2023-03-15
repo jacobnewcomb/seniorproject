@@ -30,7 +30,7 @@ $events = array();
 foreach($data as $row) {
     $e = new Event();
     $e->id = $row['apt_id'];
-    $query = "SELECT * FROM customer WHERE cust_id = " . $row['cust_id'];
+    $query = "SELECT * FROM (customer C join customerscar CC on C.cust_id = CC.cust_id) join appointments A on CC.id = A.cust_car_id WHERE cust_car_id = " . $row['cust_car_id'];
     $exec = mysqli_query($conn, $query);
     $custInfo = mysqli_fetch_assoc($exec);
     $e->text = $custInfo['f_name'] . " " . $custInfo['l_name'];
