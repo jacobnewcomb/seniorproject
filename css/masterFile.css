@@ -57,7 +57,7 @@ h1 {				/* Page-Name Text*/
 	top: 2vh;
 	left: 65vw;
 	width: 15vw;
-	height: 10vh;
+	height: min(10vh, 75px);
 	background: var(--aqua);
 	opacity: 1;
 	overflow: hidden;
@@ -72,7 +72,7 @@ h1 {				/* Page-Name Text*/
 	top: 2vh;
 	left: 80vw;
 	width: 15vw;
-	height: 10vh;
+	height: min(10vh, 75px);
 	background: var(--aqua);
 	opacity: 1;
 	overflow: hidden;
