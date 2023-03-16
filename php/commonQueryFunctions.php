@@ -2,12 +2,22 @@
     require_once('databaseConnection.php');
 
     $action = $_POST["action"];
+    //general search
     if(ISSET($_POST["search"])) $search = $_POST["search"];
+    //customer attributes
     if(ISSET($_POST["cust_id"])) $cust_id = $_POST["cust_id"];
+    //car attributes
     if(ISSET($_POST["make"])) $make = $_POST["make"];
     if(ISSET($_POST["model"])) $model = $_POST["model"];
     if(ISSET($_POST["year"])) $year = $_POST["year"];
     if(ISSET($_POST["car_id"])) $car_id = $_POST["car_id"];
+    //customers car attributes
+    if(ISSET($_POST["cust_car_id"])) $cust_car_id = $_POST["cust_car_id"];
+    //appointment attributes
+    if(ISSET($_POST["start_date"])) $start_date = $_POST["start_date"];
+    if(ISSET($_POST["end_date"])) $end_date = $_POST["end_date"];
+    if(ISSET($_POST["location"])) $location = $_POST["location"];
+    if(ISSET($_POST["notes"])) $notes = $_POST["notes"];
     $conn = ConnectDb::getInstance();
 
     switch($action){
@@ -17,6 +27,7 @@
         case 'fetchExistingModelsTop': {fetchExistingModelsTop($conn->getConnection(), $search); break;}
         case 'searchCars': {if(ISSET($_POST["make"]) && ISSET($_POST["model"]) && ISSET($_POST["year"])) searchCars($conn->getConnection(), $make, $model, $year); break;}
         case 'addCustomersCarRelation': {if(ISSET($_POST["cust_id"]) && ISSET($_POST["car_id"])) addCustomersCarRelation($conn->getConnection(), $cust_id, $car_id); break;}
+        case 'createAppointmentAndInvoice': {if(ISSET($_POST["cust_id"]) && ISSET($_POST["cust_car_id"]) && ISSET($_POST["start_date"]) && ISSET($_POST["end_date"]) && ISSET($_POST["location"]) && ISSET($_POST["notes"])) createAppointmentAndInvoice($conn->getConnection(), $cust_id, $cust_car_id, $start_date, $end_date, $location, $notes); break;}
         default:;
     }
     #Customer Queries
@@ -84,6 +95,13 @@
     }
     function createAppointmentAndInvoice($conn, $cust_id, $cust_car_id, $start_date, $end_date, $location, $notes){
         $query = "INSERT INTO `invoices`(`cust_id`, `date`) VALUES ('" . $cust_id . "', '" . $start_date . "')";
+        $exec = mysqli_query($conn, $query);
+        $query = "SELECT invoice_id FROM invoices WHERE cust_id = " . $cust_id . " AND date = " . $start_date;
+        $exec = mysqli_query($conn, $query);
+        $invoice_id = mysqli_fetch_assoc($exec)["invoice_id"];
+        $query = "INSERT INTO `appointments`(`cust_car_id`, `invoice_id`, `start_date`, `end_date`, `location`, `notes`) VALUES (" . $cust_car_id . ", " . $invoice_id . ", " . $start_date . ", " . $end_date . ", '" . $location . "', '" . $notes . "')";
+        $exec = mysqli_query($conn, $query);
+        echo $invoice_id;
     }
 
     #Car Queries
@@ -112,7 +130,7 @@
         echo json_encode($data);
     }
     function fetchCarByParameters($conn, $cust_id, $input){
-        $query = "SELECT Make, Model, Year FROM customerscar cc JOIN car c on cc.car_id = c.id WHERE cust_id = " . $cust_id . " AND (Make LIKE '%" . $input . "%' OR Model LIKE '%" . $input . "%' OR concat(Make, ' ', Model) LIKE '%" . $input . "%' OR concat(Model, ' ', Make) LIKE '%" . $input . "%') AND ('" . $input . "' != '' AND '" . $input . "' != ' ');";
+        $query = "SELECT Make, Model, Year, cc.id FROM customerscar cc JOIN car c on cc.car_id = c.id WHERE cust_id = " . $cust_id . " AND (Make LIKE '%" . $input . "%' OR Model LIKE '%" . $input . "%' OR concat(Make, ' ', Model) LIKE '%" . $input . "%' OR concat(Model, ' ', Make) LIKE '%" . $input . "%') AND ('" . $input . "' != '' AND '" . $input . "' != ' ');";
         $exec = mysqli_query($conn, $query);
         $data = array();
         while($row = mysqli_fetch_assoc($exec))

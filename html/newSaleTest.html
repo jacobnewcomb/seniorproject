@@ -321,7 +321,7 @@
     }
     function selectCar(){
         document.getElementById("carName").value = this.innerHTML;
-        selectedCarID = this.getAttribute("id");
+        selectedCustomersCarID = this.getAttribute("id");
         var resultsDisplay = document.getElementById("carSearchResults");
         while (resultsDisplay.hasChildNodes()) {
             resultsDisplay.removeChild(resultsDisplay.firstChild);
@@ -436,9 +436,9 @@
             async: false,
             url:"../php/commonQueryFunctions.php",    //the page containing php script
             type: "post",    //request type,
-            data: {"action": "createAppointmentAndInvoice", "cust_id": selectedCustomerID, "cust_car_id": selectedCustomersCarID, "start_date": document.getElementById("startDateInput").value, "end_date": document.getElementById("endDateInput").value, "locations": document.getElementById("locationInput").value, "notes": document.getElementById("notesInput").value},
+            data: {"action": "createAppointmentAndInvoice", "cust_id": selectedCustomerID, "cust_car_id": selectedCustomersCarID, "start_date": document.getElementById("startDateInput").value, "end_date": document.getElementById("endDateInput").value, "location": document.getElementById("locationInput").value, "notes": document.getElementById("notesInput").value},
             success:function(result){
-                
+                // location.href = "invoice.html?invoice=" + result;
             }
         });
     }
