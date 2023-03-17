@@ -44,7 +44,7 @@ else :
         $cust = mysqli_fetch_assoc(mysqli_query($conn, $query));
     ?>
 
-        <div id="auto_input_grid">
+        <div id="customer_grid">
             <div id="inv_id">
                 <h3>
                     Invoice Num: <?= $invoice_id ?>
@@ -69,7 +69,11 @@ else :
         $apts = mysqli_query($conn, $query);
 
         $apt_num = 1;
-        foreach ($apts as $apt) : ?>
+        foreach ($apts as $apt) : 
+            $car_id = $apt['cust_car_id'];
+            $query = "SELECT * FROM car WHERE id='$car_id';";
+            $car = mysqli_fetch_assoc(mysqli_query($conn, $query));
+            ?>
 
             <div>
                 <h4>Appointment <?= $apt_num ?></h4>
@@ -83,14 +87,14 @@ else :
                     Location: <?= $apt['location'] ?>
                 </div>
                 <div>
-                    Add car info
+                    Car: <?= $car['Make'], " ", $car['Model'], ", ", $car['Year']?>
                 </div>
                 <div>
                     Notes: <?= $apt['notes'] ?>
                 </div>
                 <div>
                     Labor hours
-                    <input type="number" name="hours_apt_<?= $apt_num ?>">
+                    <input type="number" value=<?= $apt['labor_hours']?> oninput="calc_labor_hours(this.value, <?= $apt_num?>)">
                 </div>
                 <hr>
             </div>

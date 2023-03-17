@@ -44,46 +44,22 @@ section {
 
 /* auto input */
 
-#auto_input_grid {
+#customer_grid {
   padding: 1em;
   border-radius: 1em;
   border: 1px solid var(--dark-steel);
   background-color: var(--platinum);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 3em) 100%;
+  grid-template-rows: 3em 100%;
 }
 
-#auto_input_grid>div>input {
+#customer_grid>div>input {
   width: 100%;
 }
 
-#inv_id {
-  grid-column-end: -1;
-}
-
-#fname {
-  grid-row-start: 2;
-}
-
-#lname {
-  grid-row-start: 2;
-}
-
-#make {
-  grid-row-start: 3;
-}
-
-#model {
-  grid-row-start: 3;
-}
-
-#year {
-  grid-row-start: 3;
-}
-
 #notes {
-  grid-row-start: 4;
+  grid-row-start: 2;
   grid-column: 1 / span 3;
 }
 

@@ -114,5 +114,11 @@
 	$("#invoice_table").load("../php/invoiceBackend.php", {
 		section: "invoices"
 	});
+	
+	function calc_labor_hours(val, apt_num) {
+		labor_hours[apt_num] = val;
+		
+		$("#total_hours").html(sum(labor_hours));
+	}
 
 </script>
