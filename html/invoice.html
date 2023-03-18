@@ -66,6 +66,8 @@
 			<section>
 				<div id="appointments">
 				</div>
+				<div id="total_hours">
+				</div>
 			</section>
 
 			<section>
@@ -114,6 +116,7 @@
 	$("#invoice_table").load("../php/invoiceBackend.php", {
 		section: "invoices"
 	});
+	
 	
 	function calc_labor_hours(val, apt_num) {
 		labor_hours[apt_num] = val;
