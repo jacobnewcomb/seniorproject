@@ -21,12 +21,10 @@ $cust = mysqli_fetch_assoc(mysqli_query($conn, $query));
 <div class="popupMessage">
 
     <h3>Name: <?= $cust['f_name'], " ", $cust['l_name']?></h3>
-    <form>
 		Location: <input name="loc" type="text" value="<?= $apt['location'] ?>"><br>
         Start Date: <input name="start_date" type="datetime-local" value="<?= $apt['start_date']?>"><br>
         End Date: <input name="end_date" type="datetime-local" value="<?= $apt['start_date']?>"><br>
         Notes: <input name="notes" type="text" value="<?= $apt['notes'] ?>"><br>
 		Labor Hours: <input name="labor_hours" type="number" value="<?= $apt['labor_hours']?>"><br>
         <button onclick="updateApt(<?= $apt['apt_id'] ?>)">Update</button>
-    </form>
 </div>

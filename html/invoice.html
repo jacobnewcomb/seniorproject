@@ -59,64 +59,44 @@
 	<main>
 		<div class="main_container">
 
-			<section>
-				<div id="customer">
-				</div>
-			</section>
+			<div id="invoice_section"></div>
 
+			<div class="displayBox">
+				<table class="table table-hover">
+					<thead>
+						<th scope="col">Invoice ID</th>
+						<th scope="col">First</th>
+						<th scope="col">Last</th>
+						<th scope="col">First Appointment Date</th>
+					</thead>
+					<tbody id="invoice_table">
+					</tbody>
+				</table>
+			</div>
 
-			<section>
-				<div id="appointments">
-				</div>
-				<div id="total_hours">
-				</div>
-			</section>
-
-			<section>
-				<div id="bottom_buttons_section">
-					<button id="saveButton">Save</button>
-					<button id="finalButton">Finalize</button>
-					<button id="omitButton">Omit</button>
-				</div>
-			</section>
-
-			<section>
-				<div class="displayBox">
-					<table class="table table-hover">
-						<thead>
-							<th scope="col">Invoice ID</th>
-							<th scope="col">First</th>
-							<th scope="col">Last</th>
-							<th scope="col">First Appointment Date</th>
-						</thead>
-						<tbody id="invoice_table">
-						</tbody>
-					</table>
-				</div>
-			</section>
 		</div>
 	</main>
 
-
+	<p id="throwaway"></p>
 </body>
 
 </html>
 
 <script>
-	invoice_id = 1;
+	let params = new URLSearchParams(location.search);
+	var invoice_id = params.get('invoice_id');
 
-	$("#customer").load("../php/invoiceBackend.php", {
-		section: "customer_info",
-		invoice_id: invoice_id
-	});
-
-	$("#appointments").load("../php/invoiceBackend.php", {
-		section: "appointments",
-		invoice_id: invoice_id
-	});
+	if (invoice_id != null) {
+		$("#invoice_section").load("../php/invoiceBackend.php", {
+			section: "invoice_section",
+			invoice_id: invoice_id
+		});
+	} else {
+		$("#invoice_section").html("<h3>Please Select Invoice</h3>");
+	}
 
 	$("#invoice_table").load("../php/invoiceBackend.php", {
-		section: "invoices"
+		section: "invoice_table"
 	});
 
 	function popup(apt_id) {
@@ -139,28 +119,27 @@
 		notes = $("input[type=text][name=notes]").val();
 		labor_hours = $("input[type=number][name=labor_hours]").val();
 
-		alert( "start_date: " + start_date + 
-			" end_date: " + end_date + 
-			" location: " + loc + 
-			" notes: " + notes + 
-			" labor " + labor_hours);
+
 		$.ajax({
 			type: "POST",
-			url: "../php/invoiceBackend",
+			url: "../php/invoiceBackend.php",
 			data: {
 				section: "update_apt",
 				apt_id: apt_id,
 				start_date: start_date,
 				end_date: end_date,
-				location: loc,
-				//car id ....
+				loc: loc,
 				notes: notes,
 				labor_hours: labor_hours
 			},
-			success: function(mes) {
-				alert(mes);
+			success: function() {
+				window.location.reload();
 			}
-		})
+		});
+	}
+
+	function loadInvoice(invoice_id) {
+		window.location.href = location.protocol + '//' + location.host + location.pathname + "?invoice_id=" + invoice_id;
 	}
 
 </script>
