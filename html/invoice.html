@@ -40,6 +40,8 @@
 
 	<link href="../css/masterFile.css" rel="stylesheet">
 	<link href="../css/invoice.css" rel="stylesheet">
+	<link href="../css/popUps.css" rel="stylesheet">
+
 	<title>Invoice Page</title>
 </head>
 
@@ -116,12 +118,49 @@
 	$("#invoice_table").load("../php/invoiceBackend.php", {
 		section: "invoices"
 	});
-	
-	
-	function calc_labor_hours(val, apt_num) {
-		labor_hours[apt_num] = val;
-		
-		$("#total_hours").html(sum(labor_hours));
+
+	function popup(apt_id) {
+		$("body").append('<div id="editAppointmentPopup" class="popup"></div>');
+
+		$("#editAppointmentPopup").load("../php/appointmentPopup.php", {
+			func: "popup_content",
+			apt_id: apt_id
+		});
+	}
+
+	function unpop() {
+		document.getElementById("editAppointmentPopup").remove();
+	}
+
+	function updateApt(apt_id) {
+		start_date = $("input[type=datetime-local][name=start_date]").val();
+		end_date = $("input[type=datetime-local][name=end_date]").val();
+		loc = $("input[type=text][name=loc]").val();
+		notes = $("input[type=text][name=notes]").val();
+		labor_hours = $("input[type=number][name=labor_hours]").val();
+
+		alert( "start_date: " + start_date + 
+			" end_date: " + end_date + 
+			" location: " + loc + 
+			" notes: " + notes + 
+			" labor " + labor_hours);
+		$.ajax({
+			type: "POST",
+			url: "../php/invoiceBackend",
+			data: {
+				section: "update_apt",
+				apt_id: apt_id,
+				start_date: start_date,
+				end_date: end_date,
+				location: loc,
+				//car id ....
+				notes: notes,
+				labor_hours: labor_hours
+			},
+			success: function(mes) {
+				alert(mes);
+			}
+		})
 	}
 
 </script>

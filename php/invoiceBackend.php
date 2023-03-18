@@ -93,15 +93,37 @@ else :
                     Notes: <?= $apt['notes'] ?>
                 </div>
                 <div>
-                    Labor hours
-                    <input type="number" value=<?= $apt['labor_hours']?> oninput="calc_labor_hours(this.value, <?= $apt_num?>)">
+                    Labor hours: <?= $apt['labor_hours']?>
                 </div>
+                <button onclick="popup(<?= $apt['apt_id']?>)">Edit</button>
                 <hr>
             </div>
 
 <?php
             $apt_num += 1;
         endforeach;
+    elseif ($section == "update_apt"):
+        $apt_id = $_POST['apt_id'];
+        
+        $start_date = $_POST['start_date'];
+        $end_date = $_POST['end_date'];
+        $loc = $_POST['loc'];
+        $notes = $_POST['notes'];
+        $labor_hours = $_POST['labor_hours'];
+
+        $query = "UPDATE `appointments`
+            SET `location` = '$loc',
+                `notes` = '$notes',
+                `labor_hours` = '$labor_hours',
+                `start_date` = '$start_date',
+                `end_date` = '$end_date'
+            WHERE `apt_id` = $apt_id;";
+        
+        try {
+            mysqli_query($conn, $query);
+        } catch (Exception $e) {
+            echo $query;
+        }
     endif;
 endif;
 ?>
