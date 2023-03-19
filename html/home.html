@@ -87,38 +87,20 @@
 				</div>
 				-->
 				
-				<div class="dropdown_Appointment">
-					<button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-						Remind Me of Appointments
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-						<li><a class="dropdown-item" href="#">Option 01</a></li>
-						<li><a class="dropdown-item" href="#">Option 02</a></li>
-						<li><a class="dropdown-item" href="#">Option 03</a></li>
-					</ul>
-				</div>
-				
-				<div class="dropdown_Inventory">
-					<button class="btn btn-secondary dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-						Remind Me of Low Inventory
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-						<li><a class="dropdown-item" href="#">Option 01</a></li>
-						<li><a class="dropdown-item" href="#">Option 02</a></li>
-						<li><a class="dropdown-item" href="#">Option 03</a></li>
-					</ul>
-				</div>
+
+				<!-- settings section -->
 				
 				<div class = "entryFR">
 					<label for = "flatRate">Current Flat Rate</label>
-					<input type="text" id = "flatRate" name="flatRate" placeholder="$0.00">
+					<input type="number" id = "flatRate" name="flatRate" placeholder="$0.00">
 				</div>
 				
 				<div class = "entryTR">
 					<label for = "taxRate">Current Tax Rate</label>
-					<input type="text" id="taxRate" name="taxRate" placeholder="$0.00">
+					<input type="number" id="taxRate" oninput="update_tr(this.value)" name="taxRate" placeholder="0">
 				</div>
 					
+				<!-- menu section -->
 				<div class = "newSale_Button" onclick="window.location.href = 'newSale.html'">
 					<div class = "buttonText_Plat">New Sale</div>
 				</div>
