@@ -15,6 +15,9 @@ switch ($section) {
     case "update_apt":
         update_apt($conn);
         break;
+    case "new_apt":
+        new_apt($conn);
+        break;
 }
 
 function invoice_section($conn)
@@ -37,6 +40,7 @@ function invoice_section($conn)
     $car_id = $apt['cust_car_id'];
     $query = "SELECT * FROM car WHERE id='$car_id';";
     $car = mysqli_fetch_assoc(mysqli_query($conn, $query));
+    $car_id = $car['id'];
 
     // appointments querys
     $query = "SELECT * FROM appointments WHERE invoice_id = '$invoice_id';";
@@ -164,8 +168,7 @@ function invoice_section($conn)
     <!-- bottom buttons section -->
     <section>
         <div id="bottom_buttons_section">
-            <button id="finalButton">Download</button>
-            <button id="omitButton">Delete</button>
+            <button onclick="newApt(<?= $invoice_id?>, <?= $car_id ?>)" id="new_apt">New Appointment</button>
         </div>
     </section>
     <?php
@@ -220,5 +223,15 @@ function update_apt($conn)
             WHERE `apt_id` = $apt_id;";
 
     mysqli_query($conn, $query);
-    echo "fff";
+}
+
+
+function new_apt($conn) {
+    $invoice_id = $_POST['invoice_id'];
+    $car_id = $_POST['car_id'];
+
+    $query = "INSERT INTO `appointments` (`cust_car_id`, `invoice_id`) VALUES ('$car_id', '$invoice_id');";
+    mysqli_query($conn, $query);
+
+    echo mysqli_insert_id($conn);
 }

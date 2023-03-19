@@ -27,5 +27,6 @@ $cust = mysqli_fetch_assoc(mysqli_query($conn, $query));
     Notes: <input name="notes" type="text" value="<?= $apt['notes'] ?>"><br>
     Labor Hours: <input name="labor_hours" type="number" value="<?= $apt['labor_hours'] ?>"><br>
     <button onclick="updateApt(<?= $apt['apt_id'] ?>)">Update</button>
-    
+    <br>
+    <button onclick="deleteApt(<?= $apt['apt_id'] ?>)">Delete Appointment</button>
 </div>

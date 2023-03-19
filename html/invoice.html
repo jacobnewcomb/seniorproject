@@ -138,8 +138,32 @@
 		});
 	}
 
+	function newApt(invoice_id, car_id) {
+		// create empty apt with an id
+
+		// call popup with apt id
+		$.ajax({
+			type: "POST",
+			url: "../php/invoiceBackend.php",
+			data: {
+				section: "new_apt",
+				car_id: car_id,
+				invoice_id: invoice_id
+			},
+			success: function(apt_id) {
+				popup(apt_id);
+			}
+		});
+	}
+
+
+	function deleteApt(apt_id) {
+		
+	}
+
 	function loadInvoice(invoice_id) {
 		window.location.href = location.protocol + '//' + location.host + location.pathname + "?invoice_id=" + invoice_id;
 	}
+
 
 </script>

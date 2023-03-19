@@ -65,21 +65,13 @@ section {
 }
 
 #bottom_buttons_section>button {
-  width: 20%;
   height: 1.5em;
   border-radius: 45px;
   color: white;
   font-family: var(--sans-serif-font);
   font-size: 3em;
   text-align: center;
-}
-
-#finalButton {
-  background: rgba(30, 144, 255, 1);
-}
-
-#omitButton {
-  background: rgba(255, 40, 0, 1);
+  background: var(--agua);
 }
 
 /* display box for table section */
