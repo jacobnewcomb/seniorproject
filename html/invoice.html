@@ -43,10 +43,18 @@
 	<link href="../css/popUps.css" rel="stylesheet">
 
 	<title>Invoice Page</title>
+
+	<style>
+		@media print {
+			.no_print {
+				visibility: hidden;
+			}
+		}
+	</style>
 </head>
 
 <body>
-	<header>
+	<header class="no_print">
 		<h1>Invoice</h1>
 		<div class="home_Button" onclick="window.location.href = 'home.html'">
 			<div class="buttonText_Aqua">Home</div>
@@ -61,7 +69,7 @@
 
 			<div id="invoice_section"></div>
 
-			<div class="displayBox">
+			<div class="displayBox no_print">
 				<table class="table table-hover">
 					<thead>
 						<th scope="col">Invoice ID</th>
@@ -77,7 +85,6 @@
 		</div>
 	</main>
 
-	<p id="throwaway"></p>
 </body>
 
 </html>

@@ -149,7 +149,7 @@ function invoice_section($conn)
                     <div>
                         Labor hours: <?= $apt['labor_hours'] ?>
                     </div>
-                    <button onclick="popup(<?= $apt['apt_id'] ?>)">Edit</button>
+                    <button class="no_print" onclick="popup(<?= $apt['apt_id'] ?>)">Edit</button>
                     <hr>
                 </div>
             <?php
@@ -170,7 +170,7 @@ function invoice_section($conn)
 
     <!-- bottom buttons section -->
     <section>
-        <div id="bottom_buttons_section">
+        <div id="bottom_buttons_section" class="no_print">
             <button onclick="newApt(<?= $invoice_id?>, <?= $car_id ?>)" id="new_apt">New Appointment</button>
         </div>
     </section>
