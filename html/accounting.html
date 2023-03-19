@@ -24,32 +24,6 @@
 		<script type="text/javascript">
 			// ensure we are logged in
 			$.get('../php/checkLogin.php', function () { });
-
-			// prepare form submittal function
-			$(document).ready(function () {
-				$("#add-cust-form").submit(function (event) {
-					// prevent the form from doing default behavior
-					event.preventDefault();
-
-					// get vars
-					var fname = $("#cust-fname").val();
-					var lname = $("#cust-lname").val();
-					var phone = $("#cust-phone").val();
-					var email = $("#cust-email").val();
-					var address = $("#cust-address").val();
-
-					//send vars
-					$("#cust-form-message").load("../php/addCustomer.php", {
-						'fname': fname,
-						'lname': lname,
-						'phone': phone,
-						'email': email,
-						'address': address
-					});
-
-					// reroute to window.location.href='customerGarage.html'
-				});
-			});
 		</script>
     </head>
 	
@@ -108,15 +82,11 @@
 			<div class = "displayBox">
 				<table class="table table-hover">
 					<thead>
-						<tr>
-							<th scope="col" style="width: 10%; text-align: center">Inv. Type</th>
-							<th scope="col" style="width: 15%; text-align: center">Date Start</th>
-							<th scope="col" style="width: 15%; text-align: center">Date End</th>
-							<th scope="col" style="width: 10%; text-align: center">Invoice No.</th>
-							<th scope="col" style="width: 20%; text-align: center">First Name</th>
-							<th scope="col" style="width: 20%; text-align: center">Phone Number</th>
-							<th scope="col" style="width: 10%; text-align: center">Search</th>
-						</tr>
+							<th>Revenue</th>
+							<th>Expense</th>
+							<th>Item</th>
+							<th>Invoice</th>
+							<th>Note</th>
 					</thead>
 					<tbody id="customer-table">
 						<!-- Insert PHP code here to connect to database-->
@@ -126,3 +96,9 @@
 		</main>
     </body>
 </html>
+
+<script>
+	$("#customer-table").load("../php/accountingBackend.php", {
+		
+	})
+</script>

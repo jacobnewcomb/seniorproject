@@ -51,14 +51,43 @@ function invoice_section($conn)
             WHERE invoice_id = '$invoice_id';";
     mysqli_query($conn, $query);
 
-    $query = "SELECT flat_rate FROM users WHERE username='Uncle';";
+    $query = "SELECT flat_rate, tax_rate FROM users WHERE username='Uncle';";
     $user = mysqli_fetch_assoc(mysqli_query($conn, $query));
     $flat_rate = $user['flat_rate'];
     $tax_rate = $user['tax_rate'];
 
     $labor_charge = $total * $flat_rate;
 
+    $combined_charge = $labor_charge; // + $inventory_charge
+    $tax = $combined_charge * $tax_rate;
+
+    $final_charge = $tax + $combined_charge;
+
+    // put final charge in ledger
+    // query ledger where invoice id = this
+    $query = "SELECT * FROM ledger WHERE invoice_id='$invoice_id';";
+    $ledger = mysqli_fetch_assoc(mysqli_query($conn, $query));
+
+    // if no ledger exists, create
+    if($ledger == null) {
+        $query = "INSERT INTO `ledger` (`invoice_id`) 
+            VALUES ('$invoice_id');";
+        mysqli_query($conn, $query);
+
+        $query = "SELECT * FROM ledger WHERE invoice_id='$invoice_id';";
+        $ledger = mysqli_fetch_assoc(mysqli_query($conn, $query));
+    }
     
+    // add quantity, make it a deposit, add invoice id
+    $quantity = $apt['labor_hours'];
+    $ledger_id = $ledger['ledger_id'];
+    $query = "UPDATE ledger
+        SET quantity = '$quantity',
+            expense_per_unit = '$flat_rate',
+            invoice_id = '$invoice_id',
+            withdraw = 0
+        WHERE ledger_id='$ledger_id';";
+    mysqli_query($conn, $query);
 ?>
 
     <!-- customer info section -->
@@ -126,8 +155,9 @@ function invoice_section($conn)
     <!-- summary section -->
     <section>
         <div id="summary">
-            <span>Total Labor Hours: <?= $total ?></span>
-            <span>Total Labor Charge: $<?= $labor_charge ?></span>
+            <p>Total Labor Charge: $<?= $labor_charge ?></p>
+            <p>Tax: $<?= $tax ?></p>
+            <p>Final Charge: $<?= $final_charge ?></p>
         </div>
     </section>
 
