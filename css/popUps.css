@@ -25,7 +25,6 @@
     z-index: 12;
     padding: 10px;
     width: max(30%, 300px);
-    height: max(60%, 400px);
     background-color: white;
     display: flex;
     justify-content: left;
@@ -33,4 +32,8 @@
     align-items: top;
     -webkit-align-items: top;
     flex-direction: column;
+}
+
+.popupMessage>input {
+    height: 2em;
 }

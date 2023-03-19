@@ -18,6 +18,9 @@ switch ($section) {
     case "new_apt":
         new_apt($conn);
         break;
+    case "delete_apt":
+        delete_apt($conn);
+        break;
 }
 
 function invoice_section($conn)
@@ -234,4 +237,11 @@ function new_apt($conn) {
     mysqli_query($conn, $query);
 
     echo mysqli_insert_id($conn);
+}
+
+
+function delete_apt($conn) {
+    $apt_id = $_POST['apt_id'];
+    $query = "DELETE FROM appointments WHERE apt_id='$apt_id';";
+    mysqli_query($conn, $query);
 }

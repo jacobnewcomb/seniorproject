@@ -132,7 +132,7 @@
 				notes: notes,
 				labor_hours: labor_hours
 			},
-			success: function() {
+			success: function () {
 				window.location.reload();
 			}
 		});
@@ -150,7 +150,7 @@
 				car_id: car_id,
 				invoice_id: invoice_id
 			},
-			success: function(apt_id) {
+			success: function (apt_id) {
 				popup(apt_id);
 			}
 		});
@@ -158,7 +158,19 @@
 
 
 	function deleteApt(apt_id) {
-		
+		if (confirm("Are you sure you want to delete this appointment?")) {
+			$.ajax({
+				type: "POST",
+				url: "../php/invoiceBackend.php",
+				data: {
+					section: "delete_apt",
+					apt_id: apt_id
+				},
+				success: function () {
+					window.location.reload();
+				}
+			});
+		}
 	}
 
 	function loadInvoice(invoice_id) {

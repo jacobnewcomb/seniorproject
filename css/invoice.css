@@ -66,10 +66,10 @@ section {
 
 #bottom_buttons_section>button {
   height: 1.5em;
-  border-radius: 45px;
+  margin: 0.5em;
   color: white;
   font-family: var(--sans-serif-font);
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
   background: var(--agua);
 }
