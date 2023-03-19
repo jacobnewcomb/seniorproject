@@ -58,7 +58,10 @@ function invoice_section($conn)
 
     $labor_charge = $total * $flat_rate;
 
-    
+    $combined_charge = $labor_charge; // + $inventory_charge
+    $tax = $combined_charge * $tax_rate;
+
+    $final_charge = $tax + $combined_charge
 ?>
 
     <!-- customer info section -->
@@ -126,8 +129,9 @@ function invoice_section($conn)
     <!-- summary section -->
     <section>
         <div id="summary">
-            <span>Total Labor Hours: <?= $total ?></span>
             <span>Total Labor Charge: $<?= $labor_charge ?></span>
+            <span>Tax: $<?= $tax ?></span>
+            <span>Final Charge: $<?= $final_charge ?></span>
         </div>
     </section>
 
