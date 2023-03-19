@@ -103,40 +103,7 @@
 		loadEvents();
 
 		function popup(appointment) {
-			const popup = document.createElement("div");
-			popup.setAttribute("class", "popup");
-			popup.setAttribute("id", "schedulePopup");
-
-			const popupBackground = document.createElement("div");
-			popupBackground.setAttribute("class", "popupBackground");
-			
-			const popupMessage = document.createElement("div");
-			popupMessage.setAttribute("class", "popupMessage");
-			
-			const appointmentID = document.createElement("span");
-			appointmentID.innerHTML = "Appointment ID: " + appointment.id();
-			popupMessage.appendChild(appointmentID);
-			//
-			const customerName = document.createElement("span");
-			customerName.innerHTML = "Customer Name: " + appointment.data.tags.name;
-			popupMessage.appendChild(customerName);
-			//
-			const location = document.createElement("span");
-			location.innerHTML = "Location: " + appointment.data.tags.location;
-			popupMessage.appendChild(location);
-			//
-			const notes = document.createElement("span");
-			notes.innerHTML = "Notes: " + appointment.data.tags.notes;
-			popupMessage.appendChild(notes);
-
-
-			popup.appendChild(popupBackground);
-			popup.appendChild(popupMessage);
-			document.body.appendChild(popup);
-			popupBackground.addEventListener('click', unpop);
-		}
-		function unpop() {
-			document.getElementById("schedulePopup").remove();
+			location.href = "invoice.html?invoice_id=" + appointment.data.tags.invoice_id;
 		}
 	</script>
 </body>

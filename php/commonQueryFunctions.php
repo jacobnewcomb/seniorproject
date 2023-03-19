@@ -96,10 +96,15 @@
     function createAppointmentAndInvoice($conn, $cust_id, $cust_car_id, $start_date, $end_date, $location, $notes){
         $query = "INSERT INTO `invoices`(`cust_id`, `date`) VALUES ('" . $cust_id . "', '" . $start_date . "')";
         $exec = mysqli_query($conn, $query);
-        $query = "SELECT invoice_id FROM invoices WHERE cust_id = " . $cust_id . " AND date = " . $start_date;
+        $query = "SELECT invoice_id FROM invoices WHERE cust_id = " . $cust_id . " AND date = '" . $start_date. "'";
         $exec = mysqli_query($conn, $query);
         $invoice_id = mysqli_fetch_assoc($exec)["invoice_id"];
-        $query = "INSERT INTO `appointments`(`cust_car_id`, `invoice_id`, `start_date`, `end_date`, `location`, `notes`) VALUES (" . $cust_car_id . ", " . $invoice_id . ", " . $start_date . ", " . $end_date . ", '" . $location . "', '" . $notes . "')";
+        $query = "INSERT INTO `appointments`(`cust_car_id`, `invoice_id`, `start_date`, `end_date`, `location`, `notes`) VALUES (" . $cust_car_id . ", " . $invoice_id . ", '" . $start_date . "', '" . $end_date . "', '" . $location . "', '" . $notes . "')";
+        $exec = mysqli_query($conn, $query);
+        $query = "SELECT apt_id FROM appointments WHERE invoice_id = " . $invoice_id . " AND extended_apt IS NULL";
+        $exec = mysqli_query($conn, $query);
+        $apt_id = mysqli_fetch_assoc($exec)["apt_id"];
+        $query = "UPDATE invoices SET root_apt_id = " . $apt_id . " WHERE invoice_id = " . $invoice_id;
         $exec = mysqli_query($conn, $query);
         echo $invoice_id;
     }

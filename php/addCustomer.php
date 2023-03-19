@@ -81,10 +81,11 @@ if (empty($fname) || empty($lname) || empty($phone)) {
         echo "<span style=\"color:green\">Customer Added</span>";
     }
     else{
-        $idQuery = "SELECT cust_id FROM customer ORDER BY cust_id DESC LIMIT 1";
+        header('Content-Type: application/json; charset=utf-8');
+        $idQuery = "SELECT cust_id, f_name, l_name FROM customer ORDER BY cust_id DESC LIMIT 1";
         $exec = mysqli_query($conn, $idQuery);
         $data = mysqli_fetch_assoc($exec);
-        echo $data;
+        echo json_encode($data);
     }
     #} else {
     #    echo "<span style=\"color:red\">Customer Already Exists</span>";
@@ -94,23 +95,3 @@ if (empty($fname) || empty($lname) || empty($phone)) {
 
 
 ?>
-
-<script>  
-    var errorEmpty = "<?php echo $errorEmpty; ?>";
-    var errorEmail = "<?php echo $errorEmail; ?>";
-    var errorPhone = "<?php echo $errorPhone; ?>";
-    
-    if (errorEmpty) {
-        $("#cust-fname, #cust-lname, #cust-phone").addClass("input-error");
-    }
-    if (errorPhone) {
-        $("#cust-phone").addClass("input-error");
-    }
-    if (errorEmail) {
-        $("#cust-email").addClass("input-error");
-    }
-    if(!errorEmpty && !errorPhone && !errorEmail) {
-        // clear inputs
-        $("#cust-fname, #cust-lname, #cust-phone, #cust-address, #cust-email").val("");
-    }
-</script>

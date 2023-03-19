@@ -3,6 +3,7 @@ class tags{
     public $name;
     public $location;
     public $notes;
+    public $invoice_id;
 }
 
 require_once 'databaseConnection.php';
@@ -38,6 +39,7 @@ foreach($data as $row) {
     $tags->name = $custInfo['f_name'] . " " . $custInfo['l_name'];
     $tags->location = $row['location'];
     $tags->notes = $row['notes'];
+    $tags->invoice_id = $row['invoice_id'];
     $e->tags = $tags;
     $e->start = str_replace(" ","T",$row['start_date']);
     $e->end = str_replace(" ","T",$row['end_date']);
