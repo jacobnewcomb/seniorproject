@@ -51,9 +51,14 @@ function invoice_section($conn)
             WHERE invoice_id = '$invoice_id';";
     mysqli_query($conn, $query);
 
-    $query = "SELECT flat_rate FROM users WHERE user='Uncle';";
-    $flat_rate = mysqli_fetch_assoc(mysqli_query($conn, $query))['flat_rate'];
+    $query = "SELECT flat_rate FROM users WHERE username='Uncle';";
+    $user = mysqli_fetch_assoc(mysqli_query($conn, $query));
+    $flat_rate = $user['flat_rate'];
+    $tax_rate = $user['tax_rate'];
+
     $labor_charge = $total * $flat_rate;
+
+    
 ?>
 
     <!-- customer info section -->
@@ -122,7 +127,7 @@ function invoice_section($conn)
     <section>
         <div id="summary">
             <span>Total Labor Hours: <?= $total ?></span>
-            <span>Total Labor Charge: <?= $labor_charge ?></span>
+            <span>Total Labor Charge: $<?= $labor_charge ?></span>
         </div>
     </section>
 
