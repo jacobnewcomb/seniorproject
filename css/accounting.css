@@ -4,46 +4,9 @@
     padding: 1em;
 }
 
-.infoDisplay{
-	position: absolute;
-	width: 95vw;
-	top: 120px;
-	left: 5vw;
-}
-
-.netProfit{
-	height: 30px;
-	width: 25vw;
-	border: 1px solid rgba(0,0,0,1);
-}
-
-.grossProfit{
-	height: 30px;
-	width: 25vw;
-	border: 1px solid rgba(0,0,0,1);
-}
-
-.dateDisplay{
-	height: 30px;
-	width: 25vw;
-	border: 1px solid rgba(0,0,0,1);
-}
-
-.expenses{
-	height: 30px;
-	width: 25vw;
-	border: 1px solid rgba(0,0,0,1);
-}
-
-.taxesPaid{
-	height: 30px;
-	width: 25vw;
-	border: 1px solid rgba(0,0,0,1);
-}
-
 .displayBox{
 	position: absolute;
-	top: 260px;
+	top: 160px;
 	left: 2vw;
 	height: 60vh;
 	width: 95%;

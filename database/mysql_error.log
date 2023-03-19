@@ -4323,3 +4323,267 @@ recovered pages: 0% 14% 56% 83% 95% 100% (0.0 seconds); tables to flush: 2 1 0
 2023-03-19 10:42:54 0 [Note] Plugin 'FEEDBACK' is disabled.
 2023-03-19 10:42:54 0 [Note] InnoDB: Cannot open 'E:\Senior Project\seniorproject\database\ib_buffer_pool' for reading: No such file or directory
 2023-03-19 10:42:55 0 [Note] Server socket created on IP: '::'.
+2023-03-19 12:09:22 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2023-03-19 12:09:22 0 [Note] InnoDB: Uses event mutexes
+2023-03-19 12:09:22 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2023-03-19 12:09:22 0 [Note] InnoDB: Number of pools: 1
+2023-03-19 12:09:22 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2023-03-19 12:09:22 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2023-03-19 12:09:22 0 [Note] InnoDB: Completed initialization of buffer pool
+2023-03-19 12:09:22 0 [Note] InnoDB: Starting crash recovery from checkpoint LSN=902010
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\appointments.ibd' OS error: 71
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`appointments``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:09:23 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`appointments` because it could not be opened.
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\appointments_inventoryledger.ibd' OS error: 71
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`appointments_inventoryledger``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:09:23 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`appointments_inventoryledger` because it could not be opened.
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\car.ibd' OS error: 71
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`car``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:09:23 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`car` because it could not be opened.
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\customer.ibd' OS error: 71
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`customer``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:09:23 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`customer` because it could not be opened.
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\customerscar.ibd' OS error: 71
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`customerscar``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:09:23 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`customerscar` because it could not be opened.
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\inventory.ibd' OS error: 71
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`inventory``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:09:23 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`inventory` because it could not be opened.
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\invoices.ibd' OS error: 71
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`invoices``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:09:23 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`invoices` because it could not be opened.
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\users.ibd' OS error: 71
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`users``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:09:23 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`users` because it could not be opened.
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\seniorproject\inventoryledger.ibd' OS error: 71
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:09:23 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:09:23 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``seniorproject`.`inventoryledger``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:09:23 0 [Warning] InnoDB: Ignoring tablespace for `seniorproject`.`inventoryledger` because it could not be opened.
+2023-03-19 12:09:23 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2023-03-19 12:09:23 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2023-03-19 12:09:23 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2023-03-19 12:09:23 0 [Note] InnoDB: Setting file 'C:\xampp\htdocs\seniorproject\database\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2023-03-19 12:09:23 0 [Note] InnoDB: File 'C:\xampp\htdocs\seniorproject\database\ibtmp1' size is now 12 MB.
+2023-03-19 12:09:23 0 [Note] InnoDB: Waiting for purge to start
+2023-03-19 12:09:23 0 [Note] InnoDB: 10.4.25 started; log sequence number 902019; transaction id 1601
+2023-03-19 12:09:23 0 [Note] InnoDB: Loading buffer pool(s) from C:\xampp\htdocs\seniorproject\database\ib_buffer_pool
+2023-03-19 12:09:23 0 [Note] Plugin 'FEEDBACK' is disabled.
+2023-03-19 12:09:23 0 [Note] InnoDB: Cannot open 'C:\xampp\htdocs\seniorproject\database\ib_buffer_pool' for reading: No such file or directory
+2023-03-19 12:09:23 0 [Note] Server socket created on IP: '::'.
+2023-03-19 12:10:58 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2023-03-19 12:10:58 0 [Note] InnoDB: Uses event mutexes
+2023-03-19 12:10:58 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2023-03-19 12:10:58 0 [Note] InnoDB: Number of pools: 1
+2023-03-19 12:10:58 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2023-03-19 12:10:58 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2023-03-19 12:10:58 0 [Note] InnoDB: Completed initialization of buffer pool
+2023-03-19 12:10:58 0 [Note] InnoDB: Starting crash recovery from checkpoint LSN=902085
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Refusing to load '.\seniorproject\appointments.ibd' (id=128, flags=0x21); dictionary contains id=92, flags=0x21
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``seniorproject`.`appointments``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:10:58 0 [Note] InnoDB: 1 transaction(s) which must be rolled back or cleaned up in total 1 row operations to undo
+2023-03-19 12:10:58 0 [Note] InnoDB: Trx id counter is 1602
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\appointments.ibd' OS error: 71
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`appointments``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:10:58 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`appointments` because it could not be opened.
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\appointments_inventoryledger.ibd' OS error: 71
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`appointments_inventoryledger``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:10:58 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`appointments_inventoryledger` because it could not be opened.
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\car.ibd' OS error: 71
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`car``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:10:58 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`car` because it could not be opened.
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\customer.ibd' OS error: 71
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`customer``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:10:58 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`customer` because it could not be opened.
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\customerscar.ibd' OS error: 71
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`customerscar``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:10:58 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`customerscar` because it could not be opened.
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\inventory.ibd' OS error: 71
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`inventory``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:10:58 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`inventory` because it could not be opened.
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\invoices.ibd' OS error: 71
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`invoices``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:10:58 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`invoices` because it could not be opened.
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\users.ibd' OS error: 71
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`users``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:10:58 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`users` because it could not be opened.
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\seniorproject\inventoryledger.ibd' OS error: 71
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:10:58 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:10:58 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``seniorproject`.`inventoryledger``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:10:58 0 [Warning] InnoDB: Ignoring tablespace for `seniorproject`.`inventoryledger` because it could not be opened.
+2023-03-19 12:10:58 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2023-03-19 12:10:58 0 [Note] InnoDB: Starting in background the rollback of recovered transactions
+2023-03-19 12:10:58 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2023-03-19 12:10:58 0 [Note] InnoDB: Rolled back recovered transaction 1601
+2023-03-19 12:10:58 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2023-03-19 12:10:58 0 [Note] InnoDB: Rollback of non-prepared transactions completed
+2023-03-19 12:10:58 0 [Note] InnoDB: Setting file 'C:\xampp\htdocs\seniorproject\database\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2023-03-19 12:10:58 0 [Note] InnoDB: File 'C:\xampp\htdocs\seniorproject\database\ibtmp1' size is now 12 MB.
+2023-03-19 12:10:58 0 [Note] InnoDB: Waiting for purge to start
+2023-03-19 12:10:58 0 [Note] InnoDB: 10.4.25 started; log sequence number 902094; transaction id 1604
+2023-03-19 12:10:58 0 [Note] InnoDB: Loading buffer pool(s) from C:\xampp\htdocs\seniorproject\database\ib_buffer_pool
+2023-03-19 12:10:58 0 [Note] Plugin 'FEEDBACK' is disabled.
+2023-03-19 12:10:58 0 [Note] InnoDB: Cannot open 'C:\xampp\htdocs\seniorproject\database\ib_buffer_pool' for reading: No such file or directory
+2023-03-19 12:10:58 0 [Note] Server socket created on IP: '::'.
+2023-03-19 12:17:36 0 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions
+2023-03-19 12:17:36 0 [Note] InnoDB: Uses event mutexes
+2023-03-19 12:17:36 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2023-03-19 12:17:36 0 [Note] InnoDB: Number of pools: 1
+2023-03-19 12:17:36 0 [Note] InnoDB: Using SSE2 crc32 instructions
+2023-03-19 12:17:36 0 [Note] InnoDB: Initializing buffer pool, total size = 16M, instances = 1, chunk size = 16M
+2023-03-19 12:17:36 0 [Note] InnoDB: Completed initialization of buffer pool
+2023-03-19 12:17:36 0 [Note] InnoDB: Starting crash recovery from checkpoint LSN=902264
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Refusing to load '.\seniorproject\appointments.ibd' (id=128, flags=0x21); dictionary contains id=92, flags=0x21
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``seniorproject`.`appointments``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:17:36 0 [Note] InnoDB: 1 transaction(s) which must be rolled back or cleaned up in total 1 row operations to undo
+2023-03-19 12:17:36 0 [Note] InnoDB: Trx id counter is 1605
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\appointments.ibd' OS error: 71
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`appointments``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:17:36 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`appointments` because it could not be opened.
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\appointments_inventoryledger.ibd' OS error: 71
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`appointments_inventoryledger``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:17:36 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`appointments_inventoryledger` because it could not be opened.
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\car.ibd' OS error: 71
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`car``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:17:36 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`car` because it could not be opened.
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\customer.ibd' OS error: 71
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`customer``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:17:36 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`customer` because it could not be opened.
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\customerscar.ibd' OS error: 71
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`customerscar``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:17:36 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`customerscar` because it could not be opened.
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\inventory.ibd' OS error: 71
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`inventory``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:17:36 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`inventory` because it could not be opened.
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\invoices.ibd' OS error: 71
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`invoices``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:17:36 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`invoices` because it could not be opened.
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\acmechanic\users.ibd' OS error: 71
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``acmechanic`.`users``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:17:36 0 [Warning] InnoDB: Ignoring tablespace for `acmechanic`.`users` because it could not be opened.
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 2 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Cannot open datafile for read-only: '.\seniorproject\inventoryledger.ibd' OS error: 71
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Operating system error number 203 in a file operation.
+2023-03-19 12:17:36 0 [Note] InnoDB: Some operating system error numbers are described at https://mariadb.com/kb/en/library/operating-system-error-codes/
+2023-03-19 12:17:36 0 [ERROR] InnoDB: Could not find a valid tablespace file for ``seniorproject`.`inventoryledger``. Please refer to https://mariadb.com/kb/en/innodb-data-dictionary-troubleshooting/ for how to resolve the issue.
+2023-03-19 12:17:36 0 [Warning] InnoDB: Ignoring tablespace for `seniorproject`.`inventoryledger` because it could not be opened.
+2023-03-19 12:17:36 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
+2023-03-19 12:17:36 0 [Note] InnoDB: Starting in background the rollback of recovered transactions
+2023-03-19 12:17:36 0 [Note] InnoDB: Rolled back recovered transaction 1604
+2023-03-19 12:17:36 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+2023-03-19 12:17:36 0 [Note] InnoDB: Rollback of non-prepared transactions completed
+2023-03-19 12:17:36 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2023-03-19 12:17:36 0 [Note] InnoDB: Setting file 'C:\xampp\htdocs\seniorproject\database\ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2023-03-19 12:17:36 0 [Note] InnoDB: File 'C:\xampp\htdocs\seniorproject\database\ibtmp1' size is now 12 MB.
+2023-03-19 12:17:36 0 [Note] InnoDB: Waiting for purge to start
+2023-03-19 12:17:36 0 [Note] InnoDB: 10.4.25 started; log sequence number 902273; transaction id 1607
+2023-03-19 12:17:36 0 [Note] InnoDB: Loading buffer pool(s) from C:\xampp\htdocs\seniorproject\database\ib_buffer_pool
+2023-03-19 12:17:36 0 [Note] Plugin 'FEEDBACK' is disabled.
+2023-03-19 12:17:36 0 [Note] InnoDB: Cannot open 'C:\xampp\htdocs\seniorproject\database\ib_buffer_pool' for reading: No such file or directory
+2023-03-19 12:17:36 0 [Note] Server socket created on IP: '::'.

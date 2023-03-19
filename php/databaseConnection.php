@@ -15,7 +15,7 @@ class ConnectDb
     private $host = 'localhost';
     private $user = 'senior';
     private $pass = 'project';
-    private $name = 'seniorproject';
+    private $name = 'clone';
 
     // The db connection is established in the private constructor.
     private function __construct()
