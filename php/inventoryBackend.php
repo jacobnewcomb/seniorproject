@@ -106,7 +106,7 @@ function change_quantity($conn)
     if ($type == "withdraw")
         $t = true;
 
-    $query = "INSERT INTO `inventoryledger` (`item_id`, `quantity`, `withdraw`, `expense_per_unit`, `note`) 
+    $query = "INSERT INTO `ledger` (`item_id`, `quantity`, `withdraw`, `expense_per_unit`, `note`) 
         VALUES ('$id', '$amount', '$t', '$expense_per', '$note');";
     
     mysqli_query($conn, $query);

@@ -51,7 +51,7 @@ function invoice_section($conn)
             WHERE invoice_id = '$invoice_id';";
     mysqli_query($conn, $query);
 
-    $query = "SELECT flat_rate FROM users WHERE username='Uncle';";
+    $query = "SELECT flat_rate, tax_rate FROM users WHERE username='Uncle';";
     $user = mysqli_fetch_assoc(mysqli_query($conn, $query));
     $flat_rate = $user['flat_rate'];
     $tax_rate = $user['tax_rate'];
