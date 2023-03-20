@@ -2,7 +2,7 @@
     $hostname = 'localhost';
     $username = "senior";
     $password = "project";
-    $database = 'seniorproject';
+    $database = 'clone';
     
     $conn = mysqli_connect($hostname, $username, $password, $database);
     

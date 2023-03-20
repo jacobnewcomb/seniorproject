@@ -376,6 +376,13 @@
     }
 
     function addNewCustomer() {
+        var inputs = document.getElementsByClassName("fork")[0].querySelectorAll("input");
+        for(var i = 0; i < 3; i++){
+            if(inputs[i].value == ""){
+                alert("You must input something in all required fields.");
+                return false;
+            }
+        }
         $.ajax({
             async: false,
             url: "../php/addCustomer.php",    //the page containing php script
@@ -398,6 +405,19 @@
     }
 
     function addNewCar() {
+        var inputs = document.getElementsByClassName("fork")[1].querySelectorAll("input");
+        for(var i = 0; i < 4; i++){
+            if(i != 3 && inputs[i].value == ""){
+                alert("You must input something in all required fields.");
+                return false;
+            }
+            else{
+                if(inputs[i].value == "" && selectedCustomersCarID != null){
+                    alert("You must input something in all required fields.");
+                    return false;
+                }
+            }
+        }
         if (selectedCarID == null) {
             $.ajax({
                 async: false,
@@ -431,6 +451,27 @@
     }
 
     function nextTab() {
+        if(currentTab == 0){
+            if(selectedCustomerID == null){
+                alert("You have not chosen a customer.");
+                return false;
+            }
+        }
+        else if(currentTab == 2){
+            if(selectedCustomersCarID == null){
+                alert("You have not chosen a car.");
+                return false;
+            }
+        }
+        else if(currentTab == 4){
+            var inputs = tabs[currentTab].querySelectorAll("input");
+            for(var i = 0; i < inputs.length; i++){
+                if(inputs[i].value == ""){
+                    alert("You must input something in all fields.");
+                    return false;
+                }
+            }
+        }
         tabs[currentTab].style.display = "none";
         do {
             currentTab++;
