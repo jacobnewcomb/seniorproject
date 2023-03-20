@@ -26,7 +26,7 @@
 			var password = document.getElementById("password").value;
 			$.ajax({
 				async: false,
-				url: "../php/login.php",    //the page containing php script
+				url: "./php/login.php",    //the page containing php script
 				type: "post",    //request type,
 				data: {
 					'username': username,
@@ -35,7 +35,7 @@
 				dataType: "json",
 				success: function (result) {
 					if (result) {
-						document.location.href = "home.html"
+						document.location.href = "./home.html"
 					}
 					else {
 						alert("Could not find user. Please try again.");
@@ -48,13 +48,13 @@
 	<script type="text/javascript">
 		$.ajax({
 			async: false,
-			url: "../php/checkLogin.php",    //the page containing php script
+			url: "./php/checkLogin.php",    //the page containing php script
 			type: "post",    //request type,
 			data: {},
 			dataType: "json",
 			success: function (result) {
 				if (result) {
-					document.location.href = "home.html";
+					document.location.href = "./html/home.html";
 				}
 			}
 		});
