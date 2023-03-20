@@ -81,6 +81,17 @@
 				}
 			});
 		}
+		function logout(){
+			$.ajax({
+				async: false,
+				url: "../php/logout.php",    //the page containing php script
+				type: "post",    //request type,
+				data: {},
+				success: function (result) {
+				}
+			});
+			document.location.href = "index.html";
+		}
 	</script>
 </head>
 
@@ -88,7 +99,7 @@
 	<!-- Page Header -->
 	<header>
 		<h1>Home</h1>
-		<button class="header_button buttonText_Aqua">
+		<button class="header_button buttonText_Aqua" onclick="logout();">
 			Logout
 		</button>
 	</header>
