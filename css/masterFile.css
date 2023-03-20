@@ -24,16 +24,9 @@ body {
 }
 
 .buttonText_Aqua{
-	position: absolute;
 	color: white;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	
 	font-family: var(--button-font);
-	font-weight: Regular;
 	font-size: 5vh;
-	opacity: 1;
 }
 
 /* Page Header */

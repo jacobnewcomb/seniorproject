@@ -48,7 +48,9 @@
 			--title-font: Roboto Slab, Times;
 			--button-font: Inter, Sans-Serif;
 		}
-		h1 {				/* Page-Name Text*/
+
+		h1 {
+			/* Page-Name Text*/
 			color: white;
 			position: relative;
 			top: 1vh;
@@ -61,19 +63,19 @@
 
 <body>
 
-		<!-- Page Header -->
-		<header>
-			<h1>Inventory Page</h1>
-			<div class="home_Button" onclick="window.location.href = 'home.html'">
-				<div class="buttonText_Aqua">Home</div>
-			</div>
-			<div class="logout_Button">
-				<div class="buttonText_Aqua">Logout</div>
-			</div>
-		</header>
+	<!-- Page Header -->
+	<header>
+		<h1>Schedule</h1>
+		<button class="home_Button buttonText_Aqua" onclick="window.location.href = 'home.html'">
+			Home
+		</button>
+		<button class="logout_Button buttonText_Aqua">
+			Logout
+		</button>
+	</header>
 
-		<!-- Schedule Goes Here -->
-		<div id="dp"></div>
+	<!-- Schedule Goes Here -->
+	<div id="dp"></div>
 
 	<!-- Script to Build Schedule -->
 	<script type="text/javascript">
