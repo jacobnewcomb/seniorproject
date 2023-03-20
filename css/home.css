@@ -1,117 +1,66 @@
-.main {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 1em;
-}
-
 .gridContainer{
+	height: 38vw;
+	padding: 2em;
 	display: grid;
-	width: 98vw;
-	height: 83vh;
-	margin: auto;
+	width: 100%;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr;
-	grid-gap: 10px;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 1em;
 }
 
-.schedule_Button{
-	position: relative;
+.menu_button {
+	font-family: var(--button-font);
+	font-size: 5vh;
+	background: var(--platinum);
+	border: 1px solid black;
+}
+
+#schedule {
 	grid-column: 1 / 2;
-	grid-row: 1 / 5;
-	background: var(--platinum);
-	opacity: 1;
-	overflow: hidden;
-	border-bottom-right-radius: 20px;
-	border: 1px solid rgba(0,0,0,1);
+	grid-row: 1 / 3;
+	border-radius: 0 20px 20px 0;
 }
 
-.display_Box{
-	position: relative;
-	grid-column: 2 / 4;
+#newSale {
+	grid-column: 2 / 3;
 	grid-row: 1 / 2;
-	background: var(--platinum);
-	opacity: 1;
-	overflow: hidden;
-	border-bottom-left-radius: 20px;
-	border-bottom-right-radius: 20px;
-	border: 1px solid rgba(0,0,0,1);
-}
-
-.calendar_Button{
-	position: relative;
-	grid-column: 4 / 5;
-	grid-row: 1 / 5;
-	background: var(--platinum);
-	opacity: 1;
-	overflow: hidden;
-	border-bottom-left-radius: 20px;
-	border: 1px solid rgba(0,0,0,1);
-}
-
-.dropdown_Appointment{
-	position: absolute;
-	top: 100px;
-	left: 80vw;
-}
-
-.dropdown_Inventory{
-	position: absolute;
-	top: 150px;
-	left: 80vw;
-}
-
-.entryFR{
-	position: absolute;
-	top: 200px;
-	left: 80vw;
-}
-
-.entryTR{
-	position: absolute;
-	top: 275px;
-	left: 80vw;
-}
-
-.newSale_Button{
-	position: relative;
-	grid-column: 2 / 3;
-	grid-row: 2 / 3;
-	background: var(--platinum);
-	opacity: 1;
-	overflow: hidden;
 	border-top-left-radius: 20px;
-	border: 1px solid rgba(0,0,0,1);
 }
 
-.inventory_Button{
-	position: relative;
+#inventory {
+	grid-column: 3 / 4;
+	grid-row: 1 / 2;
+	border-top-right-radius: 20px;
+}
+
+#invoice {
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+	border-bottom-left-radius: 20px;
+}
+
+#accounting {
 	grid-column: 3 / 4;
 	grid-row: 2 / 3;
-	background: var(--platinum);
-	opacity: 1;
-	overflow: hidden;
-	border-top-right-radius: 20px;
-	border: 1px solid rgba(0,0,0,1);
-}
-
-.settings_Button{
-	position: relative;
-	grid-column: 2 / 3;
-	grid-row: 3 / 4;
-	background: var(--platinum);
-	opacity: 1;
-	overflow: hidden;
-	border-bottom-left-radius: 20px;
-	border: 1px solid rgba(0,0,0,1);
-}
-
-.accounting_Button{
-	position: relative;
-	grid-column: 3 / 4;
-	grid-row: 3 / 4;
-	background: var(--platinum);
-	opacity: 1;
-	overflow: hidden;
 	border-bottom-right-radius: 20px;
-	border: 1px solid rgba(0,0,0,1);
+}
+
+#settings {
+	grid-column: 4 / 5;
+	grid-row: 1 / 3;
+	border-radius: 20px 0px 0px 20px;
+	border: 1px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+#settings_button {
+	color: white;
+	background-color: var(--aqua);
+	border: 1px solid var(--dark-steel);
+	font-family: var(--button-font);
+	font-size: 1.5em;
+	width: 75%;
 }
