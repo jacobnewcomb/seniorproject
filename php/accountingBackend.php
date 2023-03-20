@@ -20,7 +20,7 @@ foreach($ledger as $entry):
     }
 
     $invoice_id = $entry['invoice_id'];
-    if($entry['withdraw'] == 0):
+    if($entry['withdraw'] == 1):
 ?>
         <tr>
             <td style="color: green;"><?= $expense?></td>

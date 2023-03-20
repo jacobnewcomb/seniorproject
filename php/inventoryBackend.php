@@ -83,7 +83,7 @@ function popup_content($conn)
             <input name="type" type="radio" value="deposit" id="deposit" checked><label for="deposit">Deposit</label>
             <input name="type" type="radio" value="withdraw" id="withdraw"><label for="withdraw">Withdraw</label>
             <br>
-            Expense per Unit <input name="expense_per" type="number">
+            Cash Flow per Unit <input name="expense_per" type="number">
             <br>
             <input type="text" placeholder="Note (optional)" name="note">
             <button onclick="changeQuantity(<?= $item['item_id'] ?>)">Change Quantity</button>
