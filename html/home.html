@@ -29,7 +29,18 @@
 
 	<script type="text/javascript">
 		// ensure we are logged in
-		$.get('../php/checkLogin.php', function () { });
+		$.ajax({
+			async: false,
+			url: "../php/checkLogin.php",    //the page containing php script
+			type: "post",    //request type,
+			data: {},
+			dataType: "json",
+			success: function (result) {
+				if (!result) {
+					document.location.href = "index.html";
+				}
+			}
+		});
 
 		// prepare form submittal function
 		$(document).ready(function () {
@@ -56,6 +67,20 @@
 				// reroute to window.location.href='customerGarage.html'
 			});
 		});
+
+		function update_tr(){
+			$.ajax({
+				async: false,
+				url: "../php/changeTaxInfo.php",    //the page containing php script
+				type: "post",    //request type,
+				data: {"fr": document.getElementById("flatRate").value, "tr": document.getElementById("taxRate").value},
+				success: function (result) {
+					if(result){
+						alert("Flat/tax rates have been updated!");
+					}
+				}
+			});
+		}
 	</script>
 </head>
 
@@ -103,9 +128,9 @@
 				</div>
 				<div class="settings_element">
 					<label for="taxRate">Current Tax Rate</label><br>
-					<input type="number" id="taxRate" oninput="update_tr(this.value)" name="taxRate" placeholder="0">
+					<input type="number" id="taxRate" name="taxRate" placeholder="0">
 				</div>
-				<button id="settings_button">Update Settings</button>
+				<button id="settings_button" onclick="update_tr();">Update Settings</button>
 			</div>
 		</div>
 	</main>
