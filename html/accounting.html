@@ -24,7 +24,18 @@
 
 	<script type="text/javascript">
 		// ensure we are logged in
-		$.get('../php/checkLogin.php', function () { });
+		$.ajax({
+			async: false,
+			url: "../php/checkLogin.php",    //the page containing php script
+			type: "post",    //request type,
+			data: {},
+			dataType: "json",
+			success: function (result) {
+				if (!result) {
+					document.location.href = "index.html";
+				}
+			}
+		});
 	</script>
 </head>
 
